@@ -1,18 +1,16 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import mapStyle from './mapStyle.json'
 import { easeCubic } from 'd3-ease'
 import './Mapa.css'
 import ReactMapGL, { FlyToInterpolator } from 'react-map-gl'
 import CapaRegiones from './CapaRegiones'
-import { useHistory, useParams } from 'react-router-dom'
-import geoJSONRegiones from '../../data/geojson/regiones.json'
-import { calcularPoloDeInaccesibilidad } from '../../helpers/turf'
+import { useHistory } from 'react-router-dom'
 
 const Mapa = () => {
 
   const [vp, setVp] = useState({
-    width: '100vw',
-    height: 'calc(100vh - 50px)',
+    width: '100%',
+    height: 'calc(100vh - 3rem)',
     bearing: 98.49519730510106,
     pitch: 0,
     altitude: 1.5,
@@ -26,13 +24,12 @@ const Mapa = () => {
   const cambioEnElViewport = vp => {
     setVp({
       ...vp,
-      width: '100vw',
-      height: 'calc(100vh - 200px)',
+      width: '100%',
+      height: 'calc(100vh - 3rem)',
     })
   }
 
   const history = useHistory()
-  const { codigo: codigoComunaSeleccionada } = useParams()
 
   // useEffect(() => {
   //   const featureComuna = geoJSONRegiones.features.find(f => f.properties.COD_COMUNA === codigoComunaSeleccionada)
