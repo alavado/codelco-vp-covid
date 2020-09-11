@@ -16,19 +16,18 @@ const Mapa = () => {
     bearing: 98.49519730510106,
     pitch: 0,
     altitude: 1.5,
-    zoom: 4,
+    zoom: 5,
     latitude: -28.63,
     longitude: -70.75,
     transitionInterpolator: new FlyToInterpolator(),
     transitionEasing: easeCubic,
-    minZoom: 5
   })
 
   const cambioEnElViewport = vp => {
     setVp({
       ...vp,
       width: '100vw',
-      height: 'calc(100vh - 50px)',
+      height: 'calc(100vh - 200px)',
     })
   }
 
