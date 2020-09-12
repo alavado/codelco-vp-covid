@@ -3,7 +3,7 @@ import './Graficos.css'
 
 const Graficos = () => {
   return (
-    <div>
+    <div className="Graficos">
       Graficos
     </div>
   )

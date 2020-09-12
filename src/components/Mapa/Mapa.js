@@ -19,6 +19,7 @@ const Mapa = () => {
     longitude: -70.75,
     transitionInterpolator: new FlyToInterpolator(),
     transitionEasing: easeCubic,
+    minZoom: 4,
   })
 
   const cambioEnElViewport = vp => {

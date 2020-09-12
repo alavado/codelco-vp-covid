@@ -1,3 +1,13 @@
 .Graficos {
   height: 200vh;
+  animation: aparecen-graficos .25s ease-in-out both;
+}
+
+@keyframes aparecen-graficos {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
