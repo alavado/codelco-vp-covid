@@ -3,6 +3,7 @@
   flex-direction: column;
   width: 100%;
   min-height: 100vh;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .App__header {
@@ -10,4 +11,47 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: #2B4552;
+  color: white;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, .25);
+  z-index: 2;
+  padding: 0 1rem;
+}
+
+.App__codelco {
+  font-weight: 600;
+  font-size: 1.15rem;
+}
+
+.App__navegacion {
+  color: white;
+  display: flex;
+  height: 100%;
+}
+
+.App__link_navegacion {
+  padding: 0 1rem;
+  font-size: .9rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  transition: all .15s ease-in-out;
+}
+
+.App__link_navegacion--activo {
+  background-color: #52859E;
+}
+
+.App__contenedor {
+  max-height: calc(100vh - 3rem);
+  overflow-y: auto;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
 }

@@ -18,19 +18,39 @@ const App = () => {
   return (
     <div className="App">
       <div className="App__header">
-        <h1>CODELCO</h1>
-        <nav>
-          <NavLink to="/mapa">Mapa</NavLink>
-          <NavLink to="/graficos">Gráficos</NavLink>
-          <NavLink to="/tabla">Tabla de datos</NavLink>
+        <h1 className="App__codelco">Dashboard CODELCO-COVID</h1>
+        <nav className="App__navegacion">
+          <NavLink
+            className="App__link_navegacion"
+            activeClassName="App__link_navegacion--activo"
+            to="/mapa"
+          >
+            Mapa
+          </NavLink>
+          <NavLink
+            className="App__link_navegacion"
+            activeClassName="App__link_navegacion--activo"
+            to="/graficos"
+          >
+            Gráficos
+          </NavLink>
+          <NavLink
+            className="App__link_navegacion"
+            activeClassName="App__link_navegacion--activo"
+            to="/tabla"
+          >
+            Tabla de datos
+          </NavLink>
         </nav>
       </div>
-      <Switch>
-        <Route exact path="/" component={Mapa} />
-        <Route path="/mapa" component={Mapa} />
-        <Route path="/graficos" component={Graficos} />
-        <Route path="/tabla" component={Tabla} />
-      </Switch>
+      <div className="App__contenedor">
+        <Switch>
+          <Route exact path="/" component={Mapa} />
+          <Route path="/mapa" component={Mapa} />
+          <Route path="/graficos" component={Graficos} />
+          <Route path="/tabla" component={Tabla} />
+        </Switch>
+      </div>
     </div>
   );
 }

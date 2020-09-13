@@ -1,7 +1,9 @@
 const login = 'login/login'
+const fijarError = 'login/fijarError'
 
 const defaultState = {
-  usuario: false
+  usuario: false,
+  error: null
 }
 
 export default function reducer(state = defaultState, action = {}) {
@@ -12,6 +14,12 @@ export default function reducer(state = defaultState, action = {}) {
         usuario: true
       }
     }
+    case fijarError: {
+      return {
+        ...state,
+        error: 'Contraseña incorrecta'
+      }
+    }
     default: {
       return state
     }
@@ -20,7 +28,10 @@ export default function reducer(state = defaultState, action = {}) {
 
 export const iniciaSesion = password => {
   if (password !== 'codelco') {
-    return null
+    return {
+      type: fijarError,
+      payload: 'Contraseña incorrecta'
+    }
   }
   return {
     type: login

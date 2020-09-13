@@ -1,16 +1,17 @@
 import React, { useState } from 'react'
 import './Login.css'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { iniciaSesion } from '../../redux/ducks/login'
 
 const Login = () => {
 
   const [password, setPassword] = useState('')
   const dispatch = useDispatch()
+  const { error } = useSelector(state => state.login)
 
   const login = e => {
     e.preventDefault()
-    setTimeout(() => dispatch(iniciaSesion(password), 200 + Math.random() * 800))
+    setTimeout(() => dispatch(iniciaSesion(password)), 200 + Math.random() * 800)
   }
 
   return (
@@ -23,6 +24,7 @@ const Login = () => {
         />
         <button type="submit">Ingresar</button>
       </form>
+      {error}
     </div>
   )
 }
