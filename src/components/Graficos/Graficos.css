@@ -1,6 +1,29 @@
 .Graficos {
-  height: 200vh;
   animation: aparecen-graficos .25s ease-in-out both;
+  display: flex;
+}
+
+.Graficos__contenedor_grafico {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.Grafico__titulo {
+  font-weight: bold;
+  padding: 2rem;
+}
+
+.Graficos__grafico {
+  height: 40vh;
+  flex: 1;
+  padding: 4rem;
+}
+
+.Grafico__total_acumulado {
+  font-size: 5rem;
+  padding: .5rem 0;
 }
 
 @keyframes aparecen-graficos {
