@@ -2,7 +2,7 @@ const login = 'login/login'
 const fijarError = 'login/fijarError'
 
 const defaultState = {
-  usuario: false,
+  usuario: window.location.href.indexOf('localhost') >= 0,
   error: null
 }
 
