@@ -40,26 +40,49 @@ const [fechaInicial, fechaFinal] = series.reduce((prev, d) => {
 
 const inicio = moment(fechaInicial), fin = moment(fechaFinal)
 const propiosCodelco = [], contratistasCodelco = []
+const fechas = []
 while (!inicio.isSame(fin)) {
+  const fechaFormateada = inicio.format('YYYY-MM-DD')
   propiosCodelco.push(series
     .map(d => d.propios)
     .reduce((prev, serie) => {
-      const casosFecha = serie.find(d => d.fecha === inicio.format('YYYY-MM-DD'))
+      const casosFecha = serie.find(d => d.fecha === fechaFormateada)
       return prev + (casosFecha ? casosFecha.casosNuevos : 0)
     }, 0))
   contratistasCodelco.push(series
     .map(d => d.contratistas)
     .reduce((prev, serie) => {
-      const casosFecha = serie.find(d => d.fecha === inicio.format('YYYY-MM-DD'))
+      const casosFecha = serie.find(d => d.fecha === fechaFormateada)
       return prev + (casosFecha ? casosFecha.casosNuevos : 0)
     }, 0))
+  fechas.push(fechaFormateada)
   inicio.add(1, 'day')
 }
 
-series.push({
-  codigo: 'Codelco',
-  propios: propiosCodelco,
-  contratistas: contratistasCodelco
-})
+const seriesCompletas = [
+  ...series.map(serie => {
+    return {
+      codigo: serie.codigo,
+      propios: fechas.map(fecha => {
+        const dato = serie.propios.find(d => d.fecha === fecha)
+        return dato ? dato.casosNuevos : null
+      }),
+      contratistas: fechas.map(fecha => {
+        const dato = serie.contratistas.find(d => d.fecha === fecha)
+        return dato ? dato.casosNuevos : null
+      }),
+    }
+  }),
+  {
+    codigo: 'Codelco',
+    propios: propiosCodelco,
+    contratistas: contratistasCodelco
+  }
+]
 
-fs.writeFileSync('src/data/csv/data_codelco.json', JSON.stringify(series))
+const datos = {
+  fechas,
+  series: seriesCompletas
+}
+
+fs.writeFileSync('src/data/csv/data_codelco.json', JSON.stringify(datos))
