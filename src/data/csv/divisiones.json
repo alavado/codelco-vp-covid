@@ -1,0 +1,52 @@
+[
+  {
+    "codigo": "DCH",
+    "nombre": "División Chuquicamata",
+    "region": 3
+  },
+  {
+    "codigo": "DET",
+    "nombre": "División El Teniente",
+    "region": 6
+  },
+  {
+    "codigo": "DGM",
+    "nombre": "División Gabriela Mistral",
+    "region": 3
+  },
+  {
+    "codigo": "DMH",
+    "nombre": "División Ministro Hales",
+    "region": 3
+  },
+  {
+    "codigo": "DRT",
+    "nombre": "División Radomiro Tomic",
+    "region": 3
+  },
+  {
+    "codigo": "DVEN",
+    "nombre": "División Ventanas",
+    "region": 5
+  },
+  {
+    "codigo": "VP",
+    "nombre": "Vicepresidencias",
+    "region": 13
+  },
+  {
+    "codigo": "DAND",
+    "nombre": "División Andina",
+    "region": 5
+  },
+  {
+    "codigo": "DSAL",
+    "nombre": "División Salvador",
+    "region": 2
+  },
+  {
+    "codigo": "Codelco",
+    "nombre": "Toda CODELCO",
+    "region": -1
+  }
+]
