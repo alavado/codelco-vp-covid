@@ -12,7 +12,7 @@ const Graficos = () => {
   return (
     <div className="Graficos">
       <Grafico division={divisiones.find(d => d.codigo === 'Codelco')} />
-      {divisiones.filter(d => d.codigo !== 'Codelco').map(d => <Grafico division={d} />)}
+      {divisiones.filter(d => d.codigo !== 'Codelco').map(d => <Grafico key={d.codigo} division={d} />)}
     </div>
   )
 }

@@ -1,6 +1,7 @@
 .Grafico {
   display: flex;
   flex-direction: column;
+  margin-bottom: 3rem;
 }
 
 .Grafico__contenedor_grafico {
@@ -81,4 +82,17 @@
   100% {
     opacity: 1;
   }
+}
+
+@media(orientation: portrait) {
+
+  .Grafico__contenedor_grafico {
+    flex-direction: column;
+    margin: 0;
+  }
+
+  .Grafico__grafico {
+    padding-right: 0;
+  }
+
 }

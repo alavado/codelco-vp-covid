@@ -6,6 +6,7 @@ import Graficos from '../Graficos'
 import Tabla from '../Tabla'
 import { useSelector } from 'react-redux'
 import Login from '../Login'
+import logo from '../../assets/Codelco_logo.svg'
 
 const App = () => {
 
@@ -18,7 +19,10 @@ const App = () => {
   return (
     <div className="App">
       <div className="App__header">
-        <h1 className="App__codelco">Dashboard CODELCO-COVID</h1>
+        <h1 className="App__codelco">
+          <img src={logo} alt="Logo CODELCO" className="App__logo" />
+          Dashboard CODELCO COVID-19
+        </h1>
         <nav className="App__navegacion">
           <NavLink
             className="App__link_navegacion"
