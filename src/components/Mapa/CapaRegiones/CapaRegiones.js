@@ -1,113 +1,53 @@
 import React, { useMemo } from 'react'
 import { Source, Layer } from 'react-map-gl'
-import geoJSONComunas from '../../../data/geojson/regiones.json'
+import geoJSONRegiones from '../../../data/geojson/regiones.json'
 import { useParams } from 'react-router-dom'
 import './CapaRegiones.css'
+import { obtenerColorRegion } from '../../../helpers/colores'
 
-const CapaComunas = () => {
+const CapaRegiones = () => {
 
-  const { codigo: codigoComunaSeleccionada } = useParams()
+  const { codigo: codigoRegionSeleccionada } = useParams()
 
-  const geoJSONComunasOtrasRegiones = useMemo(() => {
-    if (!codigoComunaSeleccionada) {
-      return geoJSONComunas
-    }
-    const comuna = geoJSONComunas.features.find(f => Number(f.properties.COD_COMUNA) === Number(codigoComunaSeleccionada))
+  const geoJSONConColres = useMemo(() => {
     return {
-      ...geoJSONComunas,
-      features: geoJSONComunas.features.filter(f => f.properties.NOM_REG !== comuna.properties.NOM_REG)
+      ...geoJSONRegiones,
+      features: geoJSONRegiones.features.map(f => ({
+        ...f,
+        properties: {
+          ...f.properties,
+          color: obtenerColorRegion(f.properties.codregion)
+        }
+      }))
     }
-  }, [codigoComunaSeleccionada])
-
-  const geoJSONComunasRegion = useMemo(() => {
-    if (!codigoComunaSeleccionada) {
-      return geoJSONComunas
-    }
-    const comuna = geoJSONComunas.features.find(f => Number(f.properties.COD_COMUNA) === Number(codigoComunaSeleccionada))
-    return {
-      ...geoJSONComunas,
-      features: geoJSONComunas.features.filter(f => f.properties.NOM_REG === comuna.properties.NOM_REG)
-    }
-  }, [codigoComunaSeleccionada])
-
-  const geoJSONComuna = useMemo(() => {
-    return {
-      ...geoJSONComunas,
-      features: geoJSONComunas.features.filter(f => f.properties.COD_COMUNA === codigoComunaSeleccionada)
-    }
-  }, [codigoComunaSeleccionada])
+  }, [])
 
   return (
     <>
       <Source
-        id="source-otras-comunas"
+        id="source-regiones"
         type="geojson"
-        data={geoJSONComunasOtrasRegiones}
+        data={geoJSONConColres}
       >
         <Layer
-          id="layer-otras-comunas-fill"
+          id="layer-regiones-fill"
           type="fill"
           paint={{
-            'fill-color': ['get', 'colorPositividad'],
-            'fill-opacity': .2
-          }}
-        />
-        <Layer
-          id="layer-otras-comunas-line"
-          type="line"
-          paint={{
-            'line-color': '#1e0b0b',
-            'line-opacity': .3
-          }}
-        />
-      </Source>
-      <Source
-        id="source-comunas-region"
-        type="geojson"
-        data={geoJSONComunasRegion}
-      >
-        <Layer
-          id="layer-comunas-fill"
-          type="fill"
-          paint={{
-            'fill-color': ['get', 'colorPositividad'],
+            'fill-color': ['get', 'color'],
             'fill-opacity': 1
           }}
         />
         <Layer
-          id="layer-comunas-line"
+          id="layer-regiones-line"
           type="line"
           paint={{
-            'line-color': '#1e0b0b',
-            'line-width': 1.25
+            'line-color': 'white',
+            'line-opacity': 1
           }}
         />
       </Source>
-      <Source
-        id="source-comuna"
-        type="geojson"
-        data={geoJSONComuna}
-      >
-        <Layer
-          id="layer-comuna-fill"
-          type="fill"
-          paint={{
-            'fill-color': 'black',
-            'fill-opacity': .05
-          }}
-        />
-        <Layer
-          id="layer-comuna-line"
-          type="line"
-          paint={{
-            'line-color': '#1e0b0b',
-            'line-width': 3
-          }}
-        />
-      </Source>
-      {/* {labelsComunas} */}
     </>
   )
 }
 
-export default CapaComunas
+export default CapaRegiones
