@@ -1,0 +1,7 @@
+.MarkerRegion {
+  pointer-events: none;
+  background-color: white;
+  z-index: 2;
+  padding: .5rem;
+  cursor: pointer;
+}

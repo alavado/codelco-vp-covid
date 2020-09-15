@@ -11,20 +11,16 @@ const Grafico = ({ division }) => {
   const [acumulados, setAcumulados] = useState(true)
 
   const [fechas, series, total, totalPropios, totalContratistas] = useMemo(() => {
-    const { propios, contratistas } = divisiones.series.find(d => d.codigo === division.codigo)
+    const datosDivision = divisiones.series.find(d => d.codigo === division.codigo)
     return [
       divisiones.fechas,
       {
-        propios: acumulados
-          ? propios.reduce((prev, v) => [...prev, prev.slice(-1)[0] + v], [0]).slice(1)
-          : propios.slice(),
-        contratistas: acumulados
-          ? contratistas.reduce((prev, v) => [...prev, prev.slice(-1)[0] + v], [0]).slice(1)
-          : contratistas.slice(),
+        propios: acumulados ? datosDivision.propiosAcum : datosDivision.propios,
+        contratistas: acumulados ? datosDivision.contratistasAcum : datosDivision.contratistas
       },
-      propios.reduce((sum, v) => sum + v) + contratistas.reduce((sum, v) => sum + v),
-      propios.reduce((sum, v) => sum + v),
-      contratistas.reduce((sum, v) => sum + v),
+      datosDivision.total,
+      datosDivision.totalPropios,
+      datosDivision.totalContratistas
     ]
   }, [acumulados, division])
 

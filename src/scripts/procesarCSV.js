@@ -82,7 +82,18 @@ const seriesCompletas = [
 
 const datos = {
   fechas,
-  series: seriesCompletas
+  series: seriesCompletas.map(serie => {
+    const propiosAcum = serie.propios.reduce((prev, v) => [...prev, v + prev.slice(-1)[0]], [0]).slice(1)
+    const contratistasAcum = serie.contratistas.reduce((prev, v) => [...prev, v + prev.slice(-1)[0]], [0]).slice(1)
+    return {
+      ...serie,
+      propiosAcum,
+      contratistasAcum,
+      totalPropios: propiosAcum.slice(-1)[0],
+      totalContratistas: contratistasAcum.slice(-1)[0],
+      total: propiosAcum.slice(-1)[0] + contratistasAcum.slice(-1)[0]
+    }
+  })
 }
 
 fs.writeFileSync('src/data/csv/data_codelco.json', JSON.stringify(datos))

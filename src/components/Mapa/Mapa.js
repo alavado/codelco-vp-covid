@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 import mapStyle from './mapStyle.json'
 import { easeCubic } from 'd3-ease'
 import './Mapa.css'
-import ReactMapGL, { FlyToInterpolator } from 'react-map-gl'
+import ReactMapGL, { FlyToInterpolator, Marker } from 'react-map-gl'
 import CapaRegiones from './CapaRegiones'
 import { useHistory } from 'react-router-dom'
+import MarkerRegion from './MarkerRegion'
 
 const Mapa = () => {
 
@@ -20,6 +21,11 @@ const Mapa = () => {
     transitionInterpolator: new FlyToInterpolator(),
     transitionEasing: easeCubic,
     minZoom: 4,
+  })
+  const [markerRegion, setMarkerRegion] = useState({
+    visible: false,
+    latitude: -28.63,
+    longitude: -70.75
   })
 
   const cambioEnElViewport = vp => {
@@ -54,6 +60,20 @@ const Mapa = () => {
     }
   }
 
+  const moverMarker = e => {
+    if (e.features?.some(f => f.layer.id === 'layer-regiones-fill')) {
+      setMarkerRegion({
+        latitude: e.lngLat[1],
+        longitude: e.lngLat[0],
+        visible: true,
+        codigoRegion: e.features[0].properties.codregion
+      })
+    }
+    else {
+      setMarkerRegion({ ...markerRegion, visible: false })
+    }
+  }
+
   return (
     <div className="Mapa">
       <ReactMapGL
@@ -63,7 +83,9 @@ const Mapa = () => {
         doubleClickZoom={(() => 'ontouchstart' in window)()}
         getCursor={() => 'pointer'}
         onClick={clickEnMapa}
+        onHover={moverMarker}
       >
+        <MarkerRegion {...markerRegion} />
         <CapaRegiones />
       </ReactMapGL>
     </div>
