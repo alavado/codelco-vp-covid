@@ -1,32 +1,32 @@
 [
   {
     "codigo": "DCH",
-    "nombre": "División Chuquicamata",
+    "nombre": "Chuquicamata",
     "region": 3
   },
   {
     "codigo": "DET",
-    "nombre": "División El Teniente",
+    "nombre": "El Teniente",
     "region": 6
   },
   {
     "codigo": "DGM",
-    "nombre": "División Gabriela Mistral",
+    "nombre": "Gabriela Mistral",
     "region": 3
   },
   {
     "codigo": "DMH",
-    "nombre": "División Ministro Hales",
+    "nombre": "Ministro Hales",
     "region": 3
   },
   {
     "codigo": "DRT",
-    "nombre": "División Radomiro Tomic",
+    "nombre": "Radomiro Tomic",
     "region": 3
   },
   {
     "codigo": "DVEN",
-    "nombre": "División Ventanas",
+    "nombre": "Ventanas",
     "region": 5
   },
   {
@@ -36,12 +36,12 @@
   },
   {
     "codigo": "DAND",
-    "nombre": "División Andina",
+    "nombre": "Andina",
     "region": 5
   },
   {
     "codigo": "DSAL",
-    "nombre": "División Salvador",
+    "nombre": "Salvador",
     "region": 2
   },
   {

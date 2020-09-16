@@ -2,6 +2,9 @@
   pointer-events: none;
   background-color: white;
   z-index: 2;
-  padding: .5rem;
+  height: 3rem;
   cursor: pointer;
+  position: absolute;
+  top: -3rem;
+  padding: .5rem;
 }

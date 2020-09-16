@@ -65,12 +65,12 @@ const Grafico = ({ division }) => {
               labels: fechas,
               datasets: [
                 {
-                  data: series.propios,
+                  data: series.propios.slice(),
                   backgroundColor: '#42809E',
                   label: `Trabajadores propios: ${totalPropios} casos`
                 },
                 {
-                  data: series.contratistas,
+                  data: series.contratistas.slice(),
                   backgroundColor: '#EBCB63',
                   label: `Trabajadores contratistas: ${totalContratistas} casos`
                 }
