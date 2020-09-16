@@ -8,14 +8,13 @@ export const obtenerColorRegion = codigoRegion => {
   }
   const casosDivisiones = dataCodelco.series.filter(s => divisionesRegion.some(d => d.codigo === s.codigo))
   const totalCasosDivisionesRegion = casosDivisiones.map(s => [...s.contratistas, ...s.propios].reduce((sum, v) => sum + v)).reduce((sum, v) => sum + v)
-  return escala.find(v => v.maximo > totalCasosDivisionesRegion).color
+  return escala.find((v, i) => !escala[i + 1] || escala[i + 1].maximo > totalCasosDivisionesRegion).color
 }
 
 export const escala = [
-  [0, '#cdd0d0'],
-  [50, '#DEDA5D'],
-  [100, '#73BADE'],
-  [500, '#52859E'],
-  [1000, '#2B4552'],
-  [Infinity, '#1D2F38']
-].map(paso => ({ maximo: paso[0], color: paso[1] }))
+  [0, '#DEDA5D', '1 - 49'],
+  [50, '#73BADE', '50 - 99'],
+  [100, '#52859E', '100 - 499'],
+  [500, '#2B4552', '500 o más'],
+  [1000, '#1D2F38', 'Más de 100']
+].map(paso => ({ maximo: paso[0], color: paso[1], leyenda: paso[2] }))

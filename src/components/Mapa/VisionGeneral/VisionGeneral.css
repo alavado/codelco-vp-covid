@@ -3,12 +3,13 @@
   z-index: 3;
   left: .5rem;
   top: .5rem;
-  background-color: rgba(255, 255, 255, .8);
+  background-color: rgba(255, 255, 255, .9);
   padding: 1rem;
   height: calc(100vh - 4rem);
   border-radius: .25rem;
   animation: aparece-vision-general .25s .25s ease-in-out both;
   width: 20vw;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, .05);
 }
 
 @keyframes aparece-vision-general {

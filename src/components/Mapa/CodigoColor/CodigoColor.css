@@ -3,9 +3,26 @@
   right: .5rem;
   top: .5rem;
   z-index: 3;
-  background-color: white;
   padding: 1rem;
   animation: aparece-codigo-color .25s .75s ease-in-out both;
+  display: flex;
+}
+
+.CodigoColor__paso_escala {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.CodigoColor__color_escala {
+  height: .5rem;
+  width: 6rem;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, .05);
+}
+
+.CodigoColor__valor_escala {
+  font-size: .65rem;
+  margin-top: .1rem;
 }
 
 @keyframes aparece-codigo-color {
