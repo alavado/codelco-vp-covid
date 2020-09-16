@@ -1,10 +1,22 @@
 .MarkerRegion {
   pointer-events: none;
-  background-color: white;
+  background-color: rgba(255, 255, 255, .95);
   z-index: 2;
-  height: 3rem;
+  height: 6rem;
+  top: -6rem;
   cursor: pointer;
   position: absolute;
-  top: -3rem;
   padding: .5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: .25rem;
+  justify-content: center;
+}
+
+.MarkerRegion__nombre_region {
+  font-weight: 600;
+  font-size: .9rem;
+  min-width: 10rem;
+  text-align: center;
 }

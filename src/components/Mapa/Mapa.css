@@ -1,4 +1,5 @@
 .Mapa {
+  position: relative;
   flex: 1;
   animation: aparece-mapa .25s ease-in-out both;
 }

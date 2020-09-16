@@ -6,6 +6,8 @@ import ReactMapGL, { FlyToInterpolator, Marker } from 'react-map-gl'
 import CapaRegiones from './CapaRegiones'
 import { useHistory } from 'react-router-dom'
 import MarkerRegion from './MarkerRegion'
+import CodigoColor from './CodigoColor'
+import VisionGeneral from './VisionGeneral'
 
 const Mapa = () => {
 
@@ -16,8 +18,8 @@ const Mapa = () => {
     pitch: 0,
     altitude: 1.5,
     zoom: 5,
-    latitude: -28.63,
-    longitude: -70.75,
+    latitude: -24.63,
+    longitude: -69.75,
     transitionInterpolator: new FlyToInterpolator(),
     transitionEasing: easeCubic,
     minZoom: 4,
@@ -76,6 +78,8 @@ const Mapa = () => {
 
   return (
     <div className="Mapa">
+      <CodigoColor />
+      <VisionGeneral />
       <ReactMapGL
         {...vp}
         mapStyle={mapStyle}
