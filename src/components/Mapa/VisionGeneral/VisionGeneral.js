@@ -1,8 +1,15 @@
 import React, { useMemo } from 'react'
 import MiniGrafico from './MiniGrafico'
 import datos from '../../../data/csv/data_codelco.json'
+import divisiones from '../../../data/csv/divisiones.json'
 import moment from 'moment'
 import './VisionGeneral.css'
+import Select from 'react-select'
+
+const options = divisiones.map(d => ({
+  value: d.codigo,
+  label: d.nombre
+}))
 
 const VisionGeneral = () => {
 
@@ -18,6 +25,9 @@ const VisionGeneral = () => {
   return (
     <div className="VisionGeneral">
       <div>
+        <Select
+          options={options}
+        />
         <div className="VisionGeneral__nuevos_casos">
           {casosUltimos7Dias} nuevos casos
         </div>

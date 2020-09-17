@@ -14,7 +14,7 @@ const MiniGrafico = () => {
         data={{
           labels: divisiones.fechas,
           datasets: [{
-            data: datosCodelco.propiosAcum,
+            data: datosCodelco.propiosAcum.map((d, i) => d + datosCodelco.contratistasAcum[i]),
             fill: false,
             borderColor: '#e6192e',
             pointRadius: 0,
