@@ -4,9 +4,9 @@ import divisiones from '../../../../data/csv/data_codelco.json'
 import moment from 'moment'
 import './MiniGrafico.css'
 
-const MiniGrafico = () => {
+const MiniGrafico = ({ codigo }) => {
 
-  const datosCodelco = divisiones.series.find(d => d.codigo === 'Codelco')
+  const datosCodelco = divisiones.series.find(d => d.codigo === codigo)
 
   return (
     <div className="MiniGrafico">
