@@ -1,7 +1,7 @@
 .VisionGeneral {
   position: absolute;
   z-index: 3;
-  left: .5rem;
+  left: 1rem;
   top: .5rem;
   background-color: rgba(255, 255, 255, .9);
   padding: 1rem;
@@ -10,6 +10,35 @@
   animation: aparece-vision-general .25s .25s ease-in-out both;
   width: 20vw;
   box-shadow: 2px 2px 1px rgba(0, 0, 0, .05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.VisionGeneral__nuevos_casos {
+  font-weight: bold;
+  text-align: right;
+  font-size: 1.5rem;
+}
+
+.VisionGeneral__intervalo {
+  font-size: .7rem;
+  text-align: right;
+  margin-top: .25rem;
+  line-height: 1.25;
+  font-weight: 500;
+}
+
+.VisionGeneral__total_casos {
+  font-weight: bold;
+  text-align: right;
+  font-size: 1.5rem;
+}
+
+.VisionGeneral__fecha_actualizacion {
+  font-size: .7rem;
+  text-align: center;
+  line-height: 1.25;
 }
 
 @keyframes aparece-vision-general {
