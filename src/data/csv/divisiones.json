@@ -48,5 +48,10 @@
     "codigo": "Codelco",
     "nombre": "Toda CODELCO",
     "region": -1
+  },
+  {
+    "codigo": "CM",
+    "nombre": "Casa Matriz",
+    "region": 13
   }
 ]
