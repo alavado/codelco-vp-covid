@@ -30,6 +30,12 @@
   font-weight: 500;
 }
 
+.VisionGeneral__label_selector_division {
+  font-size: .8rem;
+  padding-bottom: .15rem;
+  display: block;
+}
+
 .VisionGeneral__total_casos {
   font-weight: bold;
   text-align: right;

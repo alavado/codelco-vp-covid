@@ -27,9 +27,17 @@ const VisionGeneral = () => {
   return (
     <div className="VisionGeneral">
       <div>
+        <label
+          htmlFor="selector_division"
+          className="VisionGeneral__label_selector_division"
+        >
+          División
+        </label>
         <Select
+          id="selector_division"
           options={options}
           onChange={e => setCodigo(e.value)}
+          defaultValue={options.find(o => o.value === 'Codelco')}
         />
         <div className="VisionGeneral__nuevos_casos">
           {casosUltimos7Dias} nuevos casos

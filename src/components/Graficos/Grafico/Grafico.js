@@ -5,6 +5,7 @@ import { Bar } from 'react-chartjs-2'
 import moment from 'moment'
 import 'moment/locale/es'
 import classNames from 'classnames'
+import { colorTrabajadoresContratistas, colorTrabajadoresPropios } from '../../../helpers/colores'
 
 const Grafico = ({ division }) => {
 
@@ -66,12 +67,12 @@ const Grafico = ({ division }) => {
               datasets: [
                 {
                   data: series.propios.slice(),
-                  backgroundColor: '#42809E',
+                  backgroundColor: colorTrabajadoresPropios,
                   label: `Trabajadores propios: ${totalPropios} casos`
                 },
                 {
                   data: series.contratistas.slice(),
-                  backgroundColor: '#EBCB63',
+                  backgroundColor: colorTrabajadoresContratistas,
                   label: `Trabajadores contratistas: ${totalContratistas} casos`
                 }
               ]

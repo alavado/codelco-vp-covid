@@ -53,13 +53,13 @@
 
 .Grafico__selector_acumulados {
   background-color: white;
-  border: 1px solid #42809E;
+  border: 1px solid #0070A3;
   font-size: .7rem;
   padding: .75rem .75rem;
   cursor: pointer;
   transition: all .25s ease-in-out;
   outline: none;
-  color: #2B4552;
+  color: #0070A3;
 }
 
 .Grafico__selector_acumulados--izquierda {
@@ -71,7 +71,7 @@
 }
 
 .Grafico__selector_acumulados--activo {
-  background-color: #42809E;
+  background-color: #0093D5;
   color: white;
 }
 

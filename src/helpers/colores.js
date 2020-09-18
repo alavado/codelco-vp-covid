@@ -12,9 +12,12 @@ export const obtenerColorRegion = codigoRegion => {
 }
 
 export const escala = [
-  [0, '#DEDA5D', '1 - 49'],
-  [50, '#73BADE', '50 - 99'],
-  [100, '#52859E', '100 - 499'],
-  [500, '#2B4552', '500 o más'],
-  [1000, '#1D2F38', 'Más de 100']
+  [0, '#95DCF4', '1 - 49'],
+  [50, '#54CBF2', '50 - 99'],
+  [100, '#00ACE3', '100 - 499'],
+  [500, '#008EBC', '500 o más'],
+  [1000, '#007092', 'Más de 100']
 ].map(paso => ({ maximo: paso[0], color: paso[1], leyenda: paso[2] }))
+
+export const colorTrabajadoresPropios = '#B52D3B'
+export const colorTrabajadoresContratistas = '#EC828C'
