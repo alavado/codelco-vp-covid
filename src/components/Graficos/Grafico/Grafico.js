@@ -68,12 +68,12 @@ const Grafico = ({ division }) => {
                 {
                   data: series.propios.slice(),
                   backgroundColor: colorTrabajadoresPropios,
-                  label: `Trabajadores propios: ${totalPropios} casos`
+                  label: `Trabajadores propios`
                 },
                 {
                   data: series.contratistas.slice(),
                   backgroundColor: colorTrabajadoresContratistas,
-                  label: `Trabajadores contratistas: ${totalContratistas} casos`
+                  label: `Trabajadores contratistas`
                 }
               ]
             }}
@@ -84,6 +84,12 @@ const Grafico = ({ division }) => {
                 position: 'bottom',
                 align: 'end'
               },
+              tooltips: {
+                callbacks: {
+                  title: items => moment(items[0].xLabel).format('dddd D [de] MMMM'),
+                  label: (item, data) => `${data.datasets[item.datasetIndex].label}: ${item.yLabel} casos`
+                 }
+              },
               scales: {
                 xAxes: [{
                   ticks: {
@@ -92,7 +98,7 @@ const Grafico = ({ division }) => {
                     callback: v => {
                       const fecha = moment(v)
                       return fecha.date() === 1 ? fecha.format('D MMM') : null
-                    }
+                    },
                   },
                   gridLines: {
                     display: false
@@ -102,7 +108,10 @@ const Grafico = ({ division }) => {
                   gridLines: {
                     display: false
                   },
-                  position: 'right'
+                  position: 'right',
+                  ticks: {
+                    suggestedMax: 10,
+                  }
                 }]
               }
             }}

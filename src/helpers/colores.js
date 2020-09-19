@@ -19,5 +19,5 @@ export const escala = [
   [1000, '#007092', 'Más de 100']
 ].map(paso => ({ maximo: paso[0], color: paso[1], leyenda: paso[2] }))
 
-export const colorTrabajadoresPropios = '#B52D3B'
-export const colorTrabajadoresContratistas = '#EC828C'
+export const colorTrabajadoresPropios = '#fe8720'
+export const colorTrabajadoresContratistas = '#009b9e'
