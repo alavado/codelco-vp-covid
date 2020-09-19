@@ -8,6 +8,7 @@ import { useHistory } from 'react-router-dom'
 import MarkerRegion from './MarkerRegion'
 import CodigoColor from './CodigoColor'
 import VisionGeneral from './VisionGeneral'
+import MarkersDivisiones from './MarkersDivisiones'
 
 const Mapa = () => {
 
@@ -90,6 +91,7 @@ const Mapa = () => {
         onHover={moverMarker}
       >
         <MarkerRegion {...markerRegion} />
+        {/* <MarkersDivisiones /> */}
         <CapaRegiones />
       </ReactMapGL>
     </div>

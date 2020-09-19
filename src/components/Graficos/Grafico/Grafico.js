@@ -87,7 +87,7 @@ const Grafico = ({ division }) => {
               tooltips: {
                 callbacks: {
                   title: items => moment(items[0].xLabel).format('dddd D [de] MMMM'),
-                  label: (item, data) => `${data.datasets[item.datasetIndex].label}: ${item.yLabel} casos`
+                  label: (item, data) => `${data.datasets[item.datasetIndex].label}: ${item.yLabel} caso${item.yLabel !== 1 ? 's' : ''}`
                  }
               },
               scales: {
