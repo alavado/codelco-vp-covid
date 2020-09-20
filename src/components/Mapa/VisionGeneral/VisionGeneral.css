@@ -49,8 +49,10 @@
 
 .VisionGeneral__total_casos {
   font-weight: bold;
-  text-align: right;
   font-size: 1.25rem;
+  width: 10rem;
+  align-self: flex-end;
+  text-align: right;
 }
 
 .VisionGeneral__fecha_actualizacion {

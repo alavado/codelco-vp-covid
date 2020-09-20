@@ -19,7 +19,7 @@ const MiniGrafico = ({ codigo }) => {
             borderColor: '#e6192e',
             pointRadius: 0,
             lineTension: 0,
-            pointHitRadius: 5
+            pointHitRadius: 3
           }]
         }}
         options={{
@@ -35,10 +35,24 @@ const MiniGrafico = ({ codigo }) => {
           },
           scales: {
             xAxes: [{
-              display: false
+              gridLines: {
+                display: false
+              },
+              ticks: {
+                maxRotation: 0,
+                fontColor: '#212121',
+                fontSize: 11,
+                autoSkip: false,
+                callback: (v, i, vals) => i === 0 || i === vals.length - 1 ? moment(v).format('D[/]M') : null
+              }
             }],
             yAxes: [{
-              display: false
+              gridLines: {
+                display: false
+              },
+              ticks: {
+                display: false
+              }
             }]
           }
         }}

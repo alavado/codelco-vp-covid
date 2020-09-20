@@ -62,11 +62,11 @@ const VisionGeneral = () => {
         </div>
         <MiniGrafico codigo={codigo} />
         <div className="VisionGeneral__total_casos">
-          {totalCasosCodelco} casos
+          {totalCasosCodelco} casos hasta la fecha
         </div>
-        <div className="VisionGeneral__intervalo">
+        {/* <div className="VisionGeneral__intervalo">
          Desde el {moment(datos.fechas[0]).format('D [de] MMMM')} al {fin.format('D [de] MMMM')}
-        </div>
+        </div> */}
         <MiniDona codigo={codigo} />
       </div>
       <div className="VisionGeneral__fecha_actualizacion">

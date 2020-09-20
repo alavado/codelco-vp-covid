@@ -3,8 +3,8 @@
     "codigo": "DCH",
     "nombre": "Chuquicamata",
     "region": 2,
-    "lat": -22.3090245,
-    "lng": -68.9210203
+    "lat": -22.5090245,
+    "lng": -69.0710203
   },
   {
     "codigo": "DET",
@@ -24,7 +24,7 @@
     "codigo": "DMH",
     "nombre": "Ministro Hales",
     "region": 2,
-    "lat": -22.346681,
+    "lat": -22.746681,
     "lng": -68.8906287
   },
   {
@@ -46,13 +46,13 @@
     "nombre": "Vicepresidencias",
     "region": 13,
     "lat": -33.4446613,
-    "lng": -70.6586508
+    "lng": -70.5586508
   },
   {
     "codigo": "DAND",
     "nombre": "Andina",
     "region": 5,
-    "lat": -32.9643994,
+    "lat": -32.7643994,
     "lng": -70.5674443
   },
   {
@@ -72,6 +72,6 @@
     "nombre": "Casa Matriz",
     "region": 13,
     "lat": -33.4400855,
-    "lng": -70.6722555
+    "lng": -70.7222555
   }
 ]
