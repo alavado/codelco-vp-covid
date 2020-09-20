@@ -6,6 +6,7 @@ import geoJSONRegiones from '../../../data/geojson/regiones.json'
 import moment from 'moment'
 import './VisionGeneral.css'
 import Select from 'react-select'
+import MiniDona from './MiniDona'
 
 const divisionesAgrupadasPorRegion = Array.from(new Set(divisiones.map(d => d.region)))
   .sort((r1, r2) => r1 < r2 ? -1 : 1)
@@ -34,7 +35,7 @@ const VisionGeneral = () => {
 
   return (
     <div className="VisionGeneral">
-      <div>
+      <div className="VisionGeneral__contenedor_superior">
         <label
           htmlFor="selector_division"
           className="VisionGeneral__label_selector_division"
@@ -66,6 +67,7 @@ const VisionGeneral = () => {
         <div className="VisionGeneral__intervalo">
          Desde el {moment(datos.fechas[0]).format('D [de] MMMM')} al {fin.format('D [de] MMMM')}
         </div>
+        <MiniDona codigo={codigo} />
       </div>
       <div className="VisionGeneral__fecha_actualizacion">
         Actualizado hasta el {fin.format('D [de] MMMM')}<br />

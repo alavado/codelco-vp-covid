@@ -15,6 +15,12 @@
   justify-content: space-between;
 }
 
+.VisionGeneral__contenedor_superior {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
 .VisionGeneral__nuevos_casos {
   font-weight: bold;
   text-align: right;

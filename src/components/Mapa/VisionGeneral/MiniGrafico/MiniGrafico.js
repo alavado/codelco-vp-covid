@@ -6,7 +6,7 @@ import './MiniGrafico.css'
 
 const MiniGrafico = ({ codigo }) => {
 
-  const datosCodelco = divisiones.series.find(d => d.codigo === codigo)
+  const datosDivision = divisiones.series.find(d => d.codigo === codigo)
 
   return (
     <div className="MiniGrafico">
@@ -14,7 +14,7 @@ const MiniGrafico = ({ codigo }) => {
         data={{
           labels: divisiones.fechas,
           datasets: [{
-            data: datosCodelco.propiosAcum.map((d, i) => d + datosCodelco.contratistasAcum[i]),
+            data: datosDivision.propiosAcum.map((d, i) => d + datosDivision.contratistasAcum[i]),
             fill: false,
             borderColor: '#e6192e',
             pointRadius: 0,
