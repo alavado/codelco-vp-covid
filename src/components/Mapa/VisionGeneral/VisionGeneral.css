@@ -18,7 +18,7 @@
 .VisionGeneral__nuevos_casos {
   font-weight: bold;
   text-align: right;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   margin-top: 1.5rem;
 }
 
@@ -32,14 +32,19 @@
 
 .VisionGeneral__label_selector_division {
   font-size: .8rem;
-  padding-bottom: .15rem;
+  padding-bottom: .25rem;
   display: block;
+}
+
+.VisionGeneral__selector_division {
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 
 .VisionGeneral__total_casos {
   font-weight: bold;
   text-align: right;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 .VisionGeneral__fecha_actualizacion {

@@ -1,0 +1,10 @@
+.MarkersDivisiones__marcador {
+  width: .7rem;
+  height: .7rem;
+  background-color: red;
+  z-index: 3;
+  border-radius: 100%;
+  position: absolute;
+  top: -.7rem;
+  border: 1px solid black;
+}

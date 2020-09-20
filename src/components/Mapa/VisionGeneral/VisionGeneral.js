@@ -2,14 +2,22 @@ import React, { useMemo, useState } from 'react'
 import MiniGrafico from './MiniGrafico'
 import datos from '../../../data/csv/data_codelco.json'
 import divisiones from '../../../data/csv/divisiones.json'
+import geoJSONRegiones from '../../../data/geojson/regiones.json'
 import moment from 'moment'
 import './VisionGeneral.css'
 import Select from 'react-select'
 
-const options = divisiones.map(d => ({
-  value: d.codigo,
-  label: d.nombre
-}))
+const divisionesAgrupadasPorRegion = Array.from(new Set(divisiones.map(d => d.region)))
+  .sort((r1, r2) => r1 < r2 ? -1 : 1)
+  .map(region => {
+    const divisionesRegion = divisiones.filter(d => d.region === region)
+    const feature = geoJSONRegiones.features.find(f => Number(f.properties.codregion) === Number(region))
+    const label = feature?.properties.Region ?? 'General'
+    return {
+      label,
+      options: divisionesRegion.map(d => ({ value: d.codigo, label: d.nombre }))
+    }
+  })
 
 const VisionGeneral = () => {
 
@@ -35,9 +43,15 @@ const VisionGeneral = () => {
         </label>
         <Select
           id="selector_division"
-          options={options}
+          options={divisionesAgrupadasPorRegion}
+          defaultValue={divisionesAgrupadasPorRegion[0].options[0]}
           onChange={e => setCodigo(e.value)}
-          defaultValue={options.find(o => o.value === 'Codelco')}
+          className="VisionGeneral__selector_division"
+          formatGroupLabel={data => (
+            <div>
+              <span>{data.label}</span>
+            </div>
+          )}
         />
         <div className="VisionGeneral__nuevos_casos">
           {casosUltimos7Dias} nuevos casos

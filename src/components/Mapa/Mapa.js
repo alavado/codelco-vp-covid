@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import mapStyle from './mapStyle.json'
 import { easeCubic } from 'd3-ease'
 import './Mapa.css'
-import ReactMapGL, { FlyToInterpolator, Marker } from 'react-map-gl'
+import ReactMapGL, { FlyToInterpolator, Layer } from 'react-map-gl'
 import CapaRegiones from './CapaRegiones'
 import { useHistory } from 'react-router-dom'
 import MarkerRegion from './MarkerRegion'
@@ -90,8 +90,8 @@ const Mapa = () => {
         onClick={clickEnMapa}
         onHover={moverMarker}
       >
+        <MarkersDivisiones />
         <MarkerRegion {...markerRegion} />
-        {/* <MarkersDivisiones /> */}
         <CapaRegiones />
       </ReactMapGL>
     </div>

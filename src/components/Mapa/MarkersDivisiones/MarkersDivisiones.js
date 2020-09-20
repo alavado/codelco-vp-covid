@@ -5,13 +5,15 @@ import './MarkersDivisiones.css'
 
 const MarkersDivisiones = () => {
   return divisiones.map(division => (
-      <Marker
-        latitude={division.lat || -20}
-        longitude={division.lng || -60}
-      >
-        O
-      </Marker>
-    ))
+    <Marker
+      latitude={division.lat || -20}
+      longitude={division.lng || -60}
+    >
+      <div className="MarkersDivisiones__marcador">
+        
+      </div>
+    </Marker>
+  ))
 }
 
 export default MarkersDivisiones
