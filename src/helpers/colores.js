@@ -7,8 +7,14 @@ export const obtenerColorRegion = codigoRegion => {
     return '#cdd0d0'
   }
   const casosDivisiones = dataCodelco.series.filter(s => divisionesRegion.some(d => d.codigo === s.codigo))
-  const totalCasosDivisionesRegion = casosDivisiones.map(s => [...s.contratistas, ...s.propios].reduce((sum, v) => sum + v)).reduce((sum, v) => sum + v)
+  const totalCasosDivisionesRegion = casosDivisiones.map(s => s.contratistasAcum.slice(-1)[0] + s.propiosAcum.slice(-1)[0]).reduce((sum, v) => sum + v)
   return escala.find((v, i) => !escala[i + 1] || escala[i + 1].maximo > totalCasosDivisionesRegion).color
+}
+
+export const obtenerColorDivision = codigoDivision => {
+  const dataDivision = dataCodelco.series.find(s => s.codigo === codigoDivision)
+  const totalCasosDivision = dataDivision.contratistasAcum.slice(-1)[0] + dataDivision.propiosAcum.slice(-1)[0]
+  return escala.find((v, i) => !escala[i + 1] || escala[i + 1].maximo > totalCasosDivision).color
 }
 
 export const escala = [

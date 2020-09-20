@@ -86,7 +86,6 @@ const Mapa = () => {
         mapStyle={mapStyle}
         onViewportChange={cambioEnElViewport}
         doubleClickZoom={(() => 'ontouchstart' in window)()}
-        getCursor={() => 'pointer'}
         onClick={clickEnMapa}
         onHover={moverMarker}
       >
