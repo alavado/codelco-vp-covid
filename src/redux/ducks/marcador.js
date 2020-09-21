@@ -15,9 +15,7 @@ export default function reducer(state = defaultState, action = {}) {
     case fijarRegion: {
       const codigo = action.payload
       if (!codigo || codigo === state.codigo) {
-        return {
-          ...state
-        }
+        return state
       }
       const { Region: titulo } = geoJSONRegiones.features
         .find(f => f.properties.codregion === Number(codigo))
@@ -37,8 +35,19 @@ export default function reducer(state = defaultState, action = {}) {
       }
     }
     case fijarDivision: {
+      const codigo = action.payload
+      if (!codigo || codigo === state.codigo) {
+        return state
+      }
+      const division = divisiones.find(d => d.codigo === codigo)
+      const datosDivision = datosContagios.series.find(s => s.codigo === codigo)
       return {
-        ...state
+        ...state,
+        codigo,
+        titulo: division.nombre,
+        casosPropios: datosDivision.propiosAcum.slice(-1)[0],
+        casosContratistas: datosDivision.contratistasAcum.slice(-1)[0],
+        visible: true
       }
     }
     case mostrarMarcador: {
@@ -59,7 +68,8 @@ export const muestraRegionEnMarcador = codigo => ({
 })
 
 export const muestraDivisionEnMarcador = codigo => ({
-  type: fijarDivision
+  type: fijarDivision,
+  payload: codigo
 })
 
 export const muestraMarcador = () => ({

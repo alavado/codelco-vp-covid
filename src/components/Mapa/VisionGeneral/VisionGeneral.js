@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react'
+import React, { useMemo } from 'react'
 import MiniGrafico from './MiniGrafico'
 import datos from '../../../data/csv/data_codelco.json'
 import divisiones from '../../../data/csv/divisiones.json'
@@ -7,6 +7,8 @@ import moment from 'moment'
 import './VisionGeneral.css'
 import Select from 'react-select'
 import MiniDona from './MiniDona'
+import { useSelector, useDispatch } from 'react-redux'
+import { muestraDivision } from '../../../redux/ducks/division'
 
 const divisionesAgrupadasPorRegion = Array.from(new Set(divisiones.map(d => d.region)))
   .sort((r1, r2) => r1 < r2 ? -1 : 1)
@@ -22,7 +24,8 @@ const divisionesAgrupadasPorRegion = Array.from(new Set(divisiones.map(d => d.re
 
 const VisionGeneral = () => {
 
-  const [codigo, setCodigo] = useState('Codelco')
+  const { codigo } = useSelector(state => state.division)
+  const dispatch = useDispatch()
 
   const [casosUltimos7Dias, totalCasosCodelco, inicio, fin] = useMemo(() => {
     const { total, contratistasAcum, propiosAcum } = datos.series.find(s => s.codigo === codigo)
@@ -46,8 +49,9 @@ const VisionGeneral = () => {
           id="selector_division"
           options={divisionesAgrupadasPorRegion}
           defaultValue={divisionesAgrupadasPorRegion[0].options[0]}
-          onChange={e => setCodigo(e.value)}
+          onChange={e => dispatch(muestraDivision(e.value))}
           className="VisionGeneral__selector_division"
+          value={{ value: codigo, label: divisiones.find(d => d.codigo === codigo).nombre }}
           formatGroupLabel={data => (
             <div>
               <span>{data.label}</span>

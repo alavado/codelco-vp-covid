@@ -10,7 +10,7 @@ import CodigoColor from './CodigoColor'
 import VisionGeneral from './VisionGeneral'
 import MarkersDivisiones from './MarkersDivisiones'
 import { useDispatch } from 'react-redux'
-import { escondeMarcador, muestraRegionEnMarcador } from '../../redux/ducks/marcador'
+import { escondeMarcador, muestraDivisionEnMarcador, muestraRegionEnMarcador } from '../../redux/ducks/marcador'
 
 const Mapa = () => {
 
@@ -28,7 +28,6 @@ const Mapa = () => {
     minZoom: 4,
   })
   const [markerRegion, setMarkerRegion] = useState({
-    visible: false,
     latitude: -28.63,
     longitude: -70.75
   })
@@ -44,21 +43,6 @@ const Mapa = () => {
 
   const history = useHistory()
 
-  // useEffect(() => {
-  //   const featureComuna = geoJSONRegiones.features.find(f => f.properties.COD_COMUNA === codigoComunaSeleccionada)
-  //   if (featureComuna) {
-  //     const { latitude, longitude } = calcularPoloDeInaccesibilidad(featureComuna)
-  //     setVp(v => ({
-  //       ...v,
-  //       longitude,
-  //       latitude,
-  //       transitionDuration: 3000,
-  //       transitionInterpolator: new FlyToInterpolator(),
-  //       transitionEasing: easeCubic
-  //     }))
-  //   }
-  // }, [codigoComunaSeleccionada])
-
   const clickEnMapa = e => {
     const comunaClickeada = e.features.find(f => f.layer.id === 'layer-comunas-fill' || f.layer.id === 'layer-otras-comunas-fill')
     if (comunaClickeada) {
@@ -68,20 +52,13 @@ const Mapa = () => {
 
   const moverMarker = e => {
     if (e.target?.classList.contains('MarkersDivisiones__marcador')) {
-      setMarkerRegion({
-        ...markerRegion,
-        latitude: e.lngLat[1],
-        longitude: e.lngLat[0],
-      })
-      return null
+      setMarkerRegion({ latitude: e.lngLat[1], longitude: e.lngLat[0] })
+      dispatch(muestraDivisionEnMarcador(e.target.getAttribute('codigo')))
     }
-    if (e.features?.some(f => f.layer.id === 'layer-regiones-fill')) {
+    else if (e.features?.some(f => f.layer.id === 'layer-regiones-fill')) {
+      setMarkerRegion({ latitude: e.lngLat[1], longitude: e.lngLat[0] })
       const codigo = e.features.find(f => f.layer.id === 'layer-regiones-fill').properties.codregion
       dispatch(muestraRegionEnMarcador(codigo))
-      setMarkerRegion({
-        latitude: e.lngLat[1],
-        longitude: e.lngLat[0]
-      })
     }
     else {
       dispatch(escondeMarcador())
