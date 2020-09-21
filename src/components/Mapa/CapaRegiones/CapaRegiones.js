@@ -1,13 +1,10 @@
 import React, { useMemo } from 'react'
 import { Source, Layer } from 'react-map-gl'
 import geoJSONRegiones from '../../../data/geojson/regiones.json'
-import { useParams } from 'react-router-dom'
 import './CapaRegiones.css'
 import { obtenerColorRegion } from '../../../helpers/colores'
 
 const CapaRegiones = () => {
-
-  const { codigo: codigoRegionSeleccionada } = useParams()
 
   const geoJSONConColres = useMemo(() => {
     return {

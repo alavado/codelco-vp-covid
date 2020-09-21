@@ -11,7 +11,7 @@ const Grafico = ({ division }) => {
 
   const [acumulados, setAcumulados] = useState(true)
 
-  const [fechas, series, total, totalPropios, totalContratistas] = useMemo(() => {
+  const [fechas, series, total] = useMemo(() => {
     const datosDivision = divisiones.series.find(d => d.codigo === division.codigo)
     return [
       divisiones.fechas,
@@ -19,9 +19,7 @@ const Grafico = ({ division }) => {
         propios: acumulados ? datosDivision.propiosAcum : datosDivision.propios,
         contratistas: acumulados ? datosDivision.contratistasAcum : datosDivision.contratistas
       },
-      datosDivision.total,
-      datosDivision.totalPropios,
-      datosDivision.totalContratistas
+      datosDivision.total
     ]
   }, [acumulados, division])
 

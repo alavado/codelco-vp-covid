@@ -1,11 +1,48 @@
 .MarkersDivisiones__marcador {
-  width: .8rem;
-  height: .8rem;
+  width: .9rem;
+  height: .9rem;
   background-color: #95DCF4;
   border: 1.5px solid white;
   border-radius: 100%;
-  position: absolute;
-  top: -.8rem;
+  position: relative;
+  top: -.9rem;
   cursor: pointer;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, .5);
+  z-index: 4;
+}
+
+.MarkersDivisiones__sismo {
+  width: 2rem;
+  height: 2rem;
+  top: -1.5rem;
+  left: -.5rem;
+  border-radius: 100%;
+  border-color: white;
+  border-style: solid;
+  z-index: 3;
+  position: absolute;
+  animation: sismo 1s ease-in-out infinite both;
+  pointer-events: none;
+}
+
+@keyframes sismo {
+  0% {
+    opacity: 0;
+    width: .5rem;
+    height: .5rem;
+    top: -.5rem;
+    left: .25rem;
+    border-width: 0;
+  }
+  50% {
+    opacity: .9;
+  }
+  100% {
+    opacity: 0;
+    width: 2rem;
+    height: 2rem;
+    top: -1.5rem;
+    left: -.5rem;
+    border-width: .2rem;
+  }
 }

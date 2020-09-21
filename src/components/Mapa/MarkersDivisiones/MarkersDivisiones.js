@@ -1,6 +1,6 @@
 import React from 'react'
 import { Marker } from 'react-map-gl'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import divisiones from '../../../data/csv/divisiones.json'
 import { obtenerColorDivision } from '../../../helpers/colores'
 import { muestraDivision } from '../../../redux/ducks/division'
@@ -8,6 +8,7 @@ import './MarkersDivisiones.css'
 
 const MarkersDivisiones = () => {
 
+  const { codigo } = useSelector(state => state.division)
   const dispatch = useDispatch()
 
   return divisiones.map(division => (
@@ -16,14 +17,15 @@ const MarkersDivisiones = () => {
       longitude={division.lng || -60}
       key={`marker-division-${division.codigo}`}
     >
+      {codigo === division.codigo &&
+        <div className="MarkersDivisiones__sismo" />
+      }
       <div
-        className="MarkersDivisiones__marcador"
+        className={`MarkersDivisiones__marcador`}
         style={{ backgroundColor: obtenerColorDivision(division.codigo) }}
         codigo={division.codigo}
         onClick={() => dispatch(muestraDivision(division.codigo))}
-      >
-        
-      </div>
+      />
     </Marker>
   ))
 }
