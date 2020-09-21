@@ -3,10 +3,9 @@
   height: .8rem;
   background-color: #95DCF4;
   border: 1.5px solid white;
-  z-index: 3;
   border-radius: 100%;
   position: absolute;
   top: -.8rem;
   cursor: pointer;
-  box-shadow: 1px 1px 4px rgba(0, 0, 0, .35);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, .5);
 }

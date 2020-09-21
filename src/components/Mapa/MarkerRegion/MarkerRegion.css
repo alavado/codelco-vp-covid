@@ -1,7 +1,6 @@
 .MarkerRegion {
   pointer-events: none;
   background-color: rgba(255, 255, 255, .95);
-  z-index: 4;
   height: 6rem;
   top: -6rem;
   cursor: pointer;

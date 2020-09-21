@@ -1,26 +1,26 @@
 import React, { useMemo } from 'react'
 import { Marker } from 'react-map-gl'
-import geoJSONRegiones from '../../../data/geojson/regiones.json'
-import divisiones from '../../../data/csv/divisiones.json'
-import datosContagios from '../../../data/csv/data_codelco.json'
 import './MarkerRegion.css'
+import { useSelector } from 'react-redux'
 
-const MarkerRegion = ({ latitude, longitude, visible, codigoRegion }) => {
+const MarkerRegion = ({ latitude, longitude }) => {
 
-  const [nombreRegion, casosContratistas, casosPropios] = useMemo(() => {
-    if (!codigoRegion) {
-      return ''
-    }
-    const fetureRegion = geoJSONRegiones.features.find(f => f.properties.codregion === Number(codigoRegion))
-    const divisionesRegion = divisiones.filter(d => d.region === Number(codigoRegion))
-    const casosContratistas = divisionesRegion
-      .reduce((sum, division) => sum + datosContagios.series.find(d => d.codigo === division.codigo).totalContratistas, 0)
-    const casosPropios = divisionesRegion
-      .reduce((sum, division) => sum + datosContagios.series.find(d => d.codigo === division.codigo).totalPropios, 0)
-    return [fetureRegion.properties.Region, casosContratistas, casosPropios]
-  }, [codigoRegion])
+  // const [nombreRegion, casosContratistas, casosPropios] = useMemo(() => {
+  //   if (!codigo) {
+  //     return ['Sin definir', 0, 0]
+  //   }
+  //   const fetureRegion = geoJSONRegiones.features.find(f => f.properties.codregion === Number(codigo))
+  //   const divisionesRegion = divisiones.filter(d => d.region === Number(codigo))
+  //   const casosContratistas = divisionesRegion
+  //     .reduce((sum, division) => sum + datosContagios.series.find(d => d.codigo === division.codigo).totalContratistas, 0)
+  //   const casosPropios = divisionesRegion
+  //     .reduce((sum, division) => sum + datosContagios.series.find(d => d.codigo === division.codigo).totalPropios, 0)
+  //   return [fetureRegion.properties.Region, casosContratistas, casosPropios]
+  // }, [codigo])
 
-  if (!visible || casosContratistas === 0) {
+  const { titulo, casosContratistas, casosPropios, visible } = useSelector(state => state.marcador)
+
+  if (!visible || casosPropios === 0) {
     return null
   }
 
@@ -32,7 +32,7 @@ const MarkerRegion = ({ latitude, longitude, visible, codigoRegion }) => {
     >
       <div className="MarkerRegion">
         <div className="MarkerRegion__nombre_region">
-          {nombreRegion}
+          {titulo}
         </div>
         <div>{casosContratistas + casosPropios} casos</div>
         <div>{casosContratistas} contratistas</div>

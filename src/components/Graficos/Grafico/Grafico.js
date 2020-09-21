@@ -68,12 +68,12 @@ const Grafico = ({ division }) => {
                 {
                   data: series.propios.slice(),
                   backgroundColor: colorTrabajadoresPropios,
-                  label: `Trabajadores propios`
+                  label: `Casos propios`
                 },
                 {
                   data: series.contratistas.slice(),
                   backgroundColor: colorTrabajadoresContratistas,
-                  label: `Trabajadores contratistas`
+                  label: `Casos contratistas`
                 }
               ]
             }}
@@ -87,7 +87,6 @@ const Grafico = ({ division }) => {
               tooltips: {
                 callbacks: {
                   title: items => moment(items[0].xLabel).format('dddd D [de] MMMM'),
-                  label: (item, data) => `${data.datasets[item.datasetIndex].label}: ${item.yLabel} caso${item.yLabel !== 1 ? 's' : ''}`
                  }
               },
               scales: {

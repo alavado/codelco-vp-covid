@@ -27,7 +27,8 @@ const App = () => {
           <NavLink
             className="App__link_navegacion"
             activeClassName="App__link_navegacion--activo"
-            to="/mapa"
+            exact
+            to="/"
           >
             Mapa
           </NavLink>
@@ -50,7 +51,6 @@ const App = () => {
       <div className="App__contenedor">
         <Switch>
           <Route exact path="/" component={Mapa} />
-          <Route path="/mapa" component={Mapa} />
           <Route path="/graficos" component={Graficos} />
           <Route path="/tabla" component={Tabla} />
         </Switch>

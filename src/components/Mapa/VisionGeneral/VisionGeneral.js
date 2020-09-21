@@ -70,7 +70,7 @@ const VisionGeneral = () => {
         <MiniDona codigo={codigo} />
       </div>
       <div className="VisionGeneral__fecha_actualizacion">
-        Actualizado hasta el {fin.format('D [de] MMMM')}<br />
+        Datos más recientes: {fin.format('D [de] MMMM')}<br />
         ({fin.fromNow()})
       </div>
     </div>

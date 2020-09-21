@@ -7,14 +7,19 @@ import './MiniDona.css'
 const MiniDona = ({ codigo }) => {
 
   const datosDivision = divisiones.series.find(d => d.codigo === codigo)
+  const casosPropios = datosDivision.propiosAcum.slice(-1)[0]
+  const casosContratistas = datosDivision.contratistasAcum.slice(-1)[0]
+  const totalCasos = casosPropios + casosContratistas
+  const porcentajePropios = (100 * casosPropios / totalCasos).toLocaleString('es-CL', { maximumFractionDigits: 1 })
+  const porcentajeContratistas = (100 * casosContratistas / totalCasos).toLocaleString('es-CL', { maximumFractionDigits: 1 })
 
   return (
     <div className="MiniDona">
       <Doughnut
         data={{
-          labels: ['Casos propios', 'Casos contratistas'],
+          labels: [`${casosPropios} casos propios (${porcentajePropios}%)`, `${casosContratistas} casos contratistas (${porcentajeContratistas}%)`],
           datasets: [{
-            data: [datosDivision.propiosAcum.slice(-1)[0], datosDivision.contratistasAcum.slice(-1)[0]],
+            data: [casosPropios, casosContratistas],
             backgroundColor: [colorTrabajadoresPropios, colorTrabajadoresContratistas]
           }]
         }}
@@ -22,15 +27,16 @@ const MiniDona = ({ codigo }) => {
           maintainAspectRatio: false,
           legend: {
             position: 'top',
-            align: 'start'
+            align: 'start',
+            labels: {
+              boxWidth: 30,
+              fontSize: 11
+            },
           },
-          scales: {
-            xAxes: [{
-              display: false
-            }],
-            yAxes: [{
-              display: false
-            }]
+          tooltips: {
+            callbacks: {
+              label: item => `${item.index === 0 ? 'Propios' : 'Contratistas'}: ${item.index === 0 ? casosPropios : casosContratistas} casos`
+            }
           }
         }}
       />

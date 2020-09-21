@@ -9,10 +9,12 @@ const MarkersDivisiones = () => {
     <Marker
       latitude={division.lat || -20}
       longitude={division.lng || -60}
+      key={`marker-division-${division.codigo}`}
     >
       <div
         className="MarkersDivisiones__marcador"
         style={{ backgroundColor: obtenerColorDivision(division.codigo) }}
+        dataBla={division.codigo}
       >
         
       </div>

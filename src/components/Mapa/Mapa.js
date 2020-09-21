@@ -2,13 +2,15 @@ import React, { useState } from 'react'
 import mapStyle from './mapStyle.json'
 import { easeCubic } from 'd3-ease'
 import './Mapa.css'
-import ReactMapGL, { FlyToInterpolator, Layer } from 'react-map-gl'
+import ReactMapGL, { FlyToInterpolator } from 'react-map-gl'
 import CapaRegiones from './CapaRegiones'
 import { useHistory } from 'react-router-dom'
 import MarkerRegion from './MarkerRegion'
 import CodigoColor from './CodigoColor'
 import VisionGeneral from './VisionGeneral'
 import MarkersDivisiones from './MarkersDivisiones'
+import { useDispatch } from 'react-redux'
+import { escondeMarcador, muestraRegionEnMarcador } from '../../redux/ducks/marcador'
 
 const Mapa = () => {
 
@@ -30,6 +32,7 @@ const Mapa = () => {
     latitude: -28.63,
     longitude: -70.75
   })
+  const dispatch = useDispatch()
 
   const cambioEnElViewport = vp => {
     setVp({
@@ -64,16 +67,24 @@ const Mapa = () => {
   }
 
   const moverMarker = e => {
-    if (e.features?.some(f => f.layer.id === 'layer-regiones-fill')) {
+    if (e.target?.classList.contains('MarkersDivisiones__marcador')) {
       setMarkerRegion({
+        ...markerRegion,
         latitude: e.lngLat[1],
         longitude: e.lngLat[0],
-        visible: true,
-        codigoRegion: e.features[0].properties.codregion
+      })
+      return null
+    }
+    if (e.features?.some(f => f.layer.id === 'layer-regiones-fill')) {
+      const codigo = e.features.find(f => f.layer.id === 'layer-regiones-fill').properties.codregion
+      dispatch(muestraRegionEnMarcador(codigo))
+      setMarkerRegion({
+        latitude: e.lngLat[1],
+        longitude: e.lngLat[0]
       })
     }
     else {
-      setMarkerRegion({ ...markerRegion, visible: false })
+      dispatch(escondeMarcador())
     }
   }
 
