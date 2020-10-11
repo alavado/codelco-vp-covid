@@ -3,7 +3,7 @@ import './App.css'
 import Mapa from '../Mapa'
 import { NavLink, Switch, Route } from 'react-router-dom'
 import Graficos from '../Graficos'
-import Tabla from '../Tabla'
+import Tabla from '../Panel'
 import { useSelector } from 'react-redux'
 import Login from '../Login'
 import logo from '../../assets/Codelco_logo.svg'
@@ -44,7 +44,7 @@ const App = () => {
             activeClassName="App__link_navegacion--activo"
             to="/tabla"
           >
-            Tabla de datos
+            Panel de indicadores
           </NavLink>
         </nav>
       </div>

@@ -1,0 +1,42 @@
+.Panel {
+  display: flex;
+  flex-direction: column;
+  animation: aparece-panel .25s ease-in-out both;
+  padding-top: 1.5rem;
+}
+
+.Panel__contenedor_indicador {
+  margin: .5rem 2rem;
+  border-radius: .25rem;
+  display: flex;
+  padding: 0 1.5rem;
+  height: 5rem;
+  border: 1px solid black;
+}
+
+.Panel__nombre_indicador {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding-right: 1rem;
+  line-height: 1.5;
+}
+
+.Panel__indicador_global {
+  width: 10rem;
+  background-color: blue;
+}
+
+.Panel__indicadores_divisiones {
+  width: 20rem;
+  background-color: green;
+}
+
+@keyframes aparece-panel {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
