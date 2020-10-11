@@ -12,10 +12,6 @@
 }
 
 .MarkersDivisiones__sismo {
-  width: 2rem;
-  height: 2rem;
-  top: -1.5rem;
-  left: -.5rem;
   border-radius: 100%;
   border-color: white;
   border-style: solid;

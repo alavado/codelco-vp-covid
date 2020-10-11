@@ -8,18 +8,26 @@ const divisiones = Array.from(new Set(filas.map(f => f.split(',')[0].replace(/["
 const procesarFilas = (filas, division, tipoTrabajador) => {
   return filas
     .filter(f => f.split(',')[0] === `"${division}"` && f.split(',')[3] === `"${tipoTrabajador}"`)
-      .map(f => {
-        const [division, semana, fecha, tipo_personal, n_trabajador_promedio_faena, casos_vigentes_minsal_acumulados, casos_vigentes_codelco_acumulados, total_casos_nuevos_confirmados_sint, total_casos_nuevos_confirmados_asint, total_pcr_realizadas, total_pcr_positivas, total_anticuerpo_realizadas, total_anticuerpo_positivas, total_antigeno_realizadas, total_antigeno_positivas, total_antigeno_pcr_positivas, n_contagio_laboral, total_casos_nuevos] = f.split(',')
-        if (!/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/.test(fecha)) {
-          return null
-        }
-        return {
-          fecha,
-          trabajadores: n_trabajador_promedio_faena.slice(1, -1),
-          casosNuevos: Number(total_casos_nuevos)
-        }
-      })
-      .filter(v => v)
+    .map(f => {
+      const [
+        division, semana, fecha, tipo_personal, n_trabajador_promedio_faena,
+        casos_vigentes_minsal_acumulados, casos_vigentes_codelco_acumulados,
+        total_casos_nuevos_confirmados_sint, total_casos_nuevos_confirmados_asint,
+        total_pcr_realizadas, total_pcr_positivas, total_anticuerpo_realizadas,
+        total_anticuerpo_positivas, total_antigeno_realizadas, total_antigeno_positivas,
+        total_antigeno_pcr_positivas, n_contagio_laboral, total_casos_nuevos,
+        sem_epidem, casos_nuevos_division_x10000, porc_casos_acum_codelco_division
+      ] = f.split(',')
+      if (!/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/.test(fecha)) {
+        return null
+      }
+      return {
+        fecha,
+        trabajadores: n_trabajador_promedio_faena.slice(1, -1),
+        casosNuevos: Number(total_casos_nuevos)
+      }
+    })
+    .filter(v => v)
 }
 
 const series = []
@@ -41,7 +49,8 @@ const [fechaInicial, fechaFinal] = series.reduce((prev, d) => {
 const inicio = moment(fechaInicial), fin = moment(fechaFinal)
 const propiosCodelco = [], contratistasCodelco = []
 const fechas = []
-while (!inicio.isSame(fin)) {
+
+while (inicio.isSameOrBefore(fin)) {
   const fechaFormateada = inicio.format('YYYY-MM-DD')
   propiosCodelco.push(series
     .map(d => d.propios)
