@@ -52,6 +52,7 @@ const App = () => {
       <div className="App__contenedor">
         <Switch>
           <Route exact path="/" component={Panel} />
+          <Route path="/graficos/:codigo" component={Graficos} />
           <Route path="/graficos" component={Graficos} />
           <Route path="/mapa" component={Mapa} />
         </Switch>

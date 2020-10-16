@@ -4,6 +4,7 @@
   width: 100%;
   min-height: 100vh;
   font-family: 'Montserrat', sans-serif;
+  overflow-y: auto;
   color: #212121;
 }
 
@@ -17,6 +18,8 @@
   box-shadow: 0 1px 5px rgba(0, 0, 0, .25);
   z-index: 2;
   padding: 0 1rem;
+  position: sticky;
+  top: 0
 }
 
 .App__codelco {
@@ -53,6 +56,5 @@
 
 .App__contenedor {
   max-height: calc(100vh - 3rem);
-  overflow-y: auto;
   background-color: #fafafa;
 }

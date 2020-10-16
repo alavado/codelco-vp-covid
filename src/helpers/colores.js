@@ -37,6 +37,6 @@ export const obtenerColorIndicadorPanel = (indicador, valor) => {
       if (valor < 10) return '#ff7b24'
       else return '#ff0900'
     }
-    default: return 'gray'
+    default: return 'lightgray'
   }
 }
