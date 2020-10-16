@@ -1,8 +1,7 @@
 import React from 'react'
-import dataCodelco from '../../data/csv/data_codelco.json'
 import divisiones from '../../data/csv/divisiones.json'
 import { obtenerColorIndicadorPanel } from '../../helpers/colores'
-import { indicadores } from '../../helpers/indicadores'
+import { indicadores, obtenerCasosPor10000 } from '../../helpers/indicadores'
 import './Panel.css'
 
 const hexagonosFalsos = [0, 3, 7]
@@ -20,15 +19,17 @@ const Panel = () => {
             {indicador}
           </div>
           <div className="Panel__indicador_global">
-            <div className="Panel__hexagono">
+            <div
+              className="Panel__hexagono"
+              style={{ backgroundColor: obtenerColorIndicadorPanel(indicador, obtenerCasosPor10000('Codelco')) }}
+            >
               Global
             </div>
           </div>
           <div className="Panel__indicadores_divisiones">
             <div className="Panel__indicadores_contenedor_hexagonos">
               {divisiones.filter(d => d.codigo !== 'Codelco').map((d, i) => {
-                const { contratistasPor1000, propiosPor10000 } = dataCodelco.series.find(s => s.codigo === d.codigo)
-                const totalPor10000 = contratistasPor1000.slice(-1)[0] + propiosPor10000.slice(-1)[0]
+                const totalPor10000 = obtenerCasosPor10000(d.codigo)
                 return (
                   <>
                     {hexagonosFalsos.includes(i) &&

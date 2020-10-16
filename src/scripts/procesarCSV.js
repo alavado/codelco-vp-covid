@@ -15,22 +15,23 @@ const series = divisiones.map(d => ({
 const [fechaInicial, fechaFinal] = obtenerFechasLimite(series)
 const inicio = moment(fechaInicial), fin = moment(fechaFinal)
 const propiosCodelco = [], contratistasCodelco = []
+const propiosCodelcoPor10000 = [], contratistasCodelcoPor10000 = []
 const fechas = []
 
 while (inicio.isSameOrBefore(fin)) {
   const fechaFormateada = inicio.format('YYYY-MM-DD')
   propiosCodelco.push(series
     .map(d => d.propios)
-    .reduce((prev, serie) => {
-      const casosFecha = serie.find(d => d.fecha === fechaFormateada)
-      return prev + (casosFecha ? casosFecha.casosNuevos : 0)
-    }, 0))
+    .reduce((prev, serie) => prev + encontrarDatoEnFecha(serie, 'casosNuevos', fechaFormateada), 0))
   contratistasCodelco.push(series
     .map(d => d.contratistas)
-    .reduce((prev, serie) => {
-      const casosFecha = serie.find(d => d.fecha === fechaFormateada)
-      return prev + (casosFecha ? casosFecha.casosNuevos : 0)
-    }, 0))
+    .reduce((prev, serie) => prev + encontrarDatoEnFecha(serie, 'casosNuevos', fechaFormateada), 0))
+  propiosCodelcoPor10000.push(series
+    .map(d => d.propios)
+    .reduce((prev, serie) => prev + encontrarDatoEnFecha(serie, 'casosPor10000', fechaFormateada), 0))
+  contratistasCodelcoPor10000.push(series
+    .map(d => d.contratistas)
+    .reduce((prev, serie) => prev + encontrarDatoEnFecha(serie, 'casosPor10000', fechaFormateada), 0))
   fechas.push(fechaFormateada)
   inicio.add(1, 'day')
 }
@@ -42,13 +43,15 @@ const seriesCompletas = [
       propios: fechas.map(fecha => encontrarDatoEnFecha(serie.propios, 'casosNuevos', fecha)),
       contratistas: fechas.map(fecha => encontrarDatoEnFecha(serie.contratistas, 'casosNuevos', fecha)),
       propiosPor10000: fechas.map(fecha => encontrarDatoEnFecha(serie.propios, 'casosPor10000', fecha)),
-      contratistasPor1000: fechas.map(fecha => encontrarDatoEnFecha(serie.contratistas, 'casosPor10000', fecha))
+      contratistasPor10000: fechas.map(fecha => encontrarDatoEnFecha(serie.contratistas, 'casosPor10000', fecha))
     }
   }),
   {
     codigo: 'Codelco',
     propios: propiosCodelco,
-    contratistas: contratistasCodelco
+    contratistas: contratistasCodelco,
+    propiosPor10000: propiosCodelcoPor10000,
+    contratistasPor10000: contratistasCodelcoPor10000
   }
 ]
 

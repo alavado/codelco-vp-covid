@@ -8,20 +8,12 @@
     "lng": -69.0710203
   },
   {
-    "codigo": "DET",
-    "codigoCorto": "ET",
-    "nombre": "El Teniente",
-    "region": 6,
-    "lat": -34.0881511,
-    "lng": -70.389529
-  },
-  {
-    "codigo": "DGM",
-    "codigoCorto": "GM",
-    "nombre": "Gabriela Mistral",
+    "codigo": "DRT",
+    "codigoCorto": "RT",
+    "nombre": "Radomiro Tomic",
     "region": 2,
-    "lat": -23.4228811,
-    "lng": -68.7925451
+    "lat": -22.1991221,
+    "lng": -68.869257
   },
   {
     "codigo": "DMH",
@@ -32,28 +24,20 @@
     "lng": -68.8906287
   },
   {
-    "codigo": "DRT",
-    "codigoCorto": "RT",
-    "nombre": "Radomiro Tomic",
+    "codigo": "DGM",
+    "codigoCorto": "GM",
+    "nombre": "Gabriela Mistral",
     "region": 2,
-    "lat": -22.1991221,
-    "lng": -68.869257
+    "lat": -23.4228811,
+    "lng": -68.7925451
   },
   {
-    "codigo": "DVEN",
-    "codigoCorto": "DV",
-    "nombre": "Ventanas",
-    "region": 5,
-    "lat": -32.7650043,
-    "lng": -71.484738
-  },
-  {
-    "codigo": "VP",
-    "codigoCorto": "VP",
-    "nombre": "Vicepresidencias",
-    "region": 13,
-    "lat": -33.4446613,
-    "lng": -70.5586508
+    "codigo": "DSAL",
+    "codigoCorto": "DS",
+    "nombre": "Salvador",
+    "region": 3,
+    "lat": -26.2467421,
+    "lng": -69.6366111
   },
   {
     "codigo": "DAND",
@@ -64,12 +48,28 @@
     "lng": -70.5674443
   },
   {
-    "codigo": "DSAL",
-    "codigoCorto": "DS",
-    "nombre": "Salvador",
-    "region": 3,
-    "lat": -26.2467421,
-    "lng": -69.6366111
+    "codigo": "DVEN",
+    "codigoCorto": "DV",
+    "nombre": "Ventanas",
+    "region": 5,
+    "lat": -32.7650043,
+    "lng": -71.484738
+  },
+  {
+    "codigo": "DET",
+    "codigoCorto": "ET",
+    "nombre": "El Teniente",
+    "region": 6,
+    "lat": -34.0881511,
+    "lng": -70.389529
+  },
+  {
+    "codigo": "VP",
+    "codigoCorto": "VP",
+    "nombre": "Vicepresidencias",
+    "region": 13,
+    "lat": -33.4446613,
+    "lng": -70.5586508
   },
   {
     "codigo": "Codelco",

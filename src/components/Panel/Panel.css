@@ -32,9 +32,10 @@
   display: flex;
   padding: 0 1.5rem;
   height: 6rem;
-  border: .05rem solid rgba(0, 0, 0, .15);
+  border: .05rem solid rgba(250, 84, 84, 0.15);
   width: 100%;
   box-shadow: 0 .1rem .25rem rgba(0, 0, 0, .2);
+  background-color: white;
 }
 
 .Panel__nombre_indicador {
@@ -87,7 +88,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: .5rem;
+  font-size: .6rem;
   color: white;
   font-weight: 500;
   cursor: pointer;
@@ -95,9 +96,8 @@
   text-shadow: 0 .1rem .05rem rgba(0, 0, 0, .15);
 }
 
-.Panel__hexagono_pequeño:hover,
-.Panel__hexagono:hover {
-  filter: brightness(110%);
+.Panel__hexagono_pequeño:hover {
+  transform: scale(1.35);
 }
 
 .Panel__hexagono_pequeño--relleno {
