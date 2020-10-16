@@ -1,6 +1,7 @@
 [
   {
     "codigo": "DCH",
+    "codigoCorto": "CH",
     "nombre": "Chuquicamata",
     "region": 2,
     "lat": -22.5090245,
@@ -8,6 +9,7 @@
   },
   {
     "codigo": "DET",
+    "codigoCorto": "ET",
     "nombre": "El Teniente",
     "region": 6,
     "lat": -34.0881511,
@@ -15,6 +17,7 @@
   },
   {
     "codigo": "DGM",
+    "codigoCorto": "GM",
     "nombre": "Gabriela Mistral",
     "region": 2,
     "lat": -23.4228811,
@@ -22,6 +25,7 @@
   },
   {
     "codigo": "DMH",
+    "codigoCorto": "MH",
     "nombre": "Ministro Hales",
     "region": 2,
     "lat": -22.746681,
@@ -29,6 +33,7 @@
   },
   {
     "codigo": "DRT",
+    "codigoCorto": "RT",
     "nombre": "Radomiro Tomic",
     "region": 2,
     "lat": -22.1991221,
@@ -36,6 +41,7 @@
   },
   {
     "codigo": "DVEN",
+    "codigoCorto": "DV",
     "nombre": "Ventanas",
     "region": 5,
     "lat": -32.7650043,
@@ -43,6 +49,7 @@
   },
   {
     "codigo": "VP",
+    "codigoCorto": "VP",
     "nombre": "Vicepresidencias",
     "region": 13,
     "lat": -33.4446613,
@@ -50,6 +57,7 @@
   },
   {
     "codigo": "DAND",
+    "codigoCorto": "DA",
     "nombre": "Andina",
     "region": 5,
     "lat": -32.7643994,
@@ -57,6 +65,7 @@
   },
   {
     "codigo": "DSAL",
+    "codigoCorto": "DS",
     "nombre": "Salvador",
     "region": 3,
     "lat": -26.2467421,
@@ -64,11 +73,13 @@
   },
   {
     "codigo": "Codelco",
+    "codigoCorto": "C",
     "nombre": "Toda CODELCO",
     "region": -1
   },
   {
     "codigo": "CM",
+    "codigoCorto": "CM",
     "nombre": "Casa Matriz",
     "region": 13,
     "lat": -33.4400855,
