@@ -27,6 +27,7 @@ const Panel = () => {
             <div
               className="Panel__hexagono"
               onClick={() => history.push('/graficos')}
+              title={`${obtenerCasosPor10000('Codelco').toLocaleString('de-DE', { maximumFractionDigits: 1 })} casos por 10.000 trabajadores`}
               style={{ backgroundColor: obtenerColorIndicadorPanel(indicador, obtenerCasosPor10000('Codelco')) }}
             >
               Global
@@ -43,7 +44,7 @@ const Panel = () => {
                     }
                     <div
                       className="Panel__hexagono_pequeño"
-                      title={`División ${d.nombre}, ${totalPor10000} casos por 10.000 trabajadores`}
+                      title={`División ${d.nombre}, ${totalPor10000.toLocaleString('de-DE', { maximumFractionDigits: 1 })} casos por 10.000 trabajadores`}
                       onClick={() => history.push(`/graficos/${d.codigo}`)}
                       style={{ backgroundColor: obtenerColorIndicadorPanel(indicador, totalPor10000) }}
                     >
