@@ -1,5 +1,6 @@
 import divisiones from '../data/csv/divisiones.json'
 import dataCodelco from '../data/csv/data_codelco.json'
+import { indicadores } from './indicadores'
 
 export const obtenerColorRegion = codigoRegion => {
   const divisionesRegion = divisiones.filter(d => d.region === codigoRegion)
@@ -27,3 +28,15 @@ export const escala = [
 
 export const colorTrabajadoresPropios = '#fe8720'
 export const colorTrabajadoresContratistas = '#009b9e'
+
+export const obtenerColorIndicadorPanel = (indicador, valor) => {
+  switch (indicador) {
+    case indicadores[0]: {
+      if (valor < 1) return '#1dd600'
+      if (valor < 5) return '#ffc001'
+      if (valor < 10) return '#ff7b24'
+      else return '#ff0900'
+    }
+    default: return 'gray'
+  }
+}
