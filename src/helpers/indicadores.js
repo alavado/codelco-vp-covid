@@ -9,6 +9,5 @@ export const indicadores = [
 ]
 
 export const obtenerCasosPor10000 = codigoDivision => {
-  console.log(codigoDivision)
   return dataCodelco.series.find(s => s.codigoDivision === codigoDivision).incidenciaSemanal.slice(-1)[0]
 }

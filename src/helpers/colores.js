@@ -8,7 +8,6 @@ export const obtenerColorRegion = codigoRegion => {
     return '#cdd0d0'
   }
   const casosDivisiones = dataCodelco.series.filter(s => divisionesRegion.some(d => d.codigo === s.codigoDivision))
-  console.log(codigoRegion, divisionesRegion, casosDivisiones)
   const totalCasosDivisionesRegion = casosDivisiones.map(s => s.acumulados.slice(-1)[0]).reduce((sum, v) => sum + v)
   return escala.find((v, i) => !escala[i + 1] || escala[i + 1].maximo > totalCasosDivisionesRegion).color
 }

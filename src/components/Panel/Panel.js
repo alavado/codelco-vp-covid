@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import divisiones from '../../data/csv/divisiones.json'
 import { obtenerColorIndicadorPanel } from '../../helpers/colores'
 import { indicadores, obtenerCasosPor10000 } from '../../helpers/indicadores'
+import { InlineIcon } from '@iconify/react'
+import helpRhombus from '@iconify/icons-mdi/help-circle'
 import './Panel.css'
 
 const hexagonosFalsos = [0, 3, 7]
@@ -10,6 +12,10 @@ const hexagonosFalsos = [0, 3, 7]
 const Panel = () => {
 
   const history = useHistory()
+
+  useEffect(() => {
+    document.getElementsByClassName('App')[0].scrollTo(0, 0)
+  }, [])
 
   return (
     <div className="Panel">
@@ -19,9 +25,9 @@ const Panel = () => {
         <div className="Panel__encabezado_resultados">Resultados</div>
       </div>
       {indicadores.map(indicador => (
-        <div className="Panel__contenedor_indicador">
+        <div key={`panel-${indicador}`} className="Panel__contenedor_indicador">
           <div className="Panel__nombre_indicador">
-            {indicador}
+            <p>{indicador} <InlineIcon className="Panel__icono_indicador" icon={helpRhombus} /></p>
           </div>
           <div className="Panel__indicador_global">
             <div
@@ -38,7 +44,7 @@ const Panel = () => {
               {divisiones.filter(d => d.codigo !== 'GLOBAL').map((d, i) => {
                 const totalPor10000 = obtenerCasosPor10000(d.codigo)
                 return (
-                  <>
+                  <React.Fragment key={`hexagono-${indicador}-${i}`}>
                     {hexagonosFalsos.includes(i) &&
                       <div className="Panel__hexagono_pequeño Panel__hexagono_pequeño--relleno" />
                     }
@@ -50,7 +56,7 @@ const Panel = () => {
                     >
                       {d.codigoCorto}
                     </div>
-                  </>
+                  </React.Fragment>
                 )
               })}
             </div>

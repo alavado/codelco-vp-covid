@@ -57,6 +57,13 @@
   line-height: 1.5;
 }
 
+.Panel__icono_indicador {
+  color: #0093d5;
+  cursor: pointer;
+  margin-left: .2rem;
+  font-size: 1.15rem;
+}
+
 .Panel__indicador_global {
   width: var(--ancho-indicador-global);
   display: flex;

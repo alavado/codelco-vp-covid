@@ -7,6 +7,10 @@ import Panel from '../Panel'
 import { useSelector } from 'react-redux'
 import Login from '../Login'
 import logo from '../../assets/Codelco_logo.svg'
+import { InlineIcon } from '@iconify/react'
+import chartScatterPlotHexbin from  '@iconify/icons-mdi/chart-scatter-plot-hexbin'
+import chartBox from  '@iconify/icons-mdi/chart-bar'
+import mapLegend from '@iconify/icons-mdi/map-legend'
 
 const App = () => {
 
@@ -30,7 +34,14 @@ const App = () => {
             to="/"
             exact
           >
-            Panel de indicadores
+            <InlineIcon className="App__icono" icon={chartScatterPlotHexbin} /> Panel de indicadores 
+          </NavLink>
+          <NavLink
+            className="App__link_navegacion"
+            activeClassName="App__link_navegacion--activo"
+            to="/graficos"
+          >
+            <InlineIcon className="App__icono" icon={chartBox} /> Gráficos 
           </NavLink>
           <NavLink
             className="App__link_navegacion"
@@ -38,14 +49,7 @@ const App = () => {
             exact
             to="/mapa"
           >
-            Mapa
-          </NavLink>
-          <NavLink
-            className="App__link_navegacion"
-            activeClassName="App__link_navegacion--activo"
-            to="/graficos"
-          >
-            Gráficos
+            <InlineIcon className="App__icono" icon={mapLegend} /> Mapa 
           </NavLink>
         </nav>
       </div>

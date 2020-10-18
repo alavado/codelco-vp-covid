@@ -8,7 +8,7 @@ import { colorTrabajadoresContratistas, colorTrabajadoresPropios } from '../../.
 
 const Grafico = ({ division }) => {
 
-  const [acumulados, setAcumulados] = useState(true)
+  const [acumulados, setAcumulados] = useState(false)
 
   const [semanas, series, total] = useMemo(() => {
     const datosDivision = divisiones.series.find(d => d.codigoDivision === division.codigo)
