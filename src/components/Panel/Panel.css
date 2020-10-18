@@ -10,6 +10,7 @@
   --ancho-hexagono: 2.5rem;
   --ancho-indicador-global: 10rem;
   --ancho-indicadores-locales: calc(var(--ancho-hexagono) * 4);
+  position: relative;
 }
 
 .Panel__titulo {
@@ -55,13 +56,17 @@
   align-items: center;
   padding-right: 1rem;
   line-height: 1.5;
+  cursor: default;
 }
 
 .Panel__icono_indicador {
   color: #0093d5;
-  cursor: pointer;
+  cursor: help;
   margin-left: .2rem;
   font-size: 1.15rem;
+  display: inline-flex;
+  justify-content: center;
+  position: relative;
 }
 
 .Panel__indicador_global {

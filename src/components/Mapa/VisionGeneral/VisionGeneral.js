@@ -8,6 +8,9 @@ import TotalCasos from './TotalCasos'
 import { useSelector, useDispatch } from 'react-redux'
 import { muestraDivision } from '../../../redux/ducks/division'
 import './VisionGeneral.css'
+import { Link } from 'react-router-dom'
+import { InlineIcon } from '@iconify/react'
+import chartBox from  '@iconify/icons-mdi/chart-bar'
 
 const divisionesAgrupadasPorRegion = Array.from(new Set(divisiones.map(d => d.region)))
   .sort((r1, r2) => r1 < r2 ? -1 : 1)
@@ -68,6 +71,10 @@ const VisionGeneral = () => {
           {totalCasosCodelco.toLocaleString('de-DE')} casos hasta la fecha
         </div>
         <TotalCasos codigo={codigo} />
+        <Link className="VisionGeneral__link_grafico" to={`/graficos/${codigo}`}>
+          <InlineIcon icon={chartBox} className="VisionGeneral__link_grafico_icono" />
+          Ver gráficos
+        </Link>
       </div>
       <div className="VisionGeneral__fecha_actualizacion">
         Datos más recientes: Semana {semanas.slice(-1)[0]}<br />

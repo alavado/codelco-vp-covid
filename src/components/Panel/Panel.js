@@ -1,21 +1,25 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import divisiones from '../../data/csv/divisiones.json'
 import { obtenerColorIndicadorPanel } from '../../helpers/colores'
 import { indicadores, obtenerCasosPor10000 } from '../../helpers/indicadores'
-import { InlineIcon } from '@iconify/react'
+import { Icon } from '@iconify/react'
 import helpRhombus from '@iconify/icons-mdi/help-circle'
 import './Panel.css'
+import TooltipPanel from './TooltipPanel'
 
 const hexagonosFalsos = [0, 3, 7]
 
 const Panel = () => {
 
+  const [mostrandoTooltip, setMostrandoTooltip] = useState(indicadores.map(() => false))
   const history = useHistory()
 
   useEffect(() => {
     document.getElementsByClassName('App')[0].scrollTo(0, 0)
   }, [])
+
+  console.log(mostrandoTooltip)
 
   return (
     <div className="Panel">
@@ -24,10 +28,31 @@ const Panel = () => {
         <div className="Panel__encabezao_dimension">Dimensión</div>
         <div className="Panel__encabezado_resultados">Resultados</div>
       </div>
-      {indicadores.map(indicador => (
-        <div key={`panel-${indicador}`} className="Panel__contenedor_indicador">
+      {indicadores.map((indicador, i) => (
+        <div key={`panel-${indicador.nombre}`} className="Panel__contenedor_indicador">
           <div className="Panel__nombre_indicador">
-            <p>{indicador} <InlineIcon className="Panel__icono_indicador" icon={helpRhombus} /></p>
+            <div>
+              {indicador.nombre}
+              <div
+                className="Panel__icono_indicador" 
+                onMouseEnter={() => setMostrandoTooltip(prev => {
+                  const x = [...prev]
+                  x[i] = true
+                  return x
+                })}
+                onMouseLeave={() => setMostrandoTooltip(prev => {
+                  const x = [...prev]
+                  x[i] = false
+                  return x
+                })}
+              >
+                <TooltipPanel indicador={indicador} visible={mostrandoTooltip[i]} />
+                <Icon
+                  className="Panel__icono_indicador"
+                  icon={helpRhombus}
+                />
+              </div>
+            </div>
           </div>
           <div className="Panel__indicador_global">
             <div
