@@ -1,8 +1,7 @@
 import React, { useMemo, useState } from 'react'
-import divisiones from '../../../data/csv/data_codelco.json'
+import divisiones from '../../../data/csv/data_codelco_semanal.json'
 import './Grafico.css'
 import { Bar } from 'react-chartjs-2'
-import moment from 'moment'
 import 'moment/locale/es'
 import classNames from 'classnames'
 import { colorTrabajadoresContratistas, colorTrabajadoresPropios } from '../../../helpers/colores'
@@ -11,13 +10,13 @@ const Grafico = ({ division }) => {
 
   const [acumulados, setAcumulados] = useState(true)
 
-  const [fechas, series, total] = useMemo(() => {
-    const datosDivision = divisiones.series.find(d => d.codigo === division.codigo)
+  const [semanas, series, total] = useMemo(() => {
+    const datosDivision = divisiones.series.find(d => d.codigoDivision === division.codigo)
     return [
-      divisiones.fechas,
+      divisiones.semanas,
       {
-        propios: acumulados ? datosDivision.propiosAcum : datosDivision.propios,
-        contratistas: acumulados ? datosDivision.contratistasAcum : datosDivision.contratistas
+        propios: acumulados ? datosDivision.propiosAcum : datosDivision.nuevosPropios,
+        externos: acumulados ? datosDivision.externosAcum : datosDivision.nuevosExternos
       },
       datosDivision.total
     ]
@@ -28,7 +27,7 @@ const Grafico = ({ division }) => {
       <div className="Grafico__superior">
         <div>
           <h2 className="Grafico__titulo">{division.nombre}</h2>
-          <h3 className="Grafico__subtitulo">Período: {moment(fechas[0]).format('D [de] MMMM')} al {moment(fechas.slice(-1)[0]).format('D [de] MMMM')}</h3>
+          <h3 className="Grafico__subtitulo">Semana {semanas[0]} a la {semanas.slice(-1)[0]}</h3>
         </div>
         <div>
           <button
@@ -61,7 +60,7 @@ const Grafico = ({ division }) => {
         <div className="Grafico__grafico">
           <Bar
             data={{
-              labels: fechas,
+              labels: semanas,
               datasets: [
                 {
                   data: series.propios.slice(),
@@ -69,9 +68,9 @@ const Grafico = ({ division }) => {
                   label: `Casos propios`
                 },
                 {
-                  data: series.contratistas.slice(),
+                  data: series.externos.slice(),
                   backgroundColor: colorTrabajadoresContratistas,
-                  label: `Casos contratistas`
+                  label: `Casos externos`
                 }
               ]
             }}
@@ -84,7 +83,7 @@ const Grafico = ({ division }) => {
               },
               tooltips: {
                 callbacks: {
-                  title: items => moment(items[0].xLabel).format('dddd D [de] MMMM'),
+                  title: items => `Semana ${items[0].xLabel}`,
                  }
               },
               scales: {
@@ -92,10 +91,7 @@ const Grafico = ({ division }) => {
                   ticks: {
                     maxRotation: 0,
                     autoSkip: false,
-                    callback: v => {
-                      const fecha = moment(v)
-                      return fecha.date() === 1 ? fecha.format('D MMM') : null
-                    },
+                    callback: v => `${v}`,
                   },
                   gridLines: {
                     display: false
@@ -108,6 +104,7 @@ const Grafico = ({ division }) => {
                   position: 'right',
                   ticks: {
                     suggestedMax: 10,
+                    callback: v => v.toLocaleString('de-DE')
                   }
                 }]
               }

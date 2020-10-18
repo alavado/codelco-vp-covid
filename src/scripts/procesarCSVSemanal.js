@@ -22,12 +22,16 @@ const semanas = Array.from(new Set(datos.map(d => d.semana))).filter(d => d)
 const series = divisiones.map(codigoDivision => {
   const datosDivision = datos.filter(d => d.codigoDivision === codigoDivision)
   assert(datosDivision.length === semanas.length, 'Faltan semanas')
+  const nuevosPropios = datosDivision.map(d => d.nuevosPropios)
+  const nuevosExternos = datosDivision.map(d => d.nuevosExternos)
   return {
     codigoDivision,
-    nuevosPropios: datos.map(d => d.nuevosPropios),
-    nuevosExternos: datos.map(d => d.nuevosExternos),
-    incidenciaSemanal: datos.map(d => d.incidenciaSemanal),
-    acumulados: datos.map(d => d.acumulados)
+    nuevosPropios,
+    nuevosExternos,
+    propiosAcum: nuevosPropios.reduce((prev, v) => [...prev, prev.slice(-1)[0] + v], [nuevosPropios[0]]),
+    externosAcum: nuevosExternos.reduce((prev, v) => [...prev, prev.slice(-1)[0] + v], [nuevosExternos[0]]),
+    incidenciaSemanal: datosDivision.map(d => d.incidenciaSemanal),
+    acumulados: datosDivision.map(d => d.acumulados)
   }
 })
 

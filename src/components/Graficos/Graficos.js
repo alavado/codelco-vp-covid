@@ -24,8 +24,8 @@ const Graficos = () => {
       <div className="Graficos__titulo">
         Gráficos de casos confirmados semanales
       </div>
-      <Grafico division={divisiones.find(d => d.codigo === 'Codelco')} />
-      {divisiones.filter(d => d.codigo !== 'Codelco').map(d => (
+      <Grafico division={divisiones.find(d => d.codigo === 'GLOBAL')} />
+      {divisiones.filter(d => d.codigo !== 'GLOBAL').map(d => (
         <div
           id={`grafico-${d.codigo}`}
           key={`contenedor-grafico-${d.codigo}`}
