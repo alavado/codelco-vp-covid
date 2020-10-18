@@ -7,15 +7,49 @@
   position: absolute;
   padding: .5rem;
   display: flex;
-  align-items: center;
   flex-direction: column;
   border-radius: .25rem;
   justify-content: center;
+  box-shadow: 0 0.1rem .35rem rgba(0, 0, 0, .25);
+}
+
+.MarkerRegion__total_casos {
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: .25rem;
 }
 
 .MarkerRegion__nombre_region {
-  font-weight: 600;
-  font-size: .9rem;
+  font-weight: 500;
+  font-size: .85rem;
   min-width: 10rem;
   text-align: center;
+  margin-bottom: .25rem;
+}
+
+.MarkerRegion__contenedor_casos {
+  display: flex;
+  justify-content: space-between;
+}
+
+.MarkerRegion__casos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: .8rem;
+  width: 47.5%;
+  padding: .35rem;
+  border-radius: .25rem;
+  color: white;
+}
+
+.MarkerRegion__numero_casos {
+  font-weight: bold;
+  text-shadow: 0 .1rem .1rem rgba(0, 0, 0, .5);
+}
+
+.MarkerRegion__etiqueta_casos {
+  text-align: center;
+  text-shadow: 0 .1rem .1rem rgba(0, 0, 0, .5);
+  font-size: .7rem;
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import { Marker } from 'react-map-gl'
 import './MarkerRegion.css'
 import { useSelector } from 'react-redux'
+import { colorTrabajadoresContratistas, colorTrabajadoresPropios } from '../../../helpers/colores'
 
 const MarkerRegion = ({ latitude, longitude }) => {
 
@@ -10,6 +11,8 @@ const MarkerRegion = ({ latitude, longitude }) => {
   if (!visible || casosPropios === 0) {
     return null
   }
+
+  const total = casosContratistas + casosPropios
 
   return (
     <Marker
@@ -21,9 +24,27 @@ const MarkerRegion = ({ latitude, longitude }) => {
         <div className="MarkerRegion__nombre_region">
           {titulo}
         </div>
-        <div>{casosContratistas + casosPropios} casos</div>
-        <div>{casosContratistas} contratistas</div>
-        <div>{casosPropios} propios</div>
+        <div className="MarkerRegion__total_casos">
+          {total.toLocaleString('de-DE')} casos
+        </div>
+        <div className="MarkerRegion__contenedor_casos">
+          <div className="MarkerRegion__casos" style={{ backgroundColor: colorTrabajadoresPropios }}>
+            <div className="MarkerRegion__numero_casos">
+              {casosPropios.toLocaleString('de-DE')}
+            </div>
+            <div className="MarkerRegion__etiqueta_casos">
+              propios
+            </div>
+          </div>
+          <div className="MarkerRegion__casos" style={{ backgroundColor: colorTrabajadoresContratistas }}>
+            <div className="MarkerRegion__numero_casos">
+              {casosContratistas.toLocaleString('de-DE')}
+            </div>
+            <div className="MarkerRegion__etiqueta_casos">
+              externos
+            </div>
+          </div>
+        </div>
       </div>
     </Marker>
   )
