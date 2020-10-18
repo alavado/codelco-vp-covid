@@ -27,15 +27,15 @@ const Panel = () => {
             <div
               className="Panel__hexagono"
               onClick={() => history.push('/graficos')}
-              title={`${obtenerCasosPor10000('Codelco').toLocaleString('de-DE', { maximumFractionDigits: 1 })} casos por 10.000 trabajadores`}
-              style={{ backgroundColor: obtenerColorIndicadorPanel(indicador, obtenerCasosPor10000('Codelco')) }}
+              title={`${obtenerCasosPor10000('GLOBAL').toLocaleString('de-DE', { maximumFractionDigits: 1 })} casos por 10.000 trabajadores`}
+              style={{ backgroundColor: obtenerColorIndicadorPanel(indicador, obtenerCasosPor10000('GLOBAL')) }}
             >
               Global
             </div>
           </div>
           <div className="Panel__indicadores_divisiones">
             <div className="Panel__indicadores_contenedor_hexagonos">
-              {divisiones.filter(d => d.codigo !== 'Codelco').map((d, i) => {
+              {divisiones.filter(d => d.codigo !== 'GLOBAL').map((d, i) => {
                 const totalPor10000 = obtenerCasosPor10000(d.codigo)
                 return (
                   <>

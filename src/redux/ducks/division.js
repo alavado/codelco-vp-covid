@@ -1,7 +1,7 @@
 const fijar = 'division/fijar'
 
 const defaultState = {
-  codigo: 'Codelco'
+  codigo: 'GLOBAL'
 }
 
 export default function reducer(state = defaultState, action = {}) {

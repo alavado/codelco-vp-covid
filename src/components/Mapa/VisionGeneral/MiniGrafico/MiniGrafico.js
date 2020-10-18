@@ -1,20 +1,20 @@
 import React from 'react'
 import { Line } from 'react-chartjs-2'
-import divisiones from '../../../../data/csv/data_codelco.json'
+import divisiones from '../../../../data/csv/data_codelco_semanal.json'
 import moment from 'moment'
 import './MiniGrafico.css'
 
 const MiniGrafico = ({ codigo }) => {
 
-  const datosDivision = divisiones.series.find(d => d.codigo === codigo)
+  const datosDivision = divisiones.series.find(d => d.codigoDivision === codigo)
 
   return (
     <div className="MiniGrafico">
       <Line
         data={{
-          labels: divisiones.fechas,
+          labels: divisiones.semanas,
           datasets: [{
-            data: datosDivision.propiosAcum.map((d, i) => d + datosDivision.contratistasAcum[i]),
+            data: datosDivision.acumulados,
             fill: false,
             borderColor: '#e6192e',
             pointRadius: 0,
@@ -43,7 +43,7 @@ const MiniGrafico = ({ codigo }) => {
                 fontColor: '#212121',
                 fontSize: 11,
                 autoSkip: false,
-                callback: (v, i, vals) => i === 0 || i === vals.length - 1 ? moment(v).format('D[/]M') : null
+                callback: (v, i, vals) => i === 0 || i === vals.length - 1 ? `Sem. ${v}` : null
               }
             }],
             yAxes: [{

@@ -3,8 +3,18 @@
   right: .5rem;
   top: .5rem;
   z-index: 3;
-  padding: 1rem;
   animation: aparece-codigo-color .25s .75s ease-in-out both;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.CodigoColor__titulo {
+  font-size: .65rem;
+  padding-bottom: .3rem;
+}
+
+.CodigoColor__escala {
   display: flex;
 }
 

@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import mapStyle from './mapStyle.json'
 import { easeCubic } from 'd3-ease'
-import './Mapa.css'
 import ReactMapGL, { FlyToInterpolator } from 'react-map-gl'
 import CapaRegiones from './CapaRegiones'
 import { useHistory } from 'react-router-dom'
@@ -11,6 +10,7 @@ import VisionGeneral from './VisionGeneral'
 import MarkersDivisiones from './MarkersDivisiones'
 import { useDispatch } from 'react-redux'
 import { escondeMarcador, muestraDivisionEnMarcador, muestraRegionEnMarcador } from '../../redux/ducks/marcador'
+import './Mapa.css'
 
 const Mapa = () => {
 

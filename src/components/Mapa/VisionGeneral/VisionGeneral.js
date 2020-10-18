@@ -1,21 +1,20 @@
 import React, { useMemo } from 'react'
 import MiniGrafico from './MiniGrafico'
-import datos from '../../../data/csv/data_codelco.json'
+import datos from '../../../data/csv/data_codelco_semanal.json'
 import divisiones from '../../../data/csv/divisiones.json'
 import geoJSONRegiones from '../../../data/geojson/regiones.json'
-import moment from 'moment'
-import './VisionGeneral.css'
 import Select from 'react-select'
-import MiniDona from './MiniDona'
+import TotalCasos from './TotalCasos'
 import { useSelector, useDispatch } from 'react-redux'
 import { muestraDivision } from '../../../redux/ducks/division'
+import './VisionGeneral.css'
 
 const divisionesAgrupadasPorRegion = Array.from(new Set(divisiones.map(d => d.region)))
   .sort((r1, r2) => r1 < r2 ? -1 : 1)
   .map(region => {
     const divisionesRegion = divisiones.filter(d => d.region === region)
     const feature = geoJSONRegiones.features.find(f => Number(f.properties.codregion) === Number(region))
-    const label = feature?.properties.Region ?? 'General'
+    const label = feature?.properties.Region ?? 'Global'
     return {
       label,
       options: divisionesRegion.map(d => ({ value: d.codigo, label: d.nombre }))
@@ -27,13 +26,13 @@ const VisionGeneral = () => {
   const { codigo } = useSelector(state => state.division)
   const dispatch = useDispatch()
 
-  const [casosUltimos7Dias, totalCasosCodelco, inicio, fin] = useMemo(() => {
-    const { total, contratistasAcum, propiosAcum } = datos.series.find(s => s.codigo === codigo)
-    const difContratistas = contratistasAcum.slice(-1)[0] - contratistasAcum.slice(-8)[0]
-    const difPropios = propiosAcum.slice(-1)[0] - propiosAcum.slice(-8)[0]
-    const inicio = datos.fechas.slice(-7)[0]
-    const fin = datos.fechas.slice(-1)[0]
-    return [difContratistas + difPropios, total, moment(inicio), moment(fin)]
+  const [casosUltimos7Dias, totalCasosCodelco, semanas] = useMemo(() => {
+    const serie = datos.series.find(d => d.codigoDivision === codigo)
+    return [
+      serie.nuevosExternos.slice(-1)[0] + serie.nuevosPropios.slice(-1)[0],
+      serie.acumulados.slice(-1)[0],
+      datos.semanas
+    ]
   }, [codigo])
 
   return (
@@ -59,23 +58,20 @@ const VisionGeneral = () => {
           )}
         />
         <div className="VisionGeneral__nuevos_casos">
-          {casosUltimos7Dias} nuevos casos
+          {casosUltimos7Dias} nuevo{casosUltimos7Dias !== 1 && 's'} caso{casosUltimos7Dias !== 1 && 's'}
         </div>
         <div className="VisionGeneral__intervalo">
-          Última semana ({inicio.format('D [de] MMMM')} al {fin.format('D [de] MMMM')})
+          Semana {semanas.slice(-1)[0]}
         </div>
         <MiniGrafico codigo={codigo} />
         <div className="VisionGeneral__total_casos">
-          {totalCasosCodelco} casos hasta la fecha
+          {totalCasosCodelco.toLocaleString('de-DE')} casos hasta la fecha
         </div>
-        {/* <div className="VisionGeneral__intervalo">
-         Desde el {moment(datos.fechas[0]).format('D [de] MMMM')} al {fin.format('D [de] MMMM')}
-        </div> */}
-        <MiniDona codigo={codigo} />
+        <TotalCasos codigo={codigo} />
       </div>
       <div className="VisionGeneral__fecha_actualizacion">
-        Datos más recientes: {fin.format('D [de] MMMM')}<br />
-        ({fin.fromNow()})
+        Datos más recientes: Semana {semanas.slice(-1)[0]}<br />
+        {/* ({fin.fromNow()}) */}
       </div>
     </div>
   )

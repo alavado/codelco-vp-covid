@@ -23,14 +23,14 @@
 
 .VisionGeneral__nuevos_casos {
   font-weight: bold;
-  text-align: right;
+  text-align: center;
   font-size: 1.25rem;
   margin-top: 1.5rem;
 }
 
 .VisionGeneral__intervalo {
   font-size: .7rem;
-  text-align: right;
+  text-align: center;
   margin-top: .25rem;
   line-height: 1.25;
   font-weight: 500;
@@ -51,8 +51,9 @@
   font-weight: bold;
   font-size: 1.25rem;
   width: 10rem;
-  align-self: flex-end;
-  text-align: right;
+  align-self: center;
+  text-align: center;
+  margin-top: 1rem;
 }
 
 .VisionGeneral__fecha_actualizacion {

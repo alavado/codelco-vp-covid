@@ -1,0 +1,30 @@
+.TotalCasos {
+  margin-top: 1rem;
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.TotalCasos__contenedor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 47.5%;
+  padding: 1rem;
+  border-radius: .25rem;
+  color: white;
+}
+
+.TotalCasos__numero {
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding-bottom: .25rem;
+  text-shadow: .1rem .1rem .15rem rgba(0, 0, 0, .5);
+}
+
+.TotalCasos__etiqueta {
+  text-align: center;
+  font-size: .9rem;
+  text-shadow: .1rem .1rem .15rem rgba(0, 0, 0, .5);
+}

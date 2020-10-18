@@ -1,4 +1,4 @@
-import dataCodelco from '../data/csv/data_codelco.json'
+import dataCodelco from '../data/csv/data_codelco_semanal.json'
 
 export const indicadores = [
   'Evolución de casos',
@@ -9,6 +9,6 @@ export const indicadores = [
 ]
 
 export const obtenerCasosPor10000 = codigoDivision => {
-  const { contratistasPor10000, propiosPor10000 } = dataCodelco.series.find(s => s.codigo === codigoDivision)
-  return contratistasPor10000.slice(-1)[0] + propiosPor10000.slice(-1)[0]
+  console.log(codigoDivision)
+  return dataCodelco.series.find(s => s.codigoDivision === codigoDivision).incidenciaSemanal.slice(-1)[0]
 }

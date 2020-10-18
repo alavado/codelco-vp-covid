@@ -1,6 +1,6 @@
 import geoJSONRegiones from '../../data/geojson/regiones.json'
 import divisiones from '../../data/csv/divisiones.json'
-import datosContagios from '../../data/csv/data_codelco.json'
+import datosContagios from '../../data/csv/data_codelco_semanal.json'
 
 const fijarRegion = 'marcador/fijarRegion'
 const fijarDivision = 'marcador/fijarDivision'
@@ -22,9 +22,9 @@ export default function reducer(state = defaultState, action = {}) {
         .properties
       const divisionesRegion = divisiones.filter(d => d.region === Number(codigo))
       const casosContratistas = divisionesRegion
-        .reduce((sum, division) => sum + datosContagios.series.find(d => d.codigo === division.codigo).totalContratistas, 0)
+        .reduce((sum, division) => sum + datosContagios.series.find(d => d.codigoDivision === division.codigo).externosAcum.slice(-1)[0], 0)
       const casosPropios = divisionesRegion
-        .reduce((sum, division) => sum + datosContagios.series.find(d => d.codigo === division.codigo).totalPropios, 0)
+        .reduce((sum, division) => sum + datosContagios.series.find(d => d.codigoDivision === division.codigo).propiosAcum.slice(-1)[0], 0)
       return {
         ...state,
         codigo,
@@ -40,13 +40,13 @@ export default function reducer(state = defaultState, action = {}) {
         return state
       }
       const division = divisiones.find(d => d.codigo === codigo)
-      const datosDivision = datosContagios.series.find(s => s.codigo === codigo)
+      const datosDivision = datosContagios.series.find(s => s.codigoDivision === codigo)
       return {
         ...state,
         codigo,
         titulo: division.nombre,
         casosPropios: datosDivision.propiosAcum.slice(-1)[0],
-        casosContratistas: datosDivision.contratistasAcum.slice(-1)[0],
+        casosContratistas: datosDivision.externosAcum.slice(-1)[0],
         visible: true
       }
     }
