@@ -27,7 +27,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "refresh": "node src/scripts/procesarCSV.js"
+    "refresh": "node src/scripts/procesarCSVSemanal.js"
   },
   "eslintConfig": {
     "extends": "react-app"

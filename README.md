@@ -4,3 +4,4 @@
   - que para el 1er indicador lleve a los graficos que ya hay
   - en el 2do indicador, al hacer click un grafico ocmo el del global (test antigeno)
 - tambien poner hexagonos blancos
+- agregar tooltip con explicacion de colores e indicador?
