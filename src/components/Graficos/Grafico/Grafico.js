@@ -18,7 +18,7 @@ const Grafico = ({ division }) => {
         propios: acumulados ? datosDivision.propiosAcum : datosDivision.nuevosPropios,
         externos: acumulados ? datosDivision.externosAcum : datosDivision.nuevosExternos
       },
-      datosDivision.total
+      datosDivision.acumulados.slice(-1)[0]
     ]
   }, [acumulados, division])
 
@@ -54,7 +54,7 @@ const Grafico = ({ division }) => {
       </div>
       <div className="Grafico__contenedor_grafico">
         <div className="Grafico__descripcion">
-          <p className="Grafico__total_acumulado">{total}</p>
+          <p className="Grafico__total_acumulado">{total.toLocaleString('de-DE')}</p>
           <p>Casos confirmados</p>
         </div>
         <div className="Grafico__grafico">
