@@ -18,8 +18,9 @@
 }
 
 .Grafico__total_acumulado {
-  font-size: 5rem;
+  font-size: 4rem;
   padding: .5rem 0;
+  text-align: center;
 }
 
 .Grafico__superior {
@@ -39,6 +40,7 @@
   flex-direction: column;
   justify-content: center;
   font-weight: bold;
+  text-align: center;
 }
 
 .Grafico__titulo {

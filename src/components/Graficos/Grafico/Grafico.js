@@ -5,6 +5,7 @@ import { Bar } from 'react-chartjs-2'
 import 'moment/locale/es'
 import classNames from 'classnames'
 import { colorTrabajadoresContratistas, colorTrabajadoresPropios } from '../../../helpers/colores'
+import TotalCasos from '../../Mapa/VisionGeneral/TotalCasos/TotalCasos'
 
 const Grafico = ({ division }) => {
 
@@ -56,6 +57,7 @@ const Grafico = ({ division }) => {
         <div className="Grafico__descripcion">
           <p className="Grafico__total_acumulado">{total.toLocaleString('de-DE')}</p>
           <p>Casos confirmados</p>
+          <TotalCasos codigo={division.codigo} />
         </div>
         <div className="Grafico__grafico">
           <Bar
