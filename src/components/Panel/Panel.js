@@ -21,6 +21,7 @@ const Panel = () => {
   const dispatch = useDispatch()
   const ultimaSemana = 42
   const primeraSemana = 13
+  const indicadoresActivos = 3
 
   useEffect(() => {
     document.getElementsByClassName('App')[0].scrollTo(0, 0)
@@ -83,9 +84,11 @@ const Panel = () => {
             >
               Global
             </div>
-            <div className="Panel__popup_hexagono">
-              {obtenerValorIndicador('GLOBAL', indicador).toLocaleString('de-DE', { maximumFractionDigits: 1 })} casos por cada 1.000 trabajadores
-            </div>
+            {i < indicadoresActivos && 
+              <div className="Panel__popup_hexagono">
+                CODELCO: {obtenerSemaforoIndicador('GLOBAL', indicador) < 0 ? 'N/A' : `${obtenerValorIndicador('GLOBAL', indicador).toLocaleString('de-DE', { maximumFractionDigits: 1 })} ${indicador.sufijo}`}
+              </div>
+            }
           </div>
           <div className="Panel__indicadores_divisiones">
             <div className="Panel__indicadores_contenedor_hexagonos">
@@ -105,9 +108,11 @@ const Panel = () => {
                       >
                         {d.codigoCorto}
                       </div>
-                      <div className="Panel__popup_hexagono">
-                        {d.nombre}, {valorIndicador.toLocaleString('de-DE', { maximumFractionDigits: 1 })} caso{valorIndicador !== 1 ? 's' : ''} por cada 1.000 trabajadores
-                      </div>
+                      {i < indicadoresActivos &&
+                        <div className="Panel__popup_hexagono">
+                          {d.nombre}: {valorSemaforo < 0 ? 'N/A' : `${valorIndicador.toLocaleString('de-DE', { maximumFractionDigits: 1 })} ${indicador.sufijo}`}
+                        </div>
+                      }
                     </div>
                   </React.Fragment>
                 )

@@ -13,6 +13,7 @@ export const indicadores = [
   {
     nombre: 'Casos nuevos',
     descripcion: 'Nuevos casos semanales por cada 1.000 trabajadores',
+    sufijo: 'casos por cada 1.000 trabajadores',
     niveles: [
       {
         color: coloresIndicadores.verde,
@@ -31,6 +32,7 @@ export const indicadores = [
   {
     nombre: 'Porcentaje de asintomáticos',
     descripcion: 'Solo se calcula si hay más de 8 casos esa semana en esa división',
+    sufijo: '% de asintomáticos',
     niveles: [
       {
         color: coloresIndicadores.verde,
@@ -49,6 +51,7 @@ export const indicadores = [
   {
     nombre: 'Positividad de testeo',
     descripcion: 'Expresada por cada 1.000 tests.',
+    sufijo: '',
     niveles: [
       {
         color: coloresIndicadores.verde,
