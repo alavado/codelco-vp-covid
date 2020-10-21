@@ -59,7 +59,7 @@ export const indicadores = [
       },
       {
         color: coloresIndicadores.amarillo,
-        nombre: '(3 - 6]'
+        nombre: '[3 - 6)'
       },
       {
         color: coloresIndicadores.rojo,
