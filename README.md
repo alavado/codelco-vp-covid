@@ -5,3 +5,7 @@
   - en el 2do indicador, al hacer click un grafico ocmo el del global (test antigeno)
 - tambien poner hexagonos blancos
 - agregar tooltip con explicacion de colores e indicador?
+- agregar selector de semana en panel
+
+dudas:
+- cual es el segundo indicador

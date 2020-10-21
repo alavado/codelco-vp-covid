@@ -7,13 +7,19 @@ import { Icon } from '@iconify/react'
 import helpRhombus from '@iconify/icons-mdi/help-circle'
 import './Panel.css'
 import TooltipPanel from './TooltipPanel'
+import { useDispatch, useSelector } from 'react-redux'
+import { retrocedeSemanas } from '../../redux/ducks/indicadores'
 
 const hexagonosFalsos = [0, 3, 7]
 
 const Panel = () => {
 
+  const { retroceso } = useSelector(state => state.indicadores)
   const [mostrandoTooltip, setMostrandoTooltip] = useState(indicadores.map(() => false))
   const history = useHistory()
+  const dispatch = useDispatch()
+  const ultimaSemana = 42
+  const primeraSemana = 13
 
   useEffect(() => {
     document.getElementsByClassName('App')[0].scrollTo(0, 0)
@@ -21,7 +27,22 @@ const Panel = () => {
 
   return (
     <div className="Panel">
-      <h1 className="Panel__titulo">Panel de indicadores</h1>
+      <div className="Panel__superior">
+        <h1 className="Panel__titulo">Panel de indicadores</h1>
+        <div className="Panel__controles">
+          <input
+            className="Panel__selector_semana"
+            type="range"
+            min={primeraSemana - ultimaSemana}
+            max={0}
+            defaultValue={retroceso}
+            onChange={e => dispatch(retrocedeSemanas(Number(e.target.value)))}
+          />
+          <div className="Panel__semana_seleccionada">
+            Semana {ultimaSemana + retroceso}
+          </div>
+        </div>
+      </div>
       <div className="Panel__encabezados">
         <div className="Panel__encabezao_dimension">Dimensión</div>
         <div className="Panel__encabezado_resultados">Resultados</div>
@@ -64,18 +85,18 @@ const Panel = () => {
           </div>
           <div className="Panel__indicadores_divisiones">
             <div className="Panel__indicadores_contenedor_hexagonos">
-              {divisiones.filter(d => d.codigo !== 'GLOBAL').map((d, i) => {
+              {divisiones.filter(d => d.codigo !== 'GLOBAL').map((d, j) => {
                 const valorSemaforo = obtenerSemaforoIndicador(d.codigo, indicador)
                 const valorIndicador = obtenerValorIndicador(d.codigo, indicador)
                 return (
-                  <React.Fragment key={`hexagono-${indicador}-${i}`}>
-                    {hexagonosFalsos.includes(i) &&
+                  <React.Fragment key={`hexagono-${indicador}-${j}`}>
+                    {hexagonosFalsos.includes(j) &&
                       <div className="Panel__hexagono_pequeño Panel__hexagono_pequeño--relleno" />
                     }
                     <div
                       className="Panel__hexagono_pequeño"
                       title={`División ${d.nombre}, ${valorIndicador.toLocaleString('de-DE', { maximumFractionDigits: 1 })} caso${valorIndicador !== 1 ? 's' : ''} por cada 1.000 trabajadores`}
-                      onClick={() => history.push(`/graficos/${d.codigo}`)}
+                      onClick={() => i === 0 && history.push(`/graficos/${d.codigo}`)}
                       style={{ backgroundColor: obtenerColorIndicadorPanel(indicador, valorSemaforo) }}
                     >
                       {d.codigoCorto}

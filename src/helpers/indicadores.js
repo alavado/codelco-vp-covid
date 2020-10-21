@@ -1,4 +1,5 @@
 import dataCodelco from '../data/csv/data_codelco_semanal.json'
+import store from '../redux/store'
 
 export const coloresIndicadores = {
   verde: '#1dd600',
@@ -23,31 +24,31 @@ export const indicadores = [
       },
       {
         color: coloresIndicadores.rojo,
-        nombre: 'más de 1 caso'
+        nombre: '1 o más casos'
       }
     ]
   },
   {
-    nombre: 'Porcentaje de sintomáticos',
+    nombre: 'Porcentaje de asintomáticos',
     descripcion: 'Solo se calcula si hay más de 8 casos esa semana en esa división',
     niveles: [
       {
         color: coloresIndicadores.verde,
-        nombre: 'más de 80%'
+        nombre: 'Más de 80%'
       },
       {
         color: coloresIndicadores.amarillo,
-        nombre: '60% - 80%'
+        nombre: '(60% - 80%]'
       },
       {
         color: coloresIndicadores.rojo,
-        nombre: 'menos de 60%'
+        nombre: '60% o menos'
       }
     ]
   },
   {
     nombre: 'Positividad de testeo',
-    descripcion: 'Expresado por cada 1.000 tests.',
+    descripcion: 'Expresada por cada 1.000 tests.',
     niveles: [
       {
         color: coloresIndicadores.verde,
@@ -55,11 +56,11 @@ export const indicadores = [
       },
       {
         color: coloresIndicadores.amarillo,
-        nombre: '3 a 6'
+        nombre: '(3 - 6]'
       },
       {
         color: coloresIndicadores.rojo,
-        nombre: 'Mayor a 6'
+        nombre: '6 o más'
       }
     ]
   },
@@ -78,7 +79,7 @@ const obtenerPropiedadValor = indicador => {
   switch (indicador.nombre) {
     case 'Casos nuevos':
       return 'incidenciaSemanal'
-    case 'Porcentaje de sintomáticos':
+    case 'Porcentaje de asintomáticos':
       return 'porcentajeAsintomaticos'
     case 'Positividad de testeo':
       return 'tasaPositividad1000'
@@ -91,7 +92,7 @@ const obtenerPropiedadSemaforo = indicador => {
   switch (indicador.nombre) {
     case 'Casos nuevos':
       return 'S_incidencia'
-    case 'Porcentaje de sintomáticos':
+    case 'Porcentaje de asintomáticos':
       return 'S_asintomaticos'
     case 'Positividad de testeo':
       return 'S_positividad'
@@ -101,13 +102,15 @@ const obtenerPropiedadSemaforo = indicador => {
 }
 
 export const obtenerValorIndicador = (codigoDivision, indicador) => {
+  const retroceso = store.getState().indicadores.retroceso
   const propiedad = obtenerPropiedadValor(indicador)
-  const valor = dataCodelco.series.find(s => s.codigoDivision === codigoDivision)[propiedad].slice(-1)[0]
+  const valor = dataCodelco.series.find(s => s.codigoDivision === codigoDivision)[propiedad].slice(-1 + retroceso)[0]
   return valor ?? -1
 }
 
 export const obtenerSemaforoIndicador = (codigoDivision, indicador) => {
+  const retroceso = store.getState().indicadores.retroceso
   const propiedad = obtenerPropiedadSemaforo(indicador)
-  const valor = dataCodelco.series.find(s => s.codigoDivision === codigoDivision)[propiedad].slice(-1)[0]
+  const valor = dataCodelco.series.find(s => s.codigoDivision === codigoDivision)[propiedad].slice(-1 + retroceso)[0]
   return valor ?? -1
 }
