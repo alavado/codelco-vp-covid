@@ -5,7 +5,7 @@ const csv = fs.readFileSync(archivo)
 const filas = `${csv}`.split('\n').slice(1).filter(f => f)
 
 const datos = filas.map(fila => {
-  const [codigoDivision, semana, nuevosPropios, nuevosExternos, incidenciaSemanal, acumulados] = fila.split(';')
+  const [codigoDivision, semana, nuevosPropios, nuevosExternos, incidenciaSemanal, acumulados, porcentajeAsintomaticos, positividadAntigeno, tasaPositividad1000, S_incidencia, S_asintomaticos, S_positividad] = fila.split(',')
   return ({
     codigoDivision,
     semana: Number(semana),
@@ -13,6 +13,11 @@ const datos = filas.map(fila => {
     nuevosExternos: Number(nuevosExternos),
     incidenciaSemanal: Number(incidenciaSemanal),
     acumulados: Number(acumulados),
+    porcentajeAsintomaticos: Number(porcentajeAsintomaticos),
+    tasaPositividad1000: Number(tasaPositividad1000),
+    S_incidencia: Number(S_incidencia),
+    S_asintomaticos: Number(S_asintomaticos),
+    S_positividad: Number(S_positividad)
   })
 })
 
@@ -31,7 +36,12 @@ const series = divisiones.map(codigoDivision => {
     propiosAcum: nuevosPropios.reduce((prev, v) => [...prev, prev.slice(-1)[0] + v], [nuevosPropios[0]]),
     externosAcum: nuevosExternos.reduce((prev, v) => [...prev, prev.slice(-1)[0] + v], [nuevosExternos[0]]),
     incidenciaSemanal: datosDivision.map(d => d.incidenciaSemanal),
-    acumulados: datosDivision.map(d => d.acumulados)
+    acumulados: datosDivision.map(d => d.acumulados),
+    porcentajeAsintomaticos: datosDivision.map(d => d.porcentajeAsintomaticos),
+    tasaPositividad1000: datosDivision.map(d => d.tasaPositividad1000),
+    S_incidencia:  datosDivision.map(d => d.S_incidencia),
+    S_asintomaticos: datosDivision.map(d => d.S_asintomaticos),
+    S_positividad: datosDivision.map(d => d.S_positividad)
   }
 })
 

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import divisiones from '../../data/csv/divisiones.json'
 import { obtenerColorIndicadorPanel } from '../../helpers/colores'
-import { indicadores, obtenerCasosPor10000 } from '../../helpers/indicadores'
+import { indicadores, obtenerSemaforoIndicador, obtenerValorIndicador } from '../../helpers/indicadores'
 import { Icon } from '@iconify/react'
 import helpRhombus from '@iconify/icons-mdi/help-circle'
 import './Panel.css'
@@ -18,8 +18,6 @@ const Panel = () => {
   useEffect(() => {
     document.getElementsByClassName('App')[0].scrollTo(0, 0)
   }, [])
-
-  console.log(mostrandoTooltip)
 
   return (
     <div className="Panel">
@@ -58,8 +56,8 @@ const Panel = () => {
             <div
               className="Panel__hexagono"
               onClick={() => history.push('/graficos')}
-              title={`${obtenerCasosPor10000('GLOBAL').toLocaleString('de-DE', { maximumFractionDigits: 1 })} casos por 10.000 trabajadores`}
-              style={{ backgroundColor: obtenerColorIndicadorPanel(indicador, obtenerCasosPor10000('GLOBAL')) }}
+              title={`${obtenerValorIndicador('GLOBAL', indicador).toLocaleString('de-DE', { maximumFractionDigits: 1 })} casos por cada 1.000 trabajadores`}
+              style={{ backgroundColor: obtenerColorIndicadorPanel(indicador, obtenerSemaforoIndicador('GLOBAL', indicador)) }}
             >
               Global
             </div>
@@ -67,7 +65,8 @@ const Panel = () => {
           <div className="Panel__indicadores_divisiones">
             <div className="Panel__indicadores_contenedor_hexagonos">
               {divisiones.filter(d => d.codigo !== 'GLOBAL').map((d, i) => {
-                const totalPor10000 = obtenerCasosPor10000(d.codigo)
+                const valorSemaforo = obtenerSemaforoIndicador(d.codigo, indicador)
+                const valorIndicador = obtenerValorIndicador(d.codigo, indicador)
                 return (
                   <React.Fragment key={`hexagono-${indicador}-${i}`}>
                     {hexagonosFalsos.includes(i) &&
@@ -75,9 +74,9 @@ const Panel = () => {
                     }
                     <div
                       className="Panel__hexagono_pequeño"
-                      title={`División ${d.nombre}, ${totalPor10000.toLocaleString('de-DE', { maximumFractionDigits: 1 })} casos por 10.000 trabajadores`}
+                      title={`División ${d.nombre}, ${valorIndicador.toLocaleString('de-DE', { maximumFractionDigits: 1 })} caso${valorIndicador !== 1 ? 's' : ''} por cada 1.000 trabajadores`}
                       onClick={() => history.push(`/graficos/${d.codigo}`)}
-                      style={{ backgroundColor: obtenerColorIndicadorPanel(indicador, totalPor10000) }}
+                      style={{ backgroundColor: obtenerColorIndicadorPanel(indicador, valorSemaforo) }}
                     >
                       {d.codigoCorto}
                     </div>
