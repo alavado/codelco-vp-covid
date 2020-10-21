@@ -9,3 +9,4 @@
 
 dudas:
 - cual es el segundo indicador
+- agregamos la semana?

@@ -11,11 +11,17 @@ const TotalCasos = ({ codigo }) => {
 
   return (
     <div className="TotalCasos">
-      <div className="TotalCasos__contenedor" style={{ backgroundColor: colorTrabajadoresPropios }}>
+      <div
+        className="TotalCasos__contenedor"
+        style={{ backgroundColor: colorTrabajadoresPropios }}
+      >
         <div className="TotalCasos__numero">{casosPropios.toLocaleString('de-DE')}</div>
         <div className="TotalCasos__etiqueta">casos propios</div>
       </div>
-      <div className="TotalCasos__contenedor" style={{ backgroundColor: colorTrabajadoresContratistas }}>
+      <div
+        className="TotalCasos__contenedor"
+        style={{ backgroundColor: colorTrabajadoresContratistas }}
+      >
         <div className="TotalCasos__numero">{casosExternos.toLocaleString('de-DE')}</div>
         <div className="TotalCasos__etiqueta">casos externos</div>
       </div>
