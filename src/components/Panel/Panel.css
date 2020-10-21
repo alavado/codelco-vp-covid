@@ -37,8 +37,17 @@
 .Panel__semana_seleccionada {
   font-size: .85rem;
   font-weight: 500;
-  text-align: right;
-  width: 10ch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 15ch;
+}
+
+.Panel__fechas_semana {
+  font-size: .6rem;
+  text-align: center;
+  padding-top: .15rem;
+  line-height: 1.15;
 }
 
 .Panel__selector_semana {

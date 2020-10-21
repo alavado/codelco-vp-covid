@@ -11,6 +11,7 @@ import './VisionGeneral.css'
 import { Link } from 'react-router-dom'
 import { InlineIcon } from '@iconify/react'
 import chartBox from  '@iconify/icons-mdi/chart-bar'
+import semanasEpidemilogicas from '../../../data/minsal/semanas.json'
 
 const divisionesAgrupadasPorRegion = Array.from(new Set(divisiones.map(d => d.region)))
   .sort((r1, r2) => r1 < r2 ? -1 : 1)
@@ -64,7 +65,7 @@ const VisionGeneral = () => {
           {casosUltimos7Dias} nuevo{casosUltimos7Dias !== 1 && 's'} caso{casosUltimos7Dias !== 1 && 's'}
         </div>
         <div className="VisionGeneral__intervalo">
-          Semana {semanas.slice(-1)[0]}
+          Semana {semanas.slice(-1)[0]} - {semanasEpidemilogicas[semanas.slice(-1)[0]]}
         </div>
         <MiniGrafico codigo={codigo} />
         <div className="VisionGeneral__total_casos">

@@ -6,6 +6,7 @@ import 'moment/locale/es'
 import classNames from 'classnames'
 import { colorTrabajadoresContratistas, colorTrabajadoresPropios } from '../../../helpers/colores'
 import TotalCasos from '../../Mapa/VisionGeneral/TotalCasos/TotalCasos'
+import semanasEpidemiologicas from '../../../data/minsal/semanas.json'
 
 const Grafico = ({ division }) => {
 
@@ -86,6 +87,7 @@ const Grafico = ({ division }) => {
               tooltips: {
                 callbacks: {
                   title: items => `Semana ${items[0].xLabel}`,
+                  afterTitle: items => semanasEpidemiologicas[items[0].xLabel]
                  }
               },
               scales: {

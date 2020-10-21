@@ -9,6 +9,7 @@ import './Panel.css'
 import TooltipPanel from './TooltipPanel'
 import { useDispatch, useSelector } from 'react-redux'
 import { retrocedeSemanas } from '../../redux/ducks/indicadores'
+import semanasEpidemiologicas from '../../data/minsal/semanas.json'
 
 const hexagonosFalsos = [0, 3, 7]
 
@@ -39,7 +40,8 @@ const Panel = () => {
             onChange={e => dispatch(retrocedeSemanas(Number(e.target.value)))}
           />
           <div className="Panel__semana_seleccionada">
-            Semana {ultimaSemana + retroceso}
+            <div>Semana {ultimaSemana + retroceso}</div>
+            <div className="Panel__fechas_semana">{semanasEpidemiologicas[ultimaSemana + retroceso]}</div>
           </div>
         </div>
       </div>
