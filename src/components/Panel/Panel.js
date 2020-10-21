@@ -79,10 +79,12 @@ const Panel = () => {
             <div
               className="Panel__hexagono"
               onClick={() => history.push('/graficos')}
-              title={`${obtenerValorIndicador('GLOBAL', indicador).toLocaleString('de-DE', { maximumFractionDigits: 1 })} casos por cada 1.000 trabajadores`}
               style={{ backgroundColor: obtenerColorIndicadorPanel(indicador, obtenerSemaforoIndicador('GLOBAL', indicador)) }}
             >
               Global
+            </div>
+            <div className="Panel__popup_hexagono">
+              {obtenerValorIndicador('GLOBAL', indicador).toLocaleString('de-DE', { maximumFractionDigits: 1 })} casos por cada 1.000 trabajadores
             </div>
           </div>
           <div className="Panel__indicadores_divisiones">
@@ -95,13 +97,17 @@ const Panel = () => {
                     {hexagonosFalsos.includes(j) &&
                       <div className="Panel__hexagono_pequeño Panel__hexagono_pequeño--relleno" />
                     }
-                    <div
-                      className="Panel__hexagono_pequeño"
-                      title={`División ${d.nombre}, ${valorIndicador.toLocaleString('de-DE', { maximumFractionDigits: 1 })} caso${valorIndicador !== 1 ? 's' : ''} por cada 1.000 trabajadores`}
-                      onClick={() => i === 0 && history.push(`/graficos/${d.codigo}`)}
-                      style={{ backgroundColor: obtenerColorIndicadorPanel(indicador, valorSemaforo) }}
-                    >
-                      {d.codigoCorto}
+                    <div className="Panel__contenedor_hexagono">
+                      <div
+                        className="Panel__hexagono_pequeño"
+                        onClick={() => i === 0 && history.push(`/graficos/${d.codigo}`)}
+                        style={{ backgroundColor: obtenerColorIndicadorPanel(indicador, valorSemaforo) }}
+                      >
+                        {d.codigoCorto}
+                      </div>
+                      <div className="Panel__popup_hexagono">
+                        {d.nombre}, {valorIndicador.toLocaleString('de-DE', { maximumFractionDigits: 1 })} caso{valorIndicador !== 1 ? 's' : ''} por cada 1.000 trabajadores
+                      </div>
                     </div>
                   </React.Fragment>
                 )

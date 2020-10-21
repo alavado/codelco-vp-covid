@@ -163,6 +163,35 @@
   width: calc(var(--ancho-hexagono) / 2);
 }
 
+.Panel__popup_hexagono {
+  background-color: white;
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+  pointer-events: none;
+  padding: .5rem;
+  font-size: .75rem;
+  border-radius: .25rem;
+  width: 24ch;
+  text-align: center;
+  line-height: 1.25;
+  box-shadow: 0 .1rem .25rem rgba(0, 0, 0, .2);
+  font-weight: 500;
+  transition: all .15s ease;
+  transform: translateY(.25rem);
+}
+
+.Panel__contenedor_hexagono {
+  position: relative;
+}
+
+.Panel__contenedor_hexagono:hover .Panel__popup_hexagono,
+.Panel__indicador_global:hover .Panel__popup_hexagono {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 @keyframes aparece-panel {
   0% {
     opacity: 0;
