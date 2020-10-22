@@ -13,7 +13,7 @@ export const indicadores = [
   {
     nombre: 'Casos nuevos',
     descripcion: 'Nuevos casos semanales por cada 1.000 trabajadores',
-    sufijo: 'casos por cada 1.000 trabajadores',
+    sufijo: 'casos x cada 1.000 trabajadores',
     niveles: [
       {
         color: coloresIndicadores.verde,
