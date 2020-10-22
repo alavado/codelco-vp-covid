@@ -12,7 +12,7 @@ export const coloresIndicadores = {
 export const indicadores = [
   {
     nombre: 'Casos nuevos',
-    descripcion: 'Nuevos casos semanales por cada 1.000 trabajadores',
+    descripcion: 'Nuevos casos semanales x cada 1.000 trabajadores',
     sufijo: 'casos x cada 1.000 trabajadores',
     niveles: [
       {
@@ -50,7 +50,7 @@ export const indicadores = [
   },
   {
     nombre: 'Positividad de testeo',
-    descripcion: 'Expresada por cada 1.000 tests.',
+    descripcion: 'Expresada x cada 1.000 tests.',
     sufijo: 'x cada 1.000 tests realizados',
     niveles: [
       {
