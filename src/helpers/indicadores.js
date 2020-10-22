@@ -51,7 +51,7 @@ export const indicadores = [
   {
     nombre: 'Positividad de testeo',
     descripcion: 'Expresada por cada 1.000 tests.',
-    sufijo: '',
+    sufijo: 'x 1.000 tests realizados',
     niveles: [
       {
         color: coloresIndicadores.verde,
