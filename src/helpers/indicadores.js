@@ -94,13 +94,13 @@ const obtenerPropiedadValor = indicador => {
 const obtenerPropiedadSemaforo = indicador => {
   switch (indicador.nombre) {
     case 'Casos nuevos':
-      return 'S_incidencia'
+      return 'SE_incidencia'
     case 'Porcentaje de asintomáticos':
-      return 'S_asintomaticos'
+      return 'SO_asintomaticos'
     case 'Positividad de testeo':
-      return 'S_positividad'
+      return 'SE_positividad'
     default:
-      return 'S_incidencia'
+      return 'SE_incidencia'
   }
 }
 
