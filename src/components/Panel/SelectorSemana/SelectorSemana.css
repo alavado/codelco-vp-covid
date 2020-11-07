@@ -25,3 +25,20 @@
   flex: 1;
   cursor: pointer;
 }
+
+.SelectorSemana__contenedor_semana {
+  display: flex;
+  padding-left: 1rem;
+  align-items: center;
+}
+
+.SelectorSemana__boton {
+  background-color: #0093D5;
+  color: white;
+  border-radius: 100%;
+  outline: none;
+  width: 1.75rem;
+  height: 1.75rem;
+  border: none;
+  cursor: pointer;
+}
