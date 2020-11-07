@@ -5,22 +5,16 @@ import { obtenerColorIndicadorPanel } from '../../helpers/colores'
 import { indicadores, obtenerSemaforoIndicador, obtenerValorIndicador } from '../../helpers/indicadores'
 import { Icon } from '@iconify/react'
 import helpRhombus from '@iconify/icons-mdi/help-circle'
-import './Panel.css'
 import TooltipPanel from './TooltipPanel'
-import { useDispatch, useSelector } from 'react-redux'
-import { retrocedeSemanas } from '../../redux/ducks/indicadores'
-import semanasEpidemiologicas from '../../data/minsal/semanas.json'
+import './Panel.css'
+import SelectorSemana from './SelectorSemana'
 
 const hexagonosFalsos = [0, 3, 7]
 
 const Panel = () => {
 
-  const { retroceso } = useSelector(state => state.indicadores)
   const [mostrandoTooltip, setMostrandoTooltip] = useState(indicadores.map(() => false))
   const history = useHistory()
-  const dispatch = useDispatch()
-  const ultimaSemana = 42
-  const primeraSemana = 13
   const indicadoresActivos = 3
 
   useEffect(() => {
@@ -31,20 +25,7 @@ const Panel = () => {
     <div className="Panel">
       <div className="Panel__superior">
         <h1 className="Panel__titulo">Panel de indicadores</h1>
-        <div className="Panel__controles">
-          <input
-            className="Panel__selector_semana"
-            type="range"
-            min={primeraSemana - ultimaSemana}
-            max={0}
-            defaultValue={retroceso}
-            onChange={e => dispatch(retrocedeSemanas(Number(e.target.value)))}
-          />
-          <div className="Panel__semana_seleccionada">
-            <div>Semana {ultimaSemana + retroceso}</div>
-            <div className="Panel__fechas_semana">{semanasEpidemiologicas[ultimaSemana + retroceso]}</div>
-          </div>
-        </div>
+        <SelectorSemana />
       </div>
       <div className="Panel__encabezados">
         <div className="Panel__encabezao_dimension">Dimensión</div>

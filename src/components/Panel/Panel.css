@@ -27,34 +27,6 @@
   font-weight: 500;
 }
 
-.Panel__controles {
-  display: flex;
-  align-items: center;
-  flex: 1;
-  padding-left: 2rem;
-}
-
-.Panel__semana_seleccionada {
-  font-size: .85rem;
-  font-weight: 500;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 15ch;
-}
-
-.Panel__fechas_semana {
-  font-size: .6rem;
-  text-align: center;
-  padding-top: .15rem;
-  line-height: 1.15;
-}
-
-.Panel__selector_semana {
-  flex: 1;
-  cursor: pointer;
-}
-
 .Panel__encabezados {
   display: flex;
   justify-content: space-between;
