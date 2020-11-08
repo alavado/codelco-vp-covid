@@ -8,5 +8,14 @@
 - agregar selector de semana en panel
 
 dudas:
-- cual es el segundo indicador
-- agregamos la semana?
+- pie de pagina?
+- hay mas 8 variables con prefijo SE_ pero en el panel aparecen solo 5
+ 
+  'SE_incidencia',
+  'SE_positividad',
+  'SE_seguimientoInicio',
+  'SE_seguimientoDesempeno',
+  'SE_notificacionOportunidad',
+  'SE_contactosDeteccion',
+  'SE_trazabilidadOportuna',
+  'SE_trazabilidadDesempeno',

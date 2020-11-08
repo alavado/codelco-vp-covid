@@ -20,7 +20,7 @@ const SelectorSemana = () => {
         type="range"
         min={primeraSemana - ultimaSemana}
         max={0}
-        defaultValue={retroceso}
+        value={retroceso}
         onChange={e => dispatch(retrocedeSemanas(Number(e.target.value)))}
       />
       <div className="SelectorSemana__contenedor_semana">
