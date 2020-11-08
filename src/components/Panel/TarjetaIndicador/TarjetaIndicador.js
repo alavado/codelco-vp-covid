@@ -12,7 +12,7 @@ import { useSelector } from 'react-redux'
 const hexagonosFalsos = [0, 3, 7]
 const indicadoresActivos = 3
 
-const TarjetaIndicador = ({ indicador, i, setMostrandoTooltip, mostrandoTooltip }) => {
+const TarjetaIndicador = ({ indicador, indice, setMostrandoTooltip, mostrandoTooltip }) => {
 
   const history = useHistory()
   const { retroceso } = useSelector(state => state.indicadores)
@@ -25,17 +25,18 @@ const TarjetaIndicador = ({ indicador, i, setMostrandoTooltip, mostrandoTooltip 
           <div
             className="TarjetaIndicador__icono_indicador" 
             onMouseEnter={() => setMostrandoTooltip(prev => {
+              console.log(indice)
               const x = [...prev]
-              x[i] = true
+              x[indice] = true
               return x
             })}
             onMouseLeave={() => setMostrandoTooltip(prev => {
               const x = [...prev]
-              x[i] = false
+              x[indice] = false
               return x
             })}
           >
-            <TooltipPanel indicador={indicador} visible={mostrandoTooltip[i]} />
+            <TooltipPanel indicador={indicador} visible={mostrandoTooltip[indice]} />
             <Icon
               className="TarjetaIndicador__icono_indicador"
               icon={helpRhombus}
@@ -46,12 +47,12 @@ const TarjetaIndicador = ({ indicador, i, setMostrandoTooltip, mostrandoTooltip 
       <div className="TarjetaIndicador__indicador_global">
         <div
           className="TarjetaIndicador__hexagono"
-          onClick={() => history.push('/graficos')}
+          onClick={() => indice === 0 && history.push('/graficos')}
           style={{ backgroundColor: obtenerColorIndicadorPanel(indicador, obtenerSemaforoIndicador('GLOBAL', indicador, retroceso)) }}
         >
           Global
         </div>
-        {i < indicadoresActivos && 
+        {indice < indicadoresActivos && 
           <div className="TarjetaIndicador__popup_hexagono">
             CODELCO: {obtenerSemaforoIndicador('GLOBAL', indicador) < 0 ? 'N/A' : `${obtenerValorIndicador('GLOBAL', indicador, retroceso).toLocaleString('de-DE', { maximumFractionDigits: 1 })} ${indicador.sufijo}`}
           </div>
@@ -70,12 +71,12 @@ const TarjetaIndicador = ({ indicador, i, setMostrandoTooltip, mostrandoTooltip 
                 <div className="TarjetaIndicador__contenedor_hexagono">
                   <div
                     className="TarjetaIndicador__hexagono_pequeño"
-                    onClick={() => i === 0 && history.push(`/graficos/${d.codigo}`)}
+                    onClick={() => indice === 0 && history.push(`/graficos/${d.codigo}`)}
                     style={{ backgroundColor: obtenerColorIndicadorPanel(indicador, valorSemaforo) }}
                   >
                     {d.codigoCorto}
                   </div>
-                  {i < indicadoresActivos &&
+                  {indice < indicadoresActivos &&
                     <div className="TarjetaIndicador__popup_hexagono">
                       {d.nombre}: {valorSemaforo < 0 ? 'N/A' : `${valorIndicador.toLocaleString('de-DE', { maximumFractionDigits: 1 })} ${indicador.sufijo}`}
                     </div>

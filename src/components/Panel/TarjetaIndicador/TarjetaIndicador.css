@@ -1,32 +1,32 @@
 .TarjetaIndicador {
-  margin: .5rem 2rem;
+  margin-bottom: 1rem;
   border-radius: .25rem;
   display: flex;
   padding: 0 1.5rem;
   height: 6rem;
   border: .05rem solid rgba(250, 84, 84, 0.15);
-  width: 100%;
   box-shadow: 0 .1rem .25rem rgba(0, 0, 0, .2);
   background-color: white;
 }
 
 .TarjetaIndicador__nombre_indicador {
-  flex: 1;
+  flex: 1.5;
   display: flex;
   align-items: center;
-  padding-right: 1rem;
-  line-height: 1.5;
   cursor: default;
+  font-size: .8rem;
+  font-weight: 500;
 }
 
 .TarjetaIndicador__icono_indicador {
   color: #0093d5;
   cursor: help;
   margin-left: .2rem;
-  font-size: 1.15rem;
+  font-size: 1rem;
   display: inline-flex;
   justify-content: center;
   position: relative;
+  transform: translateY(.2rem);
 }
 
 .TarjetaIndicador__indicador_global {

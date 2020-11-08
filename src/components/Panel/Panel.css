@@ -1,16 +1,29 @@
 .Panel {
   display: flex;
   flex-direction: column;
-  animation: aparece-panel .25s ease-in-out both;
-  padding-top: 1.5rem;
-  padding-bottom: 4rem;
   align-items: center;
-  width: 966px;
-  margin: 0 auto;
+  justify-content: center;
+  animation: aparece-panel .25s ease-in-out both;
   --ancho-hexagono: 2.5rem;
   --ancho-indicador-global: 10rem;
   --ancho-indicadores-locales: calc(var(--ancho-hexagono) * 4);
   position: relative;
+  overflow: hidden;
+}
+
+.Panel__contenedor {
+  padding-top: 1.5rem;
+  padding-bottom: 4rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+.Panel__panel:first-child {
+  margin-right: 1rem;
+}
+
+.Panel__panel:last-child {
+  margin-left: 1rem;
 }
 
 .Panel__superior {
@@ -35,13 +48,10 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 1.15rem;
   padding: .5rem 0 .5rem 0;
-}
-
-.Panel__encabezao_dimension {
-  padding-left: 1.5rem;
+  margin-bottom: .5rem;
 }
 
 .Panel__encabezado_resultados {
