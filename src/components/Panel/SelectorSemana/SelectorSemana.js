@@ -28,7 +28,7 @@ const SelectorSemana = () => {
           className="SelectorSemana__boton"
           onClick={() => dispatch(retrocedeSemanas(retroceso - 1))}
         >
-          <InlineIcon icon={iconoAtras} />
+          <InlineIcon className="SelectorSemana__icono_boton" icon={iconoAtras} />
         </button>
         <div className="SelectorSemana__semana_seleccionada">
           <div>Semana {ultimaSemana + retroceso}</div>
@@ -40,7 +40,7 @@ const SelectorSemana = () => {
           className="SelectorSemana__boton"
           onClick={() => dispatch(retrocedeSemanas(retroceso + 1))}
         >
-          <InlineIcon icon={iconoAdelante} />
+          <InlineIcon className="SelectorSemana__icono_boton" icon={iconoAdelante} />
         </button>
       </div>
     </div>

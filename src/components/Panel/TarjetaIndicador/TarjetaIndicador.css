@@ -1,0 +1,116 @@
+.TarjetaIndicador {
+  margin: .5rem 2rem;
+  border-radius: .25rem;
+  display: flex;
+  padding: 0 1.5rem;
+  height: 6rem;
+  border: .05rem solid rgba(250, 84, 84, 0.15);
+  width: 100%;
+  box-shadow: 0 .1rem .25rem rgba(0, 0, 0, .2);
+  background-color: white;
+}
+
+.TarjetaIndicador__nombre_indicador {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding-right: 1rem;
+  line-height: 1.5;
+  cursor: default;
+}
+
+.TarjetaIndicador__icono_indicador {
+  color: #0093d5;
+  cursor: help;
+  margin-left: .2rem;
+  font-size: 1.15rem;
+  display: inline-flex;
+  justify-content: center;
+  position: relative;
+}
+
+.TarjetaIndicador__indicador_global {
+  width: var(--ancho-indicador-global);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.TarjetaIndicador__hexagono {
+  background-color: #0093D5;
+  height: 4rem;
+  width: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: polygon(0% 25%, 50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%);
+  color: white;
+  font-weight: 500;
+  font-size: .8rem;
+  cursor: pointer;
+}
+
+.TarjetaIndicador__hexagono_pequeño {
+  width: var(--ancho-hexagono);
+  height: 1.5rem;
+  background-color: #0093D5;
+  clip-path: polygon(10% 25%, 50% 0%, 90% 25%, 90% 75%, 50% 100%, 10% 75%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: .6rem;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  text-shadow: 0 .1rem .05rem rgba(0, 0, 0, .15);
+}
+
+.TarjetaIndicador__hexagono_pequeño:hover {
+  transform: scale(1.35);
+}
+
+.TarjetaIndicador__hexagono_pequeño--relleno {
+  opacity: 0;
+  width: calc(var(--ancho-hexagono) / 2);
+}
+
+.TarjetaIndicador__popup_hexagono {
+  background-color: white;
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+  pointer-events: none;
+  padding: .5rem;
+  font-size: .75rem;
+  border-radius: .25rem;
+  width: 24ch;
+  text-align: center;
+  line-height: 1.25;
+  box-shadow: 0 .1rem .25rem rgba(0, 0, 0, .2);
+  font-weight: 500;
+  transition: all .15s ease;
+  transform: translateY(.25rem);
+}
+
+.TarjetaIndicador__indicadores_divisiones {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(var(--ancho-indicadores-locales));
+}
+
+.TarjetaIndicador__indicadores_contenedor_hexagonos {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.TarjetaIndicador__contenedor_hexagono {
+  position: relative;
+}
+
+.TarjetaIndicador__contenedor_hexagono:hover .TarjetaIndicador__popup_hexagono,
+.TarjetaIndicador__indicador_global:hover .TarjetaIndicador__popup_hexagono {
+  opacity: 1;
+  transform: translateY(0);
+}
