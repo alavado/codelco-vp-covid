@@ -155,12 +155,12 @@ export const obtenerValorIndicador = (codigoDivision, indicador, retroceso) => {
   const propiedad = obtenerPropiedadValor(indicador)
   const datos = store.getState().datos.datos
   const valor = datos.series.find(s => s.codigoDivision === codigoDivision)[propiedad].slice(-1 + retroceso)[0]
-  return valor ?? -1
+  return isNaN(valor) ? -1 : valor
 }
 
 export const obtenerSemaforoIndicador = (codigoDivision, indicador, retroceso) => {
   const propiedad = obtenerPropiedadSemaforo(indicador)
   const datos = store.getState().datos.datos
   const valor = datos.series.find(s => s.codigoDivision === codigoDivision)[propiedad].slice(-1 + retroceso)[0]
-  return valor ?? -1
+  return isNaN(valor) ? -1 : valor
 }

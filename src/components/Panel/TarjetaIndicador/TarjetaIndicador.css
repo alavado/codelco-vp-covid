@@ -22,11 +22,11 @@
   color: #0093d5;
   cursor: help;
   margin-left: .2rem;
-  font-size: 1rem;
+  font-size: .8rem;
   display: inline-flex;
   justify-content: center;
   position: relative;
-  transform: translateY(.2rem);
+  transform: translateY(.15rem);
 }
 
 .TarjetaIndicador__indicador_global {
