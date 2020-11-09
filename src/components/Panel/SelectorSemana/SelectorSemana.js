@@ -6,11 +6,12 @@ import iconoAtras from '@iconify/icons-mdi/chevron-left'
 import iconoAdelante from '@iconify/icons-mdi/chevron-right'
 import './SelectorSemana.css'
 import { InlineIcon } from '@iconify/react'
-import { primeraSemana, ultimaSemana } from '../../../config/semanas'
 
 const SelectorSemana = () => {
 
   const { retroceso } = useSelector(state => state.indicadores)
+  const { primeraSemana, ultimaSemana } = useSelector(state => state.datos)
+  const maximoRetroceso = ultimaSemana - primeraSemana
   const dispatch = useDispatch()
 
   return (
@@ -21,12 +22,12 @@ const SelectorSemana = () => {
         min={primeraSemana - ultimaSemana}
         max={0}
         value={retroceso}
-        onChange={e => dispatch(retrocedeSemanas(Number(e.target.value)))}
+        onChange={e => dispatch(retrocedeSemanas(Number(e.target.value), maximoRetroceso))}
       />
       <div className="SelectorSemana__contenedor_semana">
         <button
           className="SelectorSemana__boton"
-          onClick={() => dispatch(retrocedeSemanas(retroceso - 1))}
+          onClick={() => dispatch(retrocedeSemanas(retroceso - 1, maximoRetroceso))}
         >
           <InlineIcon className="SelectorSemana__icono_boton" icon={iconoAtras} />
         </button>
@@ -38,7 +39,7 @@ const SelectorSemana = () => {
         </div>
         <button
           className="SelectorSemana__boton"
-          onClick={() => dispatch(retrocedeSemanas(retroceso + 1))}
+          onClick={() => dispatch(retrocedeSemanas(retroceso + 1, maximoRetroceso))}
         >
           <InlineIcon className="SelectorSemana__icono_boton" icon={iconoAdelante} />
         </button>

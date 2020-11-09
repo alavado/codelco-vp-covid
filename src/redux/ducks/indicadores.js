@@ -1,5 +1,3 @@
-import { primeraSemana, ultimaSemana } from "../../config/semanas"
-
 const retrocederSemanas = 'indicadores/retrocederSemanas'
 
 const defaultState = {
@@ -9,13 +7,13 @@ const defaultState = {
 export default function(state = defaultState, action) {
   switch (action.type) {
     case retrocederSemanas: {
-      const retroceso = action.payload
-      if (retroceso < (primeraSemana - ultimaSemana) || retroceso > 0) {
+      const { retroceso, maximo } = action.payload
+      if (retroceso < -maximo || retroceso > 0) {
         return state
       }
       return {
         ...state,
-        retroceso: action.payload
+        retroceso
       }
     }
     default:
@@ -23,7 +21,10 @@ export default function(state = defaultState, action) {
   }
 }
 
-export const retrocedeSemanas = retroceso => ({
+export const retrocedeSemanas = (retroceso, maximo) => ({
   type: retrocederSemanas,
-  payload: retroceso
+  payload: {
+    retroceso,
+    maximo
+  }
 })
