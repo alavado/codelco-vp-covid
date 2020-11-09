@@ -1,6 +1,6 @@
 import geoJSONRegiones from '../../data/geojson/regiones.json'
 import divisiones from '../../data/csv/divisiones.json'
-import datosContagios from '../../data/csv/data_codelco_semanal.json'
+import store from '../store'
 
 const fijarRegion = 'marcador/fijarRegion'
 const fijarDivision = 'marcador/fijarDivision'
@@ -13,7 +13,7 @@ const defaultState = {
 export default function reducer(state = defaultState, action = {}) {
   switch (action.type) {
     case fijarRegion: {
-      const codigo = action.payload
+      const { codigo, datos } = action.payload
       if (!codigo || codigo === state.codigo) {
         return state
       }
@@ -22,9 +22,9 @@ export default function reducer(state = defaultState, action = {}) {
         .properties
       const divisionesRegion = divisiones.filter(d => d.region === Number(codigo))
       const casosContratistas = divisionesRegion
-        .reduce((sum, division) => sum + datosContagios.series.find(d => d.codigoDivision === division.codigo).externosAcum.slice(-1)[0], 0)
+        .reduce((sum, division) => sum + datos.series.find(d => d.codigoDivision === division.codigo).externosAcum.slice(-1)[0], 0)
       const casosPropios = divisionesRegion
-        .reduce((sum, division) => sum + datosContagios.series.find(d => d.codigoDivision === division.codigo).propiosAcum.slice(-1)[0], 0)
+        .reduce((sum, division) => sum + datos.series.find(d => d.codigoDivision === division.codigo).propiosAcum.slice(-1)[0], 0)
       return {
         ...state,
         codigo,
@@ -35,12 +35,12 @@ export default function reducer(state = defaultState, action = {}) {
       }
     }
     case fijarDivision: {
-      const codigo = action.payload
+      const { codigo, datos } = action.payload
       if (!codigo || codigo === state.codigo) {
         return state
       }
       const division = divisiones.find(d => d.codigo === codigo)
-      const datosDivision = datosContagios.series.find(s => s.codigoDivision === codigo)
+      const datosDivision = datos.series.find(s => s.codigoDivision === codigo)
       return {
         ...state,
         codigo,
@@ -64,12 +64,18 @@ export default function reducer(state = defaultState, action = {}) {
 
 export const muestraRegionEnMarcador = codigo => ({
   type: fijarRegion,
-  payload: codigo
+  payload: {
+    codigo,
+    datos: store.getState().datos.datos
+  }
 })
 
 export const muestraDivisionEnMarcador = codigo => ({
   type: fijarDivision,
-  payload: codigo
+  payload: {
+    codigo,
+    datos: store.getState().datos.datos
+  }
 })
 
 export const muestraMarcador = () => ({

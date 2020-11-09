@@ -1,11 +1,12 @@
 import React from 'react'
-import divisiones from '../../../../data/csv/data_codelco_semanal.json'
+import { useSelector } from 'react-redux'
 import { colorTrabajadoresContratistas, colorTrabajadoresPropios } from '../../../../helpers/colores'
 import './TotalCasos.css'
 
 const TotalCasos = ({ codigo }) => {
 
-  const datosDivision = divisiones.series.find(d => d.codigoDivision === codigo)
+  const { datos } = useSelector(state => state.datos)
+  const datosDivision = datos.series.find(d => d.codigoDivision === codigo)
   const casosPropios = datosDivision.propiosAcum.slice(-1)[0]
   const casosExternos = datosDivision.externosAcum.slice(-1)[0]
 

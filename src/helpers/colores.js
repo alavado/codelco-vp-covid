@@ -1,19 +1,21 @@
-import divisiones from '../data/csv/divisiones.json'
-import dataCodelco from '../data/csv/data_codelco_semanal.json'
 import { coloresIndicadores, indicadores } from './indicadores'
+import datosRegiones from '../data/csv/divisiones.json'
+import store from '../redux/store'
 
 export const obtenerColorRegion = codigoRegion => {
-  const divisionesRegion = divisiones.filter(d => d.region === codigoRegion)
+  const divisionesRegion = datosRegiones.filter(d => d.region === codigoRegion)
   if (divisionesRegion.length === 0) {
     return '#cdd0d0'
   }
-  const casosDivisiones = dataCodelco.series.filter(s => divisionesRegion.some(d => d.codigo === s.codigoDivision))
+  const { datos } = store.getState().datos
+  const casosDivisiones = datos.series.filter(s => divisionesRegion.some(d => d.codigo === s.codigoDivision))
   const totalCasosDivisionesRegion = casosDivisiones.map(s => s.acumulados.slice(-1)[0]).reduce((sum, v) => sum + v)
   return escala.find((v, i) => !escala[i + 1] || escala[i + 1].maximo > totalCasosDivisionesRegion).color
 }
 
 export const obtenerColorDivision = codigoDivision => {
-  const dataDivision = dataCodelco.series.find(s => s.codigoDivision === codigoDivision)
+  const { datos } = store.getState().datos
+  const dataDivision = datos.series.find(s => s.codigoDivision === codigoDivision)
   const totalCasosDivision = dataDivision.acumulados.slice(-1)[0]
   return escala.find((v, i) => !escala[i + 1] || escala[i + 1].maximo > totalCasosDivision).color
 }

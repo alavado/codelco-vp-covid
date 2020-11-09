@@ -1,4 +1,4 @@
-import dataCodelco from '../data/csv/data_codelco_semanal.json'
+import store from '../redux/store'
 
 export const coloresIndicadores = {
   verde: '#1dd600',
@@ -153,12 +153,14 @@ export const obtenerPropiedadSemaforo = indicador => {
 
 export const obtenerValorIndicador = (codigoDivision, indicador, retroceso) => {
   const propiedad = obtenerPropiedadValor(indicador)
-  const valor = dataCodelco.series.find(s => s.codigoDivision === codigoDivision)[propiedad].slice(-1 + retroceso)[0]
+  const datos = store.getState().datos.datos
+  const valor = datos.series.find(s => s.codigoDivision === codigoDivision)[propiedad].slice(-1 + retroceso)[0]
   return valor ?? -1
 }
 
 export const obtenerSemaforoIndicador = (codigoDivision, indicador, retroceso) => {
   const propiedad = obtenerPropiedadSemaforo(indicador)
-  const valor = dataCodelco.series.find(s => s.codigoDivision === codigoDivision)[propiedad].slice(-1 + retroceso)[0]
+  const datos = store.getState().datos.datos
+  const valor = datos.series.find(s => s.codigoDivision === codigoDivision)[propiedad].slice(-1 + retroceso)[0]
   return valor ?? -1
 }

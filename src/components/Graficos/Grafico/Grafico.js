@@ -1,5 +1,4 @@
 import React, { useMemo, useState } from 'react'
-import divisiones from '../../../data/csv/data_codelco_semanal.json'
 import './Grafico.css'
 import { Bar } from 'react-chartjs-2'
 import 'moment/locale/es'
@@ -7,22 +6,24 @@ import classNames from 'classnames'
 import { colorTrabajadoresContratistas, colorTrabajadoresPropios } from '../../../helpers/colores'
 import TotalCasos from '../../Mapa/VisionGeneral/TotalCasos/TotalCasos'
 import semanasEpidemiologicas from '../../../data/minsal/semanas.json'
+import { useSelector } from 'react-redux'
 
 const Grafico = ({ division }) => {
 
   const [acumulados, setAcumulados] = useState(false)
+  const { datos } = useSelector(state => state.datos)
 
   const [semanas, series, total] = useMemo(() => {
-    const datosDivision = divisiones.series.find(d => d.codigoDivision === division.codigo)
+    const datosDivision = datos.series.find(d => d.codigoDivision === division.codigo)
     return [
-      divisiones.semanas,
+      datos.semanas,
       {
         propios: acumulados ? datosDivision.propiosAcum : datosDivision.nuevosPropios,
         externos: acumulados ? datosDivision.externosAcum : datosDivision.nuevosExternos
       },
       datosDivision.acumulados.slice(-1)[0]
     ]
-  }, [acumulados, division])
+  }, [acumulados, division, datos])
 
   return (
     <div className="Grafico">

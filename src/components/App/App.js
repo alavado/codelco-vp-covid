@@ -1,23 +1,36 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './App.css'
 import Mapa from '../Mapa'
 import { NavLink, Switch, Route } from 'react-router-dom'
 import Graficos from '../Graficos'
 import Panel from '../Panel'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import Login from '../Login'
 import logo from '../../assets/Codelco_logo.svg'
 import { InlineIcon } from '@iconify/react'
 import chartScatterPlotHexbin from  '@iconify/icons-mdi/chart-scatter-plot-hexbin'
 import chartBox from  '@iconify/icons-mdi/chart-bar'
 import mapLegend from '@iconify/icons-mdi/map-legend'
+import axios from 'axios'
+import { guardaDatos } from '../../redux/ducks/datos'
 
 const App = () => {
 
   const { usuario } = useSelector(state => state.login)
+  const { datos } = useSelector(state => state.datos)
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    axios.get('https://raw.githubusercontent.com/NicoBarti/csv_cod/main/variables%20indicadores.csv')
+      .then(res => dispatch(guardaDatos(res.data)))
+  }, [dispatch])
   
   if (!usuario) {
     return <Login />
+  }
+
+  if (!datos) {
+    return 'cargando...'
   }
 
   return (

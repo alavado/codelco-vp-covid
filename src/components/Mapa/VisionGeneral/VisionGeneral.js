@@ -1,6 +1,5 @@
 import React, { useMemo } from 'react'
 import MiniGrafico from './MiniGrafico'
-import datos from '../../../data/csv/data_codelco_semanal.json'
 import divisiones from '../../../data/csv/divisiones.json'
 import geoJSONRegiones from '../../../data/geojson/regiones.json'
 import Select from 'react-select'
@@ -28,6 +27,7 @@ const divisionesAgrupadasPorRegion = Array.from(new Set(divisiones.map(d => d.re
 const VisionGeneral = () => {
 
   const { codigo } = useSelector(state => state.division)
+  const { datos } = useSelector(state => state.datos)
   const dispatch = useDispatch()
 
   const [casosUltimos7Dias, totalCasosCodelco, semanas] = useMemo(() => {
@@ -37,7 +37,7 @@ const VisionGeneral = () => {
       serie.acumulados.slice(-1)[0],
       datos.semanas
     ]
-  }, [codigo])
+  }, [codigo, datos])
 
   return (
     <div className="VisionGeneral">

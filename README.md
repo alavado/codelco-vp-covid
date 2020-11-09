@@ -19,3 +19,7 @@ dudas:
   'SE_contactosDeteccion',
   'SE_trazabilidadOportuna',
   'SE_trazabilidadDesempeno',
+
+  - cambiar kpi por indicadores
+  - NC para los que no se calculan, celeste
+  - ver archivo

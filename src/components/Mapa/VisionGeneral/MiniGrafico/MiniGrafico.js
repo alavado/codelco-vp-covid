@@ -1,18 +1,19 @@
 import React from 'react'
 import { Line } from 'react-chartjs-2'
-import divisiones from '../../../../data/csv/data_codelco_semanal.json'
 import moment from 'moment'
 import './MiniGrafico.css'
+import { useSelector } from 'react-redux'
 
 const MiniGrafico = ({ codigo }) => {
 
-  const datosDivision = divisiones.series.find(d => d.codigoDivision === codigo)
+  const { datos } = useSelector(state => state.datos)
+  const datosDivision = datos.series.find(d => d.codigoDivision === codigo)
 
   return (
     <div className="MiniGrafico">
       <Line
         data={{
-          labels: divisiones.semanas,
+          labels: datos.semanas,
           datasets: [{
             data: datosDivision.acumulados,
             fill: false,
