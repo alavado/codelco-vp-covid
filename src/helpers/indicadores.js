@@ -96,7 +96,8 @@ export const indicadores = [
     niveles: [
       { color: coloresIndicadores.verde, nombre: '> 60%' },
       { color: coloresIndicadores.amarillo, nombre: '30% a 60%' },
-      { color: coloresIndicadores.rojo, nombre: '< 30%' }
+      { color: coloresIndicadores.rojo, nombre: '< 30%' },
+      { color: coloresIndicadores.celeste, nombre: 'No calculado, menos de 8 casos' }
     ]
   },
   // SO
@@ -108,7 +109,8 @@ export const indicadores = [
     niveles: [
       { color: coloresIndicadores.verde, nombre: '> 30%' },
       { color: coloresIndicadores.amarillo, nombre: '10% a 30%' },
-      { color: coloresIndicadores.rojo, nombre: 'menor a 10%' }
+      { color: coloresIndicadores.rojo, nombre: 'menor a 10%' },
+      { color: coloresIndicadores.celeste, nombre: 'No calculado, menos de 8 casos' }
     ]
   },
   {
@@ -129,7 +131,8 @@ export const indicadores = [
     niveles: [
       { color: coloresIndicadores.verde, nombre: '> 80%' },
       { color: coloresIndicadores.amarillo, nombre: '60% a 80%' },
-      { color: coloresIndicadores.rojo, nombre: '< 60%' }
+      { color: coloresIndicadores.rojo, nombre: '< 60%' },
+      { color: coloresIndicadores.celeste, nombre: 'No calculado, menos de 8 casos' }
     ]
   },
   {
