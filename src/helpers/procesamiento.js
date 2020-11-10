@@ -32,7 +32,7 @@ export const procesarCSV = csv => {
       .split(',')
       .reduce((obj, dato, i) => ({
         ...obj,
-        [encabezados[i]]: i > 0 ? Number(dato) : dato
+        [encabezados[i]]: dato
       }), {})
   })
   

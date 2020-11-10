@@ -1,4 +1,4 @@
-import { coloresIndicadores, indicadores } from './indicadores'
+import { coloresIndicadores } from './indicadores'
 import datosRegiones from '../data/csv/divisiones.json'
 import store from '../redux/store'
 
@@ -32,25 +32,9 @@ export const colorTrabajadoresPropios = '#fe8720'
 export const colorTrabajadoresContratistas = '#009b9e'
 
 export const obtenerColorIndicadorPanel = (indicador, valor) => {
-  switch (indicador) {
-    case indicadores[0]: {
-      if (valor < 0) return coloresIndicadores.gris
-      if (valor === 2) return coloresIndicadores.rojo
-      if (valor === 1) return coloresIndicadores.amarillo
-      else return coloresIndicadores.verde
-    }
-    case indicadores[1]: {
-      if (valor < 0) return coloresIndicadores.gris
-      if (valor === 2) return coloresIndicadores.rojo
-      if (valor === 1) return coloresIndicadores.amarillo
-      else return coloresIndicadores.verde
-    }
-    case indicadores[2]: {
-      if (valor < 0) return coloresIndicadores.gris
-      if (valor === 2) return coloresIndicadores.rojo
-      if (valor === 1) return coloresIndicadores.amarillo
-      else return coloresIndicadores.verde
-    }
-    default: return coloresIndicadores.gris
-  }
+  if (valor === -2) return coloresIndicadores.celeste
+  if (valor === -1) return coloresIndicadores.gris
+  if (valor === 2) return coloresIndicadores.rojo
+  if (valor === 1) return coloresIndicadores.amarillo
+  else return coloresIndicadores.verde
 }

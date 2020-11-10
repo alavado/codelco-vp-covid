@@ -5,6 +5,7 @@ export const coloresIndicadores = {
   amarillo: '#ffc001',
   naranja: '#ff7b24',
   rojo: '#ff0900',
+  celeste: 'lightblue',
   gris: 'lightgray'
 }
 
@@ -216,12 +217,12 @@ export const obtenerValorIndicador = (codigoDivision, indicador, retroceso) => {
   const propiedad = obtenerPropiedadValor(indicador)
   const datos = store.getState().datos.datos
   const valor = datos.series.find(s => s.codigoDivision === codigoDivision)[propiedad].slice(-1 + retroceso)[0]
-  return isNaN(valor) ? -1 : valor
+  return isNaN(valor) ? (valor.trim() === 'NA' ? -1 : -2) : Number(valor)
 }
 
 export const obtenerSemaforoIndicador = (codigoDivision, indicador, retroceso) => {
   const propiedad = obtenerPropiedadSemaforo(indicador)
   const datos = store.getState().datos.datos
   const valor = datos.series.find(s => s.codigoDivision === codigoDivision)[propiedad].slice(-1 + retroceso)[0]
-  return isNaN(valor) ? -1 : valor
+  return isNaN(valor) ? (valor.trim() === 'NA' ? -1 : -2) : Number(valor)
 }

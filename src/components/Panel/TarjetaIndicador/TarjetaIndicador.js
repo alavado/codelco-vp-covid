@@ -10,12 +10,12 @@ import { useHistory } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
 const hexagonosFalsos = [0, 3, 7]
-const indicadoresActivos = 3
 
 const TarjetaIndicador = ({ indicador, indice, setMostrandoTooltip, mostrandoTooltip }) => {
 
   const history = useHistory()
   const { retroceso } = useSelector(state => state.indicadores)
+  const valorSemaforo = obtenerSemaforoIndicador('GLOBAL', indicador)
 
   return (
     <div className="TarjetaIndicador">
@@ -52,11 +52,9 @@ const TarjetaIndicador = ({ indicador, indice, setMostrandoTooltip, mostrandoToo
         >
           Global
         </div>
-        {indice < indicadoresActivos && 
-          <div className="TarjetaIndicador__popup_hexagono">
-            CODELCO: {obtenerSemaforoIndicador('GLOBAL', indicador) < 0 ? 'N/A' : `${obtenerValorIndicador('GLOBAL', indicador, retroceso).toLocaleString('de-DE', { maximumFractionDigits: 1 })} ${indicador.sufijo}`}
-          </div>
-        }
+        <div className="TarjetaIndicador__popup_hexagono">
+          CODELCO: {valorSemaforo < 0 ? (valorSemaforo === -1 ? 'N/A' : 'N/C') : `${obtenerValorIndicador('GLOBAL', indicador, retroceso).toLocaleString('de-DE', { maximumFractionDigits: 1 })} ${indicador.sufijo}`}
+        </div>
       </div>
       <div className="TarjetaIndicador__indicadores_divisiones">
         <div className="TarjetaIndicador__indicadores_contenedor_hexagonos">
@@ -76,11 +74,9 @@ const TarjetaIndicador = ({ indicador, indice, setMostrandoTooltip, mostrandoToo
                   >
                     {d.codigoCorto}
                   </div>
-                  {indice < indicadoresActivos &&
-                    <div className="TarjetaIndicador__popup_hexagono">
-                      {d.nombre}: {valorSemaforo < 0 ? 'N/A' : `${valorIndicador.toLocaleString('de-DE', { maximumFractionDigits: 1 })} ${indicador.sufijo}`}
-                    </div>
-                  }
+                  <div className="TarjetaIndicador__popup_hexagono">
+                    {d.nombre}: {valorSemaforo < 0 ? (valorSemaforo === -1 ? 'N/A' : 'N/C') : `${valorIndicador.toLocaleString('de-DE', { maximumFractionDigits: 1 })} ${indicador.sufijo}`}
+                  </div>
                 </div>
               </React.Fragment>
             )
