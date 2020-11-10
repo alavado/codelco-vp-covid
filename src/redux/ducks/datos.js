@@ -12,7 +12,7 @@ export default function reducer(state = defaultState, action) {
       return {
         ...state,
         datos: action.payload,
-        ultimaSemana: action.payload.semanas.length + state.primeraSemana
+        ultimaSemana: action.payload.semanas.length + state.primeraSemana - 1
       }
     }
     default: return state
