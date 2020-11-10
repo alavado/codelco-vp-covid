@@ -15,7 +15,7 @@ const TarjetaIndicador = ({ indicador, indice, setMostrandoTooltip, mostrandoToo
 
   const history = useHistory()
   const { retroceso } = useSelector(state => state.indicadores)
-  const valorSemaforo = obtenerSemaforoIndicador('GLOBAL', indicador)
+  const valorSemaforo = obtenerSemaforoIndicador('GLOBAL', indicador, retroceso)
 
   return (
     <div className="TarjetaIndicador">
@@ -25,7 +25,6 @@ const TarjetaIndicador = ({ indicador, indice, setMostrandoTooltip, mostrandoToo
           <div
             className="TarjetaIndicador__icono_indicador" 
             onMouseEnter={() => setMostrandoTooltip(prev => {
-              console.log(indice)
               const x = [...prev]
               x[indice] = true
               return x
@@ -48,7 +47,7 @@ const TarjetaIndicador = ({ indicador, indice, setMostrandoTooltip, mostrandoToo
         <div
           className="TarjetaIndicador__hexagono"
           onClick={() => indice === 0 && history.push('/graficos')}
-          style={{ backgroundColor: obtenerColorIndicadorPanel(indicador, obtenerSemaforoIndicador('GLOBAL', indicador, retroceso)) }}
+          style={{ backgroundColor: obtenerColorIndicadorPanel(indicador, valorSemaforo) }}
         >
           Global
         </div>
