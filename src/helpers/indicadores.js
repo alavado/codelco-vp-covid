@@ -12,103 +12,156 @@ export const indicadores = [
   // SE
   {
     nombre: 'Evolución de casos',
-    descripcion: 'Nuevos casos semanales x 1.000 trabajadores',
+    texto: 'Casos nuevos',
+    descripcion: 'Total casos nuevos x 1000 / dotación',
     sufijo: 'casos x 1.000 trabajadores',
     niveles: [
-      { color: coloresIndicadores.verde, nombre: '0 casos' },
-      { color: coloresIndicadores.amarillo, nombre: 'menos de 1 caso' },
-      { color: coloresIndicadores.rojo, nombre: '1 o más casos' }
+      { color: coloresIndicadores.verde, nombre: '0' },
+      { color: coloresIndicadores.amarillo, nombre: '< 1' },
+      { color: coloresIndicadores.rojo, nombre: '> 1' }
     ]
   },
   {
     nombre: 'Positividad',
-    descripcion: 'Expresada x 1.000 tests.',
-    sufijo: 'x 1.000 tests realizados',
+    texto: 'Tests positivos (test rápido o búsqueda activa)',
+    descripcion: 'Total test positivos x 100 / total de tests',
+    sufijo: 'x 1.00 tests realizados',
     niveles: [
-      { color: coloresIndicadores.verde, nombre: 'Menor a 3' },
-      { color: coloresIndicadores.amarillo, nombre: '[3 - 6)' },
-      { color: coloresIndicadores.rojo, nombre: '6 o más' }
+      { color: coloresIndicadores.verde, nombre: '< 1' },
+      { color: coloresIndicadores.amarillo, nombre: '1 a 3' },
+      { color: coloresIndicadores.rojo, nombre: '> 3' }
     ]
   },
   {
-    nombre: 'Notificación y seguimiento oportuno de casos',
-    descripcion: '',
-    sufijo: '',
+    nombre: 'Inicio de seguimiento',
+    texto: 'Días desde la confirmación al inicio del seguimiento',
+    descripcion: 'Número de casos a los que se les inicia el seguimiento dentro de los dos dias desde la confirmacion / casos nuevos',
+    sufijo: 'casos',
     niveles: [
-      { color: coloresIndicadores.verde, nombre: '' },
-      { color: coloresIndicadores.amarillo, nombre: '' },
-      { color: coloresIndicadores.rojo, nombre: '' }
+      { color: coloresIndicadores.verde, nombre: '> 80%' },
+      { color: coloresIndicadores.amarillo, nombre: '60% a 80%' },
+      { color: coloresIndicadores.rojo, nombre: '< 60%' }
     ]
   },
   {
-    nombre: 'Investigación y trazabilidad de contactos',
-    descripcion: 'N° de contactos por caso, seguimiento oportuno',
-    sufijo: '',
+    nombre: 'Desempeño de seguimiento',
+    texto: 'Caso, todos los días, Contacto 2 veces en el período',
+    descripcion: 'Numero de casos con contacto diario desde el inicio de seguimiento + número de contactos con contacto al menos dos veces desde inicio de seguimiento / (Total de casos + total de contactos)',
+    sufijo: 'casos',
     niveles: [
-      { color: coloresIndicadores.verde, nombre: '' },
-      { color: coloresIndicadores.amarillo, nombre: '' },
-      { color: coloresIndicadores.rojo, nombre: '' }
+      { color: coloresIndicadores.verde, nombre: '> 80%' },
+      { color: coloresIndicadores.amarillo, nombre: '60% a 80%' },
+      { color: coloresIndicadores.rojo, nombre: '< 60%' }
     ]
   },
   {
-    nombre: 'Desempeño trazabilidad',
-    descripcion: 'Casos nuevos provenientes de contactos',
-    sufijo: '',
+    nombre: 'Oportunidad de Notificacion',
+    texto: 'Dias DESDE inicio de síntomas a clasificación del caso',
+    descripcion: 'Número de casos clasificados como confirmado (PCR+) o probable (o Ag+ si se usa como confirmatorio), dentro de 3 días del inicio de síntomas / casos nuevos',
+    sufijo: 'casos',
     niveles: [
-      { color: coloresIndicadores.verde, nombre: '' },
-      { color: coloresIndicadores.amarillo, nombre: '' },
-      { color: coloresIndicadores.rojo, nombre: '' }
+      { color: coloresIndicadores.verde, nombre: '> 80%' },
+      { color: coloresIndicadores.amarillo, nombre: '60% a 80%' },
+      { color: coloresIndicadores.rojo, nombre: '< 60%' }
+    ]
+  },
+  {
+    nombre: 'Detección de contactos',
+    texto: 'Numero de contactos de un caso índice',
+    descripcion: 'Número de casos con 3 o más contactos / casos nuevos',
+    sufijo: 'casos',
+    niveles: [
+      { color: coloresIndicadores.verde, nombre: '> 80%' },
+      { color: coloresIndicadores.amarillo, nombre: '60% a 80%' },
+      { color: coloresIndicadores.rojo, nombre: '< 60%' }
+    ]
+  },
+  {
+    nombre: 'Trazabilidad oportuna',
+    texto: 'Dias DESDE inicio de síntomas o PCR + HASTA fin de investigación de contactos',
+    descripcion: 'Número de contactos (laborales + familiares) contactados durante los 3 primeros días desde la confirmación del caso / Contactos totales (familiares + laborales)',
+    sufijo: 'casos',
+    niveles: [
+      { color: coloresIndicadores.verde, nombre: '> 80%' },
+      { color: coloresIndicadores.amarillo, nombre: '60% a 80%' },
+      { color: coloresIndicadores.rojo, nombre: '< 60%' }
+    ]
+  },
+  {
+    nombre: 'Desempeño de trazabilidad',
+    texto: 'Casos nuevos provenientes de contactos',
+    descripcion: 'Numero de casos nuevos provenientes de contactos (familiares + laborales) / casos nuevos',
+    sufijo: 'casos',
+    niveles: [
+      { color: coloresIndicadores.verde, nombre: '> 60%' },
+      { color: coloresIndicadores.amarillo, nombre: '30% a 60%' },
+      { color: coloresIndicadores.rojo, nombre: '< 30%' }
     ]
   },
   // SO
   {
-    nombre: 'Búsqueda preventiva de casos',
-    descripcion: 'Cálculo: % casos fuera de faena / casos totales',
-    sufijo: '',
+    nombre: 'Búsqueda preventiva',
+    texto: 'Casos detectados fuera de faena',
+    descripcion: 'Casos fuera de faena / casos nuevos',
+    sufijo: 'casos',
     niveles: [
-      { color: coloresIndicadores.verde, nombre: '' },
-      { color: coloresIndicadores.amarillo, nombre: '' },
-      { color: coloresIndicadores.rojo, nombre: '' }
+      { color: coloresIndicadores.verde, nombre: '> 30%' },
+      { color: coloresIndicadores.amarillo, nombre: '10% a 30%' },
+      { color: coloresIndicadores.rojo, nombre: 'menor a 10%' }
     ]
   },
   {
-    nombre: 'Desempeño testeo (casos asintomáticos / total)',
-    descripcion: 'Tests / mil trabajadores',
-    sufijo: '',
+    nombre: 'Testeo sistemático',
+    texto: 'Numero de test por trabajador',
+    descripcion: 'Numero de test por trabajador / Dotación activa (en faena)',
+    sufijo: 'tests',
     niveles: [
-      { color: coloresIndicadores.verde, nombre: '' },
-      { color: coloresIndicadores.amarillo, nombre: '' },
-      { color: coloresIndicadores.rojo, nombre: '' }
+      { color: coloresIndicadores.verde, nombre: '>= 1' },
+      { color: coloresIndicadores.rojo, nombre: '< 1' }
     ]
   },
   {
-    nombre: 'Brotes generados',
-    descripcion: '',
+    nombre: 'Detección casos asintomáticos',
+    texto: 'Proporción de casos asintomáticos',
+    descripcion: 'Numero de casos asintomáticos / Casos nuevos',
     sufijo: '',
     niveles: [
-      { color: coloresIndicadores.verde, nombre: 'Sin brotes' },
-      { color: coloresIndicadores.amarillo, nombre: '1 brote contenido' },
-      { color: coloresIndicadores.rojo, nombre: '2 o más brotes' }
+      { color: coloresIndicadores.verde, nombre: '> 80%' },
+      { color: coloresIndicadores.amarillo, nombre: '60% a 80%' },
+      { color: coloresIndicadores.rojo, nombre: '< 60%' }
     ]
   },
   {
-    nombre: 'Contactos notificados a tiempo',
-    descripcion: '',
-    sufijo: '',
+    nombre: 'Brotes generadores',
+    texto: 'Número y tipo de brotes (contenidos o no)',
+    descripcion: 'Número y tipo de brotes (contenidos o no)',
+    sufijo: 'brotes',
     niveles: [
-      { color: coloresIndicadores.verde, nombre: '' },
-      { color: coloresIndicadores.amarillo, nombre: '' },
-      { color: coloresIndicadores.rojo, nombre: '' }
+      { color: coloresIndicadores.verde, nombre: '0' },
+      { color: coloresIndicadores.amarillo, nombre: '1 contenido' },
+      { color: coloresIndicadores.rojo, nombre: '2 contenidos o 1 brote' }
     ]
   },
   {
-    nombre: 'Desempeño trazabilidad interna',
-    descripcion: '% casos identificados 24hrs / N° contactos totales finales',
-    sufijo: '',
+    nombre: 'Notificación oportuna de contactos',
+    texto: 'Contactos notificados antes de 24 horas',
+    descripcion: 'Número de contactos laborales notificados antes de 24 horas / Total de contactos',
+    sufijo: 'contactos',
     niveles: [
-      { color: coloresIndicadores.verde, nombre: '' },
-      { color: coloresIndicadores.amarillo, nombre: '' },
-      { color: coloresIndicadores.rojo, nombre: '' }
+      { color: coloresIndicadores.verde, nombre: '> 80%' },
+      { color: coloresIndicadores.amarillo, nombre: '60% a 80%' },
+      { color: coloresIndicadores.rojo, nombre: '< 60%' }
+    ]
+  },
+  {
+    nombre: 'Trazabilidad oportuna interna',
+    texto: 'Dias DESDE inicio de síntomas o PCR + HASTA fin de investigación de contactos',
+    descripcion: 'Número de contactos (laborales)  contactados durante los 3 primeros días desde la confirmación del caso / Contactos finales (laborales)',
+    sufijo: 'contactos',
+    niveles: [
+      { color: coloresIndicadores.verde, nombre: '> 80%' },
+      { color: coloresIndicadores.amarillo, nombre: '60% a 80%' },
+      { color: coloresIndicadores.rojo, nombre: '< 60%' }
     ]
   },
 ]
@@ -130,21 +183,29 @@ export const obtenerPropiedadSemaforo = indicador => {
       return 'SE_incidencia'
     case 'Positividad':
       return 'SE_positividad'
-    case 'Notificación y seguimiento oportuno de casos':
+    case 'Inicio de seguimiento':
+      return 'SE_seguimientoInicio'
+    case 'Desempeño de seguimiento':
+      return 'SE_seguimientoDesempeno'
+    case 'Oportunidad de Notificacion':
       return 'SE_notificacionOportunidad'
-    case 'Investigación y trazabilidad de contactos':
+    case 'Detección de contactos':
+      return 'SE_contactosDeteccion'
+    case 'Trazabilidad oportuna':
       return 'SE_trazabilidadOportuna'
-    case 'Desempeño trazabilidad':
+    case 'Desempeño de trazabilidad':
       return 'SE_trazabilidadDesempeno'
-    case 'Búsqueda preventiva de casos':
+    case 'Búsqueda preventiva':
       return 'SO_busqueda'
-    case 'Desempeño testeo (casos asintomáticos / total)':
+    case 'Testeo sistemático':
       return 'SO_testeo'
-    case 'Brotes generados':
+    case 'Detección casos asintomáticos':
+      return 'SO_asintomaticos'
+    case 'Brotes generadores':
       return 'SO_brotes'
-    case 'Contactos notificados a tiempo':
+    case 'Notificación oportuna de contactos':
       return 'SO_notificacionOportuna'
-    case 'Desempeño trazabilidad interna':
+    case 'Trazabilidad oportuna interna':
       return 'SO_trazabilidadOportuna'
     default:
       return 'SE_incidencia'
