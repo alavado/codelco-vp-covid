@@ -15,7 +15,7 @@ export const indicadores = [
     nombre: 'Evolución de casos',
     texto: 'Casos nuevos',
     descripcion: 'Total casos nuevos x 1000 / dotación',
-    sufijo: 'casos x 1.000 trabajadores',
+    sufijo: '',
     niveles: [
       { color: coloresIndicadores.verde, nombre: '0' },
       { color: coloresIndicadores.amarillo, nombre: '< 1' },
@@ -26,7 +26,7 @@ export const indicadores = [
     nombre: 'Positividad',
     texto: 'Tests positivos (test rápido o búsqueda activa)',
     descripcion: 'Total test positivos x 100 / total de tests',
-    sufijo: 'x 1.00 tests realizados',
+    sufijo: '',
     niveles: [
       { color: coloresIndicadores.verde, nombre: '< 1' },
       { color: coloresIndicadores.amarillo, nombre: '1 a 3' },
@@ -37,7 +37,7 @@ export const indicadores = [
     nombre: 'Inicio de seguimiento',
     texto: 'Días desde la confirmación al inicio del seguimiento',
     descripcion: 'Número de casos a los que se les inicia el seguimiento dentro de los dos dias desde la confirmacion / casos nuevos',
-    sufijo: 'casos',
+    sufijo: '',
     niveles: [
       { color: coloresIndicadores.verde, nombre: '> 80%' },
       { color: coloresIndicadores.amarillo, nombre: '60% a 80%' },
@@ -48,7 +48,7 @@ export const indicadores = [
     nombre: 'Desempeño de seguimiento',
     texto: 'Caso, todos los días, Contacto 2 veces en el período',
     descripcion: 'Numero de casos con contacto diario desde el inicio de seguimiento + número de contactos con contacto al menos dos veces desde inicio de seguimiento / (Total de casos + total de contactos)',
-    sufijo: 'casos',
+    sufijo: '',
     niveles: [
       { color: coloresIndicadores.verde, nombre: '> 80%' },
       { color: coloresIndicadores.amarillo, nombre: '60% a 80%' },
@@ -59,7 +59,7 @@ export const indicadores = [
     nombre: 'Oportunidad de Notificacion',
     texto: 'Dias DESDE inicio de síntomas a clasificación del caso',
     descripcion: 'Número de casos clasificados como confirmado (PCR+) o probable (o Ag+ si se usa como confirmatorio), dentro de 3 días del inicio de síntomas / casos nuevos',
-    sufijo: 'casos',
+    sufijo: '',
     niveles: [
       { color: coloresIndicadores.verde, nombre: '> 80%' },
       { color: coloresIndicadores.amarillo, nombre: '60% a 80%' },
@@ -70,7 +70,7 @@ export const indicadores = [
     nombre: 'Detección de contactos',
     texto: 'Numero de contactos de un caso índice',
     descripcion: 'Número de casos con 3 o más contactos / casos nuevos',
-    sufijo: 'casos',
+    sufijo: '',
     niveles: [
       { color: coloresIndicadores.verde, nombre: '> 80%' },
       { color: coloresIndicadores.amarillo, nombre: '60% a 80%' },
@@ -81,7 +81,7 @@ export const indicadores = [
     nombre: 'Trazabilidad oportuna',
     texto: 'Dias DESDE inicio de síntomas o PCR + HASTA fin de investigación de contactos',
     descripcion: 'Número de contactos (laborales + familiares) contactados durante los 3 primeros días desde la confirmación del caso / Contactos totales (familiares + laborales)',
-    sufijo: 'casos',
+    sufijo: '',
     niveles: [
       { color: coloresIndicadores.verde, nombre: '> 80%' },
       { color: coloresIndicadores.amarillo, nombre: '60% a 80%' },
@@ -92,7 +92,7 @@ export const indicadores = [
     nombre: 'Desempeño de trazabilidad',
     texto: 'Casos nuevos provenientes de contactos',
     descripcion: 'Numero de casos nuevos provenientes de contactos (familiares + laborales) / casos nuevos',
-    sufijo: 'casos',
+    sufijo: '',
     niveles: [
       { color: coloresIndicadores.verde, nombre: '> 60%' },
       { color: coloresIndicadores.amarillo, nombre: '30% a 60%' },
@@ -105,7 +105,7 @@ export const indicadores = [
     nombre: 'Búsqueda preventiva',
     texto: 'Casos detectados fuera de faena',
     descripcion: 'Casos fuera de faena / casos nuevos',
-    sufijo: 'casos',
+    sufijo: '',
     niveles: [
       { color: coloresIndicadores.verde, nombre: '> 30%' },
       { color: coloresIndicadores.amarillo, nombre: '10% a 30%' },
@@ -117,7 +117,7 @@ export const indicadores = [
     nombre: 'Testeo sistemático',
     texto: 'Numero de test por trabajador',
     descripcion: 'Numero de test por trabajador / Dotación activa (en faena)',
-    sufijo: 'tests',
+    sufijo: '',
     niveles: [
       { color: coloresIndicadores.verde, nombre: '>= 1' },
       { color: coloresIndicadores.rojo, nombre: '< 1' }
@@ -139,7 +139,7 @@ export const indicadores = [
     nombre: 'Brotes generadores',
     texto: 'Número y tipo de brotes (contenidos o no)',
     descripcion: 'Número y tipo de brotes (contenidos o no)',
-    sufijo: 'brotes',
+    sufijo: '',
     niveles: [
       { color: coloresIndicadores.verde, nombre: '0' },
       { color: coloresIndicadores.amarillo, nombre: '1 contenido' },
@@ -150,7 +150,7 @@ export const indicadores = [
     nombre: 'Notificación oportuna de contactos',
     texto: 'Contactos notificados antes de 24 horas',
     descripcion: 'Número de contactos laborales notificados antes de 24 horas / Total de contactos',
-    sufijo: 'contactos',
+    sufijo: '',
     niveles: [
       { color: coloresIndicadores.verde, nombre: '> 80%' },
       { color: coloresIndicadores.amarillo, nombre: '60% a 80%' },
@@ -161,7 +161,7 @@ export const indicadores = [
     nombre: 'Trazabilidad oportuna interna',
     texto: 'Dias DESDE inicio de síntomas o PCR + HASTA fin de investigación de contactos',
     descripcion: 'Número de contactos (laborales)  contactados durante los 3 primeros días desde la confirmación del caso / Contactos finales (laborales)',
-    sufijo: 'contactos',
+    sufijo: '',
     niveles: [
       { color: coloresIndicadores.verde, nombre: '> 80%' },
       { color: coloresIndicadores.amarillo, nombre: '60% a 80%' },
