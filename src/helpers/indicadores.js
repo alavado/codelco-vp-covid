@@ -126,7 +126,7 @@ export const indicadores = [
       { color: coloresIndicadores.verde, nombre: '> 30%' },
       { color: coloresIndicadores.amarillo, nombre: '10% a 30%' },
       { color: coloresIndicadores.rojo, nombre: 'menor a 10%' },
-      { color: coloresIndicadores.celeste, nombre: 'No calculado, menos de 8 casos' }
+      { color: coloresIndicadores.celeste, nombre: 'No calculado, 8 casos o menos' }
     ],
     propiedadSemaforo: 'SO_busqueda',
     leyenda: 'X% de los casos totales detectados fuera de faena',
@@ -165,7 +165,7 @@ export const indicadores = [
       { color: coloresIndicadores.verde, nombre: '> 80%' },
       { color: coloresIndicadores.amarillo, nombre: '60% a 80%' },
       { color: coloresIndicadores.rojo, nombre: '< 60%' },
-      { color: coloresIndicadores.celeste, nombre: 'No calculado, menos de 8 casos' }
+      { color: coloresIndicadores.celeste, nombre: 'No calculado, 8 casos o menos' }
     ],
     propiedadSemaforo: 'SO_asintomaticos',
     leyenda: 'X% casos asintomáticos',
