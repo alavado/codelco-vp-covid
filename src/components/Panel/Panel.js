@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { indicadores, obtenerPropiedadSemaforo } from '../../helpers/indicadores'
+import { indicadores } from '../../helpers/indicadores'
 import SelectorSemana from './SelectorSemana'
 import TarjetaIndicador from './TarjetaIndicador'
 import './Panel.css'
@@ -12,8 +12,8 @@ const Panel = () => {
     document.getElementsByClassName('App')[0].scrollTo(0, 0)
   }, [])
 
-  const indicadoresIzquierda = indicadores.filter(i => obtenerPropiedadSemaforo(i).startsWith('SE'))
-  const indicadoresDerecha = indicadores.filter(i => obtenerPropiedadSemaforo(i).startsWith('SO'))
+  const indicadoresIzquierda = indicadores.filter(i => i.propiedadSemaforo.startsWith('SE'))
+  const indicadoresDerecha = indicadores.filter(i => i.propiedadSemaforo.startsWith('SO'))
 
   return (
     <div className="Panel">

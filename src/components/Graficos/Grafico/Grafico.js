@@ -15,6 +15,7 @@ const Grafico = ({ division }) => {
 
   const [semanas, series, total] = useMemo(() => {
     const datosDivision = datos.series.find(d => d.codigoDivision === division.codigo)
+    console.log(division, datosDivision)
     return [
       datos.semanas,
       {

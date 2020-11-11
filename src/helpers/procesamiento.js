@@ -3,7 +3,7 @@ export const procesarCSV = csv => {
 
   const encabezados = [
     'codigoDivision',
-    'semana',
+    'semEpidem',
     'nuevosPropios',
     'nuevosExternos',
     'incidenciaSemanal',
@@ -12,19 +12,44 @@ export const procesarCSV = csv => {
     'positividadAntigeno',
     'tasaPositividad1000',
     'SE_incidencia',
+    'SE_incidencia_datox',
     'SE_positividad',
+    'SE_positividad_datox',
     'SE_seguimientoInicio',
+    'SE_seguimientoInicio_datox',
+    'SE_seguimientoInicio_datoy',
     'SE_seguimientoDesempeno',
+    'SE_seguimientoDesempeno_datox',
+    'SE_seguimientoDesempeno_datoy',
     'SE_notificacionOportunidad',
+    'SE_notificacionOportunidad_datox',
+    'SE_notificacionOportunidad_datoy',
     'SE_contactosDeteccion',
-    'SE_trazabilidadOportuna',
+    'SE_contactosDeteccion_datox',
+    'SE_contactosDeteccion_datoy',
+    'SE_trazabilidadOportu',
+    'SE_trazabilidadOportu_datox',
     'SE_trazabilidadDesempeno',
+    'SE_trazabilidadDesempeno_datox',
+    'SE_trazabilidadDesempeno_datoy',
     'SO_busqueda',
+    'SO_busqueda_datox',
     'SO_testeo',
+    'SO_testeo_datox',
+    'SO_preventiva',
+    'SO_preventiva_datox',
+    'SO_preventiva_datoy',
     'SO_asintomaticos',
-    'SO_brotes',
-    'SO_notificacionOportuna',
-    'SO_trazabilidadOportuna'
+    'SO_asintomaticos_datox',
+    'SO_brotes_amarillos',
+    'SO_brotes_amarillos_datox',
+    'SO_brotes_rojos',
+    'SO_brotes_rojos_datox',
+    'SO_notificacionOportu',
+    'SO_notificacionOportu_datox',
+    'SO_notificacionOportu_datoy',
+    'SO_trazabilidadOportu',
+    'SO_trazabilidadOportu_datox'
   ]
   
   const datos = filas.map(fila => {
@@ -37,7 +62,7 @@ export const procesarCSV = csv => {
   })
   
   const divisiones = Array.from(new Set(datos.map(d => d.codigoDivision))).filter(v => v)
-  const semanas = Array.from(new Set(datos.map(d => d.semana))).filter(d => d)
+  const semanas = Array.from(new Set(datos.map(d => Number(d.semEpidem)))).filter(d => d)
   
   const series = divisiones.map(codigoDivision => {
     const datosDivision = datos.filter(d => d.codigoDivision === codigoDivision)

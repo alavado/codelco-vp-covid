@@ -20,7 +20,9 @@ export const indicadores = [
       { color: coloresIndicadores.verde, nombre: '0' },
       { color: coloresIndicadores.amarillo, nombre: '< 1' },
       { color: coloresIndicadores.rojo, nombre: '> 1' }
-    ]
+    ],
+    propiedadSemaforo: 'SE_incidencia',
+    leyenda: 'X casos por 1000 trabajadores'
   },
   {
     nombre: 'Positividad',
@@ -31,7 +33,9 @@ export const indicadores = [
       { color: coloresIndicadores.verde, nombre: '< 1' },
       { color: coloresIndicadores.amarillo, nombre: '1 a 3' },
       { color: coloresIndicadores.rojo, nombre: '> 3' }
-    ]
+    ],
+    propiedadSemaforo: 'SE_positividad',
+    leyenda: 'X% de tests positivos',
   },
   {
     nombre: 'Inicio de seguimiento',
@@ -42,18 +46,22 @@ export const indicadores = [
       { color: coloresIndicadores.verde, nombre: '> 80%' },
       { color: coloresIndicadores.amarillo, nombre: '60% a 80%' },
       { color: coloresIndicadores.rojo, nombre: '< 60%' }
-    ]
+    ],
+    propiedadSemaforo: 'SE_seguimientoInicio',
+    leyenda: 'X de Y casos nuevos',
   },
   {
     nombre: 'Desempeño de seguimiento',
     texto: 'Caso, todos los días, Contacto 2 veces en el período',
-    descripcion: 'Numero de casos con contacto diario desde el inicio de seguimiento + número de contactos con contacto al menos dos veces desde inicio de seguimiento / (Total de casos + total de contactos)',
+    descripcion: '(Numero de casos con contacto diario desde el inicio de seguimiento + número de contactos con contacto al menos dos veces desde inicio de seguimiento) / (Total de casos + total de contactos)',
     sufijo: '',
     niveles: [
       { color: coloresIndicadores.verde, nombre: '> 80%' },
       { color: coloresIndicadores.amarillo, nombre: '60% a 80%' },
       { color: coloresIndicadores.rojo, nombre: '< 60%' }
-    ]
+    ],
+    propiedadSemaforo: 'SE_seguimientoDesempeno',
+    leyenda: 'X seguimientos oportunos de Y seguimientos',
   },
   {
     nombre: 'Oportunidad de Notificacion',
@@ -64,7 +72,9 @@ export const indicadores = [
       { color: coloresIndicadores.verde, nombre: '> 80%' },
       { color: coloresIndicadores.amarillo, nombre: '60% a 80%' },
       { color: coloresIndicadores.rojo, nombre: '< 60%' }
-    ]
+    ],
+    propiedadSemaforo: 'SE_notificacionOportunidad',
+    leyenda: 'X notificaciones oportunas de Y casos nuevos',
   },
   {
     nombre: 'Detección de contactos',
@@ -75,7 +85,9 @@ export const indicadores = [
       { color: coloresIndicadores.verde, nombre: '> 80%' },
       { color: coloresIndicadores.amarillo, nombre: '60% a 80%' },
       { color: coloresIndicadores.rojo, nombre: '< 60%' }
-    ]
+    ],
+    propiedadSemaforo: 'SE_contactosDeteccion',
+    leyenda: 'X casos con suficientes contactos de Y casos nuevos',
   },
   {
     nombre: 'Trazabilidad oportuna',
@@ -86,7 +98,9 @@ export const indicadores = [
       { color: coloresIndicadores.verde, nombre: '> 80%' },
       { color: coloresIndicadores.amarillo, nombre: '60% a 80%' },
       { color: coloresIndicadores.rojo, nombre: '< 60%' }
-    ]
+    ],
+    propiedadSemaforo: 'SE_trazabilidadOportu',
+    leyenda: 'X% de contactos trazados oportunamente',
   },
   {
     nombre: 'Desempeño de trazabilidad',
@@ -97,8 +111,10 @@ export const indicadores = [
       { color: coloresIndicadores.verde, nombre: '> 60%' },
       { color: coloresIndicadores.amarillo, nombre: '30% a 60%' },
       { color: coloresIndicadores.rojo, nombre: '< 30%' },
-      { color: coloresIndicadores.celeste, nombre: 'No calculado, menos de 8 casos' }
-    ]
+      { color: coloresIndicadores.celeste, nombre: 'No calculado, 8 casos o menos' }
+    ],
+    propiedadSemaforo: 'SE_trazabilidadDesempeno',
+    leyenda: 'X casos provenientes de contactos de Y casos nuevos',
   },
   // SO
   {
@@ -111,7 +127,9 @@ export const indicadores = [
       { color: coloresIndicadores.amarillo, nombre: '10% a 30%' },
       { color: coloresIndicadores.rojo, nombre: 'menor a 10%' },
       { color: coloresIndicadores.celeste, nombre: 'No calculado, menos de 8 casos' }
-    ]
+    ],
+    propiedadSemaforo: 'SO_busqueda',
+    leyenda: 'X% de los casos totales detectados fuera de faena',
   },
   {
     nombre: 'Testeo sistemático',
@@ -121,7 +139,22 @@ export const indicadores = [
     niveles: [
       { color: coloresIndicadores.verde, nombre: '>= 1' },
       { color: coloresIndicadores.rojo, nombre: '< 1' }
-    ]
+    ],
+    propiedadSemaforo: 'SO_testeo',
+    leyenda: 'X tests por trabajador / semana',
+  },
+  {
+    nombre: 'Deteccion preventiva',
+    texto: 'Casos detectados antes de ingresar a faena (todos los medios utilizados)',
+    descripcion: '(N° Casos confirmados Covid + detectados antes de ingresar a faena) / Número de casos confirmados Covid (+)',
+    sufijo: '',
+    niveles: [
+      { color: coloresIndicadores.verde, nombre: '> 40%' },
+      { color: coloresIndicadores.amarillo, nombre: '20% a 40%' },
+      { color: coloresIndicadores.rojo, nombre: '< 20%' }
+    ],
+    propiedadSemaforo: 'SO_preventiva',
+    leyenda: 'X casos detectados antes de entrar a faena de Y casos totales',
   },
   {
     nombre: 'Detección casos asintomáticos',
@@ -133,18 +166,35 @@ export const indicadores = [
       { color: coloresIndicadores.amarillo, nombre: '60% a 80%' },
       { color: coloresIndicadores.rojo, nombre: '< 60%' },
       { color: coloresIndicadores.celeste, nombre: 'No calculado, menos de 8 casos' }
-    ]
+    ],
+    propiedadSemaforo: 'SO_asintomaticos',
+    leyenda: 'X% casos asintomáticos',
   },
   {
-    nombre: 'Brotes generadores',
-    texto: 'Número y tipo de brotes (contenidos o no)',
-    descripcion: 'Número y tipo de brotes (contenidos o no)',
+    nombre: 'Identificación de Brotes alerta amarilla',
+    texto: 'Identificación de Brotes (Alerta Amarilla)',
+    descripcion: 'N° de Brotes con Alerta Amarilla identificados en el Periodo',
     sufijo: '',
     niveles: [
       { color: coloresIndicadores.verde, nombre: '0' },
-      { color: coloresIndicadores.amarillo, nombre: '1 contenido' },
-      { color: coloresIndicadores.rojo, nombre: '2 contenidos o 1 brote' }
-    ]
+      { color: coloresIndicadores.amarillo, nombre: '1' },
+      { color: coloresIndicadores.rojo, nombre: '>= 2 Alertas Amarillas' }
+    ],
+    propiedadSemaforo: 'SO_brotes_amarillos',
+    leyenda: 'X brotes amarillos',
+  },
+  {
+    nombre: 'Identificación de Brotes alerta roja',
+    texto: 'Identificación de Brotes (Alerta Roja)',
+    descripcion: 'N° de Brotes con Alerta Roja identificados en el Periodo',
+    sufijo: '',
+    niveles: [
+      { color: coloresIndicadores.verde, nombre: '0' },
+      { color: coloresIndicadores.amarillo, nombre: '1' },
+      { color: coloresIndicadores.rojo, nombre: '>= 2 Alertas Rojas' }
+    ],
+    propiedadSemaforo: 'SO_brotes_rojos',
+    leyenda: 'X brotes rojos',
   },
   {
     nombre: 'Notificación oportuna de contactos',
@@ -155,18 +205,22 @@ export const indicadores = [
       { color: coloresIndicadores.verde, nombre: '> 80%' },
       { color: coloresIndicadores.amarillo, nombre: '60% a 80%' },
       { color: coloresIndicadores.rojo, nombre: '< 60%' }
-    ]
+    ],
+    propiedadSemaforo: 'SO_notificacionOportu',
+    leyenda: 'X contactos laborales notificados oportunamente de Y contactos laborales totales',
   },
   {
-    nombre: 'Trazabilidad oportuna interna',
-    texto: 'Dias DESDE inicio de síntomas o PCR + HASTA fin de investigación de contactos',
-    descripcion: 'Número de contactos (laborales)  contactados durante los 3 primeros días desde la confirmación del caso / Contactos finales (laborales)',
+    nombre: 'Efectividad de trazabilidad en Brotes',
+    texto: 'Porcentaje de casos identificados en la trazabilidad inicial v/s la final',
+    descripcion: 'N° contactos identificados en el Brote dentro de las 24 horas / N° contactos identificados en el Brote, durante y al cerrar el Brote',
     sufijo: '',
     niveles: [
       { color: coloresIndicadores.verde, nombre: '> 80%' },
       { color: coloresIndicadores.amarillo, nombre: '60% a 80%' },
       { color: coloresIndicadores.rojo, nombre: '< 60%' }
-    ]
+    ],
+    propiedadSemaforo: 'SO_trazabilidadOportu',
+    leyenda: 'X% de los contactos finales detectados en primeras 24 horas',
   },
 ]
 
@@ -181,50 +235,15 @@ const obtenerPropiedadValor = indicador => {
   }
 }
 
-export const obtenerPropiedadSemaforo = indicador => {
-  switch (indicador.nombre) {
-    case 'Evolución de casos':
-      return 'SE_incidencia'
-    case 'Positividad':
-      return 'SE_positividad'
-    case 'Inicio de seguimiento':
-      return 'SE_seguimientoInicio'
-    case 'Desempeño de seguimiento':
-      return 'SE_seguimientoDesempeno'
-    case 'Oportunidad de Notificacion':
-      return 'SE_notificacionOportunidad'
-    case 'Detección de contactos':
-      return 'SE_contactosDeteccion'
-    case 'Trazabilidad oportuna':
-      return 'SE_trazabilidadOportuna'
-    case 'Desempeño de trazabilidad':
-      return 'SE_trazabilidadDesempeno'
-    case 'Búsqueda preventiva':
-      return 'SO_busqueda'
-    case 'Testeo sistemático':
-      return 'SO_testeo'
-    case 'Detección casos asintomáticos':
-      return 'SO_asintomaticos'
-    case 'Brotes generadores':
-      return 'SO_brotes'
-    case 'Notificación oportuna de contactos':
-      return 'SO_notificacionOportuna'
-    case 'Trazabilidad oportuna interna':
-      return 'SO_trazabilidadOportuna'
-    default:
-      return 'SE_incidencia'
-  }
-}
-
 export const obtenerValorIndicador = (codigoDivision, indicador, retroceso) => {
-  const propiedad = obtenerPropiedadValor(indicador)
+  const propiedad = indicador.propiedadSemaforo + '_datox'
   const datos = store.getState().datos.datos
   const valor = datos.series.find(s => s.codigoDivision === codigoDivision)[propiedad].slice(-1 + retroceso)[0]
   return isNaN(valor) ? (valor.trim() === 'NA' ? -1 : -2) : Number(valor)
 }
 
 export const obtenerSemaforoIndicador = (codigoDivision, indicador, retroceso) => {
-  const propiedad = obtenerPropiedadSemaforo(indicador)
+  const propiedad = indicador.propiedadSemaforo
   const datos = store.getState().datos.datos
   const valor = datos.series.find(s => s.codigoDivision === codigoDivision)[propiedad].slice(-1 + retroceso)[0]
   return isNaN(valor) ? (valor.trim() === 'NA' ? -1 : -2) : Number(valor)
