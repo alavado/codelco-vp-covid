@@ -248,3 +248,25 @@ export const obtenerSemaforoIndicador = (codigoDivision, indicador, retroceso) =
   const valor = datos.series.find(s => s.codigoDivision === codigoDivision)[propiedad].slice(-1 + retroceso)[0]
   return isNaN(valor) ? (valor.trim() === 'NA' ? -1 : -2) : Number(valor)
 }
+
+export const obtenerTextoPopupIndicador = (codigoDivision, indicador, retroceso) => {
+  const propiedad = indicador.propiedadSemaforo
+  const datos = store.getState().datos.datos
+  const serieDivision = datos.series.find(s => s.codigoDivision === codigoDivision)
+  const valor = serieDivision[propiedad].slice(-1 + retroceso)[0]
+  if (isNaN(valor)) {
+    if (valor.trim() === 'NA') {
+      return 'N/A'
+    }
+    else {
+      return 'N/C'
+    }
+  }
+  else {
+    const propiedadDatoX = `${indicador.propiedadSemaforo}_datox`
+    const propiedadDatoY = `${indicador.propiedadSemaforo}_datoy`
+    return indicador.leyenda
+      .replace('X', serieDivision[propiedadDatoX].slice(-1 + retroceso)[0].toLocaleString('de-DE'))
+      .replace('Y', serieDivision[propiedadDatoY]?.slice(-1 + retroceso)[0].toLocaleString('de-DE'))
+  }
+}

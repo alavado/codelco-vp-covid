@@ -4,7 +4,7 @@ import TooltipPanel from '../TooltipPanel'
 import helpRhombus from '@iconify/icons-mdi/help-circle'
 import divisiones from '../../../data/csv/divisiones.json'
 import { obtenerColorIndicadorPanel } from '../../../helpers/colores'
-import { obtenerSemaforoIndicador, obtenerValorIndicador } from '../../../helpers/indicadores'
+import { obtenerSemaforoIndicador, obtenerTextoPopupIndicador, obtenerValorIndicador } from '../../../helpers/indicadores'
 import './TarjetaIndicador.css'
 import { useHistory } from 'react-router-dom'
 import { useSelector } from 'react-redux'
@@ -51,17 +51,15 @@ const TarjetaIndicador = ({ indicador, indice, setMostrandoTooltip, mostrandoToo
         >
           Global
         </div>
-        {indicador.sufijo &&
-          <div className="TarjetaIndicador__popup_hexagono">
-            CODELCO: {valorSemaforo < 0 ? (valorSemaforo === -1 ? 'N/A' : 'N/C') : `${obtenerValorIndicador('GLOBAL', indicador, retroceso).toLocaleString('de-DE', { maximumFractionDigits: 1 })} ${indicador.sufijo}`}
-          </div>
-        }
+        <div className="TarjetaIndicador__popup_hexagono">
+          {/* CODELCO: {valorSemaforo < 0 ? (valorSemaforo === -1 ? 'N/A' : 'N/C') : `${obtenerValorIndicador('GLOBAL', indicador, retroceso).toLocaleString('de-DE', { maximumFractionDigits: 1 })} ${indicador.sufijo}`} */}
+          CODELCO: {obtenerTextoPopupIndicador('GLOBAL', indicador, retroceso)}
+        </div>
       </div>
       <div className="TarjetaIndicador__indicadores_divisiones">
         <div className="TarjetaIndicador__indicadores_contenedor_hexagonos">
           {divisiones.filter(d => d.codigo !== 'GLOBAL').map((d, j) => {
             const valorSemaforo = obtenerSemaforoIndicador(d.codigo, indicador, retroceso)
-            const valorIndicador = obtenerValorIndicador(d.codigo, indicador, retroceso)
             return (
               <React.Fragment key={`hexagono-${indicador}-${j}`}>
                 {hexagonosFalsos.includes(j) &&
@@ -75,11 +73,9 @@ const TarjetaIndicador = ({ indicador, indice, setMostrandoTooltip, mostrandoToo
                   >
                     {d.codigoCorto}
                   </div>
-                  {indicador.sufijo &&
-                    <div className="TarjetaIndicador__popup_hexagono">
-                      {d.nombre}: {valorSemaforo < 0 ? (valorSemaforo === -1 ? 'N/A' : 'N/C') : `${valorIndicador.toLocaleString('de-DE', { maximumFractionDigits: 1 })} ${indicador.sufijo}`}
-                    </div>
-                  }
+                  <div className="TarjetaIndicador__popup_hexagono">
+                    {d.nombre}: {obtenerTextoPopupIndicador(d.codigo, indicador, retroceso)}
+                  </div>
                 </div>
               </React.Fragment>
             )
