@@ -27,7 +27,7 @@ export default function reducer(state = defaultState, action = {}) {
 }
 
 export const iniciaSesion = password => {
-  if (password !== 'codelco') {
+  if (password !== '19c0d3lc0v1d') {
     return {
       type: fijarError,
       payload: 'Contraseña incorrecta'

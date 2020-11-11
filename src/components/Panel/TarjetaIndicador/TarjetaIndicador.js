@@ -51,9 +51,11 @@ const TarjetaIndicador = ({ indicador, indice, setMostrandoTooltip, mostrandoToo
         >
           Global
         </div>
-        <div className="TarjetaIndicador__popup_hexagono">
-          CODELCO: {valorSemaforo < 0 ? (valorSemaforo === -1 ? 'N/A' : 'N/C') : `${obtenerValorIndicador('GLOBAL', indicador, retroceso).toLocaleString('de-DE', { maximumFractionDigits: 1 })} ${indicador.sufijo}`}
-        </div>
+        {indicador.sufijo &&
+          <div className="TarjetaIndicador__popup_hexagono">
+            CODELCO: {valorSemaforo < 0 ? (valorSemaforo === -1 ? 'N/A' : 'N/C') : `${obtenerValorIndicador('GLOBAL', indicador, retroceso).toLocaleString('de-DE', { maximumFractionDigits: 1 })} ${indicador.sufijo}`}
+          </div>
+        }
       </div>
       <div className="TarjetaIndicador__indicadores_divisiones">
         <div className="TarjetaIndicador__indicadores_contenedor_hexagonos">
@@ -73,9 +75,11 @@ const TarjetaIndicador = ({ indicador, indice, setMostrandoTooltip, mostrandoToo
                   >
                     {d.codigoCorto}
                   </div>
-                  <div className="TarjetaIndicador__popup_hexagono">
-                    {d.nombre}: {valorSemaforo < 0 ? (valorSemaforo === -1 ? 'N/A' : 'N/C') : `${valorIndicador.toLocaleString('de-DE', { maximumFractionDigits: 1 })} ${indicador.sufijo}`}
-                  </div>
+                  {indicador.sufijo &&
+                    <div className="TarjetaIndicador__popup_hexagono">
+                      {d.nombre}: {valorSemaforo < 0 ? (valorSemaforo === -1 ? 'N/A' : 'N/C') : `${valorIndicador.toLocaleString('de-DE', { maximumFractionDigits: 1 })} ${indicador.sufijo}`}
+                    </div>
+                  }
                 </div>
               </React.Fragment>
             )

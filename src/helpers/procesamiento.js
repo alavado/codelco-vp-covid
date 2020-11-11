@@ -52,8 +52,8 @@ export const procesarCSV = csv => {
       codigoDivision,
       nuevosPropios,
       nuevosExternos,
-      propiosAcum: nuevosPropios.reduce((prev, v) => [...prev, prev.slice(-1)[0] + v], [0]).slice(1),
-      externosAcum: nuevosExternos.reduce((prev, v) => [...prev, prev.slice(-1)[0] + v], [0]).slice(1),
+      propiosAcum: nuevosPropios.reduce((prev, v) => [...prev, prev.slice(-1)[0] + Number(v)], [0]).slice(1),
+      externosAcum: nuevosExternos.reduce((prev, v) => [...prev, prev.slice(-1)[0] + Number(v)], [0]).slice(1),
       ...seriesDivision
     }
   })

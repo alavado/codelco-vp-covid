@@ -127,7 +127,7 @@ export const indicadores = [
     nombre: 'Detección casos asintomáticos',
     texto: 'Proporción de casos asintomáticos',
     descripcion: 'Numero de casos asintomáticos / Casos nuevos',
-    sufijo: 'casos',
+    sufijo: '',
     niveles: [
       { color: coloresIndicadores.verde, nombre: '> 80%' },
       { color: coloresIndicadores.amarillo, nombre: '60% a 80%' },

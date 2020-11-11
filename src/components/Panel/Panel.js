@@ -25,7 +25,7 @@ const Panel = () => {
         <div className="Panel__contenedor_paneles">
           <div className="Panel__panel">
             <div className="Panel__encabezados">
-              <div className="Panel__encabezado_dimension">KPI epidemiológicos</div>
+              <div className="Panel__encabezado_dimension">Indicadores epidemiológicos</div>
             </div>
             {indicadoresIzquierda.map((indicador, i) => (
               <TarjetaIndicador
