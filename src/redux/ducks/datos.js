@@ -3,7 +3,7 @@ import { procesarCSV } from "../../helpers/procesamiento"
 const guardarDatos = 'datos/guardar'
 
 const defaultState = {
-  primeraSemana: 13
+  primeraSemana: 1
 }
 
 export default function reducer(state = defaultState, action) {

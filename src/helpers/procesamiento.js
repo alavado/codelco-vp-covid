@@ -4,6 +4,7 @@ export const procesarCSV = csv => {
   const encabezados = [
     'codigoDivision',
     'semEpidem',
+    'año',
     'nuevosPropios',
     'nuevosExternos',
     'incidenciaSemanal',

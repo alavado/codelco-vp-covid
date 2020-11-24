@@ -1,4 +1,12 @@
 {
+  "1": "29 de diciembre al 4 de enero",
+  "2": "5 al 11 de enero",
+  "3": "12 al 18 de enero",
+  "4": "19 al 25 de enero",
+  "5": "26 de enero al 1 de febrero",
+  "6": "2 al 8 de febrero",
+  "7": "9 al 15 de febrero",
+  "8": "16 al 22 de febrero",
   "9": "23 al 29 de febrero",
   "10": "1 al 7 de marzo",
   "11": "8 al 14 de marzo",
@@ -42,5 +50,6 @@
   "49": "29 de noviembre al 5 de diciembre",
   "50": "6 al 12 de diciembre",
   "51": "13 al 19 de diciembre",
-  "52": "20 al 26 de diciembre"
+  "52": "20 al 26 de diciembre",
+  "53": "27 de diciembre al 2 de enero"
 }

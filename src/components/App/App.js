@@ -21,8 +21,10 @@ const App = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    axios.get('https://raw.githubusercontent.com/NicoBarti/csv_cod/main/variables%20indicadores.csv')
+    axios.get('https://codelco-covid-form.herokuapp.com/reporte.csv', { responseType: 'text' })
       .then(res => dispatch(guardaDatos(res.data)))
+    // axios.get('https://codelco-covid-form.herokuapp.com/reporte.csv', { responseType: 'text' })
+    //   .then(res => console.log(res))
   }, [dispatch])
   
   if (!usuario) {
