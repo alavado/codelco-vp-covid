@@ -65,7 +65,7 @@ const VisionGeneral = () => {
           {casosUltimos7Dias} nuevo{casosUltimos7Dias !== 1 && 's'} caso{casosUltimos7Dias !== 1 && 's'}
         </div>
         <div className="VisionGeneral__intervalo">
-          Semana {semanas.slice(-1)[0]} - {semanasEpidemilogicas[semanas.slice(-1)[0]]}
+          Semana {semanas.slice(-1)[0]} - {semanasEpidemilogicas[semanas.slice(-1)[0]].texto}
         </div>
         <MiniGrafico codigo={codigo} />
         <div className="VisionGeneral__total_casos">

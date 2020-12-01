@@ -1,3 +1,6 @@
+import semanasEpi from '../data/minsal/semanas.json'
+import { parse, compareDesc } from 'date-fns'
+
 export const procesarCSV = csv => {
   const filas = `${csv}`.split('\n').slice(1).filter(f => f)
 
@@ -66,9 +69,10 @@ export const procesarCSV = csv => {
         [encabezados[i]]: dato
       }), {})
   })
-  
+
+  const ultimaSemana = Object.keys(semanasEpi).find(s => compareDesc(parse(semanasEpi[s].termino, 'dd-MM-yyyy', new Date()), Date.now()) <= 0)
   const divisiones = Array.from(new Set(datos.map(d => d.codigoDivision))).filter(v => v)
-  const semanas = Array.from(new Set(datos.map(d => Number(d.semEpidem)))).filter(d => d).slice(0, 48)
+  const semanas = Array.from(new Set(datos.map(d => Number(d.semEpidem)))).filter(d => d).slice(0, ultimaSemana - 1)
 
   const series = divisiones.map(codigoDivision => {
     const datosDivision = datos.filter(d => d.codigoDivision === codigoDivision).slice(0, 48)

@@ -34,7 +34,7 @@ const SelectorSemana = () => {
         <div className="SelectorSemana__semana_seleccionada">
           <div>Semana {ultimaSemana + retroceso}</div>
           <div className="SelectorSemana__fechas_semana">
-            {semanasEpidemiologicas[ultimaSemana + retroceso]}
+            {semanasEpidemiologicas[ultimaSemana + retroceso].texto}
           </div>
         </div>
         <button

@@ -88,7 +88,7 @@ const Grafico = ({ division }) => {
               tooltips: {
                 callbacks: {
                   title: items => `Semana ${items[0].xLabel}`,
-                  afterTitle: items => semanasEpidemiologicas[items[0].xLabel]
+                  afterTitle: items => semanasEpidemiologicas[items[0].xLabel].texto
                 }
               },
               scales: {
