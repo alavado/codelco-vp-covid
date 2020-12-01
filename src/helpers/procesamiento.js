@@ -68,12 +68,12 @@ export const procesarCSV = csv => {
   })
   
   const divisiones = Array.from(new Set(datos.map(d => d.codigoDivision))).filter(v => v)
-  const semanas = Array.from(new Set(datos.map(d => Number(d.semEpidem)))).filter(d => d)
+  const semanas = Array.from(new Set(datos.map(d => Number(d.semEpidem)))).filter(d => d).slice(0, 48)
 
   const series = divisiones.map(codigoDivision => {
-    const datosDivision = datos.filter(d => d.codigoDivision === codigoDivision).slice(0, 53)
-    const nuevosPropios = datosDivision.map(d => d.nuevosPropios)
-    const nuevosExternos = datosDivision.map(d => d.nuevosExternos)
+    const datosDivision = datos.filter(d => d.codigoDivision === codigoDivision).slice(0, 48)
+    const nuevosPropios = datosDivision.map(d => d.nuevos_propios)
+    const nuevosExternos = datosDivision.map(d => d.nuevos_externos)
     const seriesDivision = encabezados.slice(1)
       .reduce((obj, columna) => ({
         ...obj,
@@ -83,8 +83,8 @@ export const procesarCSV = csv => {
       codigoDivision,
       nuevosPropios,
       nuevosExternos,
-      propiosAcum: nuevosPropios.reduce((prev, v) => [...prev, prev.slice(-1)[0] + Number(v)], [0]).slice(1),
-      externosAcum: nuevosExternos.reduce((prev, v) => [...prev, prev.slice(-1)[0] + Number(v)], [0]).slice(1),
+      propiosAcum: nuevosPropios.reduce((prev, v) => [...prev, prev.slice(-1)[0] + Number(isNaN(v) ? 0 : v)], [0]).slice(1),
+      externosAcum: nuevosExternos.reduce((prev, v) => [...prev, prev.slice(-1)[0] + Number(isNaN(v) ? 0 : v)], [0]).slice(1),
       ...seriesDivision
     }
   })

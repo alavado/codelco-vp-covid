@@ -15,14 +15,13 @@ const Grafico = ({ division }) => {
 
   const [semanas, series, total] = useMemo(() => {
     const datosDivision = datos.series.find(d => d.codigoDivision === division.codigo)
-    console.log(division, datosDivision)
     return [
       datos.semanas,
       {
         propios: acumulados ? datosDivision.propiosAcum : datosDivision.nuevosPropios,
         externos: acumulados ? datosDivision.externosAcum : datosDivision.nuevosExternos
       },
-      datosDivision.acumulados.slice(-1)[0]
+      datosDivision.propiosAcum.slice(-1)[0] + datosDivision.externosAcum.slice(-1)[0]
     ]
   }, [acumulados, division, datos])
 

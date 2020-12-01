@@ -34,7 +34,7 @@ const VisionGeneral = () => {
     const serie = datos.series.find(d => d.codigoDivision === codigo)
     return [
       serie.nuevosExternos.slice(-1)[0] + serie.nuevosPropios.slice(-1)[0],
-      serie.acumulados.slice(-1)[0],
+      serie.propiosAcum.slice(-1)[0] + serie.externosAcum.slice(-1)[0],
       datos.semanas
     ]
   }, [codigo, datos])

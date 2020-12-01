@@ -9,14 +9,14 @@ export const obtenerColorRegion = codigoRegion => {
   }
   const { datos } = store.getState().datos
   const casosDivisiones = datos.series.filter(s => divisionesRegion.some(d => d.codigo === s.codigoDivision))
-  const totalCasosDivisionesRegion = casosDivisiones.map(s => s.acumulados.slice(-1)[0]).reduce((sum, v) => sum + v)
+  const totalCasosDivisionesRegion = casosDivisiones.map(s => (s.propiosAcum.slice(-1)[0] + s.externosAcum.slice(-1)[0])).reduce((sum, v) => sum + v)
   return escala.find((v, i) => !escala[i + 1] || escala[i + 1].maximo > totalCasosDivisionesRegion).color
 }
 
 export const obtenerColorDivision = codigoDivision => {
   const { datos } = store.getState().datos
   const dataDivision = datos.series.find(s => s.codigoDivision === codigoDivision)
-  const totalCasosDivision = dataDivision.acumulados.slice(-1)[0]
+  const totalCasosDivision = dataDivision.propiosAcum.slice(-1)[0] + dataDivision.externosAcum.slice(-1)[0]
   return escala.find((v, i) => !escala[i + 1] || escala[i + 1].maximo > totalCasosDivision).color
 }
 
