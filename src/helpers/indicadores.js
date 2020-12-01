@@ -145,7 +145,7 @@ export const indicadores = [
     leyenda: 'X% de los casos totales detectados antes de faena',
   },
   {
-    nombre: 'Busqueda durante faena',
+    nombre: 'Búsqueda durante faena',
     texto: 'Casos detectados durante faena',
     descripcion: 'Casos durante faena / casos nuevos',
     sufijo: '',
