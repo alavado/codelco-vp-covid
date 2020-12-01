@@ -51,7 +51,7 @@ export const indicadores = [
     leyenda: 'X de Y casos nuevos',
   },
   {
-    nombre: 'Desempeño de seguimiento',
+    nombre: 'Desempeño de seguimiento de casos',
     texto: 'Caso, todos los días, Contacto 2 veces en el período',
     descripcion: '(Numero de casos con contacto diario desde el inicio de seguimiento + número de contactos con contacto al menos dos veces desde inicio de seguimiento) / (Total de casos + total de contactos)',
     sufijo: '',
@@ -61,6 +61,19 @@ export const indicadores = [
       { color: coloresIndicadores.rojo, nombre: '< 60%' }
     ],
     propiedadSemaforo: 'SE_seguimientoDesempeno',
+    leyenda: 'X seguimientos oportunos de Y seguimientos',
+  },
+  {
+    nombre: 'Desempeño seguimiento de contactos',
+    texto: 'Caso, todos los días, Contacto 2 veces en el período',
+    descripcion: '(Numero de casos con contacto diario desde el inicio de seguimiento + número de contactos con contacto al menos dos veces desde inicio de seguimiento) / (Total de casos + total de contactos)',
+    sufijo: '',
+    niveles: [
+      { color: coloresIndicadores.verde, nombre: '> 80%' },
+      { color: coloresIndicadores.amarillo, nombre: '60% a 80%' },
+      { color: coloresIndicadores.rojo, nombre: '< 60%' }
+    ],
+    propiedadSemaforo: 'SE_seguimientoDesempeno_contactos',
     leyenda: 'X seguimientos oportunos de Y seguimientos',
   },
   {
@@ -118,9 +131,9 @@ export const indicadores = [
   },
   // SO
   {
-    nombre: 'Búsqueda preventiva',
-    texto: 'Casos detectados fuera de faena',
-    descripcion: 'Casos fuera de faena / casos nuevos',
+    nombre: 'Búsqueda antes de faena',
+    texto: 'Casos detectados antes de faena',
+    descripcion: 'Casos antes de faena / casos nuevos',
     sufijo: '',
     niveles: [
       { color: coloresIndicadores.verde, nombre: '> 30%' },
@@ -129,22 +142,24 @@ export const indicadores = [
       { color: coloresIndicadores.celeste, nombre: 'No calculado, 8 casos o menos' }
     ],
     propiedadSemaforo: 'SO_busqueda',
-    leyenda: 'X% de los casos totales detectados fuera de faena',
+    leyenda: 'X% de los casos totales detectados antes de faena',
   },
   {
-    nombre: 'Testeo sistemático',
-    texto: 'Numero de test por trabajador',
-    descripcion: 'Numero de test por trabajador / Dotación activa (en faena)',
+    nombre: 'Busqueda durante faena',
+    texto: 'Casos detectados durante faena',
+    descripcion: 'Casos durante faena / casos nuevos',
     sufijo: '',
     niveles: [
-      { color: coloresIndicadores.verde, nombre: '>= 1' },
-      { color: coloresIndicadores.rojo, nombre: '< 1' }
+      { color: coloresIndicadores.verde, nombre: '> 30%' },
+      { color: coloresIndicadores.amarillo, nombre: '10% a 30%' },
+      { color: coloresIndicadores.rojo, nombre: 'menor a 10%' },
+      { color: coloresIndicadores.celeste, nombre: 'No calculado, 8 casos o menos' }
     ],
-    propiedadSemaforo: 'SO_testeo',
-    leyenda: 'X tests por trabajador / semana',
+    propiedadSemaforo: 'SO_busqueda_durante',
+    leyenda: 'X% de los casos totales detectados durante faena',
   },
   {
-    nombre: 'Deteccion preventiva',
+    nombre: 'Detección antes de faena',
     texto: 'Casos detectados antes de ingresar a faena (todos los medios utilizados)',
     descripcion: '(N° Casos confirmados Covid + detectados antes de ingresar a faena) / Número de casos confirmados Covid (+)',
     sufijo: '',
@@ -224,17 +239,6 @@ export const indicadores = [
   },
 ]
 
-const obtenerPropiedadValor = indicador => {
-  switch (indicador.nombre) {
-    case 'Evolución de casos':
-      return 'incidenciaSemanal'
-    case 'Positividad':
-      return 'tasaPositividad1000'
-    default:
-      return 'incidenciaSemanal'
-  }
-}
-
 export const obtenerValorIndicador = (codigoDivision, indicador, retroceso) => {
   const propiedad = indicador.propiedadSemaforo + '_datox'
   const datos = store.getState().datos.datos
@@ -245,7 +249,11 @@ export const obtenerValorIndicador = (codigoDivision, indicador, retroceso) => {
 export const obtenerSemaforoIndicador = (codigoDivision, indicador, retroceso) => {
   const propiedad = indicador.propiedadSemaforo
   const datos = store.getState().datos.datos
-  const valor = datos.series.find(s => s.codigoDivision === codigoDivision)[propiedad].slice(-1 + retroceso)[0]
+  let valor
+  try {
+    valor = datos.series.find(s => s.codigoDivision === codigoDivision)[propiedad].slice(-1 + retroceso)[0]
+
+  }catch(e) {  }
   return isNaN(valor) ? (valor.trim() === 'NA' ? -1 : -2) : Number(valor)
 }
 

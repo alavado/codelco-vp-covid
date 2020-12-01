@@ -4,14 +4,14 @@ export const procesarCSV = csv => {
   const encabezados = [
     'codigoDivision',
     'semEpidem',
-    'año',
-    'nuevosPropios',
-    'nuevosExternos',
-    'incidenciaSemanal',
-    'acumulados',
-    'porcentajeAsintomaticos',
-    'positividadAntigeno',
-    'tasaPositividad1000',
+    'ano',
+    'nuevos_propios',
+    'nuevos_externos',
+    'incidencia_semal',
+    'acumulados_sema',
+    'porcentaje_asintomaticos',
+    'positividad_antigeno',
+    'tasa_positividad(1000)',
     'SE_incidencia',
     'SE_incidencia_datox',
     'SE_positividad',
@@ -50,7 +50,12 @@ export const procesarCSV = csv => {
     'SO_notificacionOportu_datox',
     'SO_notificacionOportu_datoy',
     'SO_trazabilidadOportu',
-    'SO_trazabilidadOportu_datox'
+    'SO_trazabilidadOportu_datox',
+    'SO_busqueda_durante',
+    'SO_busqueda_durante_datox',
+    'SE_seguimientoDesempeno_contactos',
+    'SE_seguimientoDesempeno_contactos_datox',
+    'SE_seguimientoDesempeno_contactos_datoy'    
   ]
   
   const datos = filas.map(fila => {
@@ -64,9 +69,9 @@ export const procesarCSV = csv => {
   
   const divisiones = Array.from(new Set(datos.map(d => d.codigoDivision))).filter(v => v)
   const semanas = Array.from(new Set(datos.map(d => Number(d.semEpidem)))).filter(d => d)
-  
+
   const series = divisiones.map(codigoDivision => {
-    const datosDivision = datos.filter(d => d.codigoDivision === codigoDivision)
+    const datosDivision = datos.filter(d => d.codigoDivision === codigoDivision).slice(0, 53)
     const nuevosPropios = datosDivision.map(d => d.nuevosPropios)
     const nuevosExternos = datosDivision.map(d => d.nuevosExternos)
     const seriesDivision = encabezados.slice(1)
