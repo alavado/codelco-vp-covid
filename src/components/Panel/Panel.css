@@ -8,7 +8,6 @@
   --ancho-indicador-global: 10rem;
   --ancho-indicadores-locales: calc(var(--ancho-hexagono) * 4);
   position: relative;
-  overflow: hidden;
 }
 
 .Panel__contenedor {
@@ -16,6 +15,7 @@
   padding-bottom: 4rem;
   padding-left: 4rem;
   padding-right: 4rem;
+  position: relative;
 }
 
 .Panel__panel:first-child {
@@ -30,9 +30,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: .5rem;
   margin-bottom: 1rem;
   width: 100%;
+  position: sticky;
+  top: 3rem;
+  background-color: white;
+  z-index: 101;
 }
 
 .Panel__contenedor_paneles {

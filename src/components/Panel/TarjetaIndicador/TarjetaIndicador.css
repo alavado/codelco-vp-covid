@@ -91,6 +91,7 @@
   font-weight: 500;
   transition: all .15s ease;
   transform: translateY(.25rem);
+  display: none;
 }
 
 .TarjetaIndicador__indicadores_divisiones {
@@ -113,4 +114,5 @@
 .TarjetaIndicador__indicador_global:hover .TarjetaIndicador__popup_hexagono {
   opacity: 1;
   transform: translateY(0);
+  display: block;
 }
