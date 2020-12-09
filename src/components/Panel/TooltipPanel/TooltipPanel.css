@@ -1,10 +1,8 @@
 .TooltipPanel {
   position: absolute;
-  z-index: 100;
-  top: -12rem;
-  width: 12rem;
-  left: -5rem;
-  height: 12rem;
+  width: 15rem;
+  left: 0%;
+  top: calc(100% - 2rem);
   display: flex;
   flex-direction: column;
   opacity: 0;
@@ -12,6 +10,7 @@
   color: #212121;
   transition: all .15s ease;
   transform: translateY(.25rem);
+  z-index: 10;
 }
 
 .TooltipPanel--visible {
@@ -26,24 +25,8 @@
   background-color: white;
   flex-direction: column;
   border-radius: .5rem;
-  padding: .5rem;
+  padding: 1rem;
   box-shadow: 0 .1rem .25rem rgba(0, 0, 0, .25);
-}
-
-.TooltipPanel__contenedor_punta {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 1rem;
-  position: relative;
-}
-
-.TooltipPanel__punta {
-  border-top: 1rem solid #0093d5;
-  border-left: 1rem solid transparent;
-  border-right: 1rem solid transparent;
-  width: 0;
-  height: 0;
 }
 
 .TooltipPanel__titulo {

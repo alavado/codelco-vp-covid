@@ -12,9 +12,9 @@ const TooltipPanel = ({ indicador, visible }) => {
       })}
     >
       <div className="TooltipPanel__contenido">
-        <div className="TooltipPanel__titulo">
+        {/* <div className="TooltipPanel__titulo">
           {indicador.nombre}
-        </div>
+        </div> */}
         <div className="TooltipPanel__descripcion">
           {indicador.descripcion}
         </div>
@@ -29,10 +29,6 @@ const TooltipPanel = ({ indicador, visible }) => {
             </div>
           </div>
         ))}
-      </div>
-      <div className="TooltipPanel__contenedor_punta">
-        <div className="TooltipPanel__punta">
-        </div>
       </div>
     </div>
   )

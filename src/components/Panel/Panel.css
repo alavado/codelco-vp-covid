@@ -35,7 +35,7 @@
   position: sticky;
   top: 3rem;
   background-color: white;
-  z-index: 101;
+  z-index: 2;
 }
 
 .Panel__contenedor_paneles {

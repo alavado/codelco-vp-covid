@@ -22,6 +22,7 @@ const TarjetaIndicador = ({ indicador, indice, setMostrandoTooltip, mostrandoToo
       <div className="TarjetaIndicador__nombre_indicador">
         <div>
           {indicador.nombre}
+            <TooltipPanel indicador={indicador} visible={mostrandoTooltip[indice]} />
           <div
             className="TarjetaIndicador__icono_indicador" 
             onMouseEnter={() => setMostrandoTooltip(prev => {
@@ -35,7 +36,6 @@ const TarjetaIndicador = ({ indicador, indice, setMostrandoTooltip, mostrandoToo
               return x
             })}
           >
-            <TooltipPanel indicador={indicador} visible={mostrandoTooltip[indice]} />
             <Icon
               className="TarjetaIndicador__icono_indicador"
               icon={helpRhombus}

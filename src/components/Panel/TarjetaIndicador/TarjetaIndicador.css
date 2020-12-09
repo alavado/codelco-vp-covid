@@ -16,6 +16,7 @@
   cursor: default;
   font-size: .8rem;
   font-weight: 500;
+  position: relative;
 }
 
 .TarjetaIndicador__icono_indicador {
