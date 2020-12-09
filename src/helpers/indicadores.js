@@ -44,7 +44,7 @@ export const indicadores = [
   {
     nombre: 'Inicio de seguimiento oportuno',
     texto: 'Días desde la confirmación al inicio del seguimiento',
-    descripcion: '[casos confirmados + probales, a los que se les inicia el seguimiento dentro de los DOS dias desde la confirmacion] / [total casos confirmados + probables]',
+    descripcion: '[casos confirmados + probables, a los que se les inicia el seguimiento dentro de los DOS dias desde la confirmacion] / [total casos confirmados + probables]',
     sufijo: '',
     niveles: [
       { color: coloresIndicadores.verde, nombre: '> 80%' },
@@ -87,7 +87,7 @@ export const indicadores = [
     leyenda: 'X seguimientos oportunos de Y seguimientos',
   },
   {
-    nombre: 'Oportunidad de Notificacion (Confirmación)',
+    nombre: 'Oportunidad de Notificación (Confirmación)',
     texto: 'Dias DESDE inicio de síntomas a clasificación del caso',
     descripcion: '[casos confirmados con exámen confirmatorio dentro de los TRES días del inicio de síntomas] / [casos confirmados]',
     sufijo: '',
@@ -200,7 +200,7 @@ export const indicadores = [
     niveles: [
       { color: coloresIndicadores.verde, nombre: '0' },
       { color: coloresIndicadores.amarillo, nombre: '1' },
-      { color: coloresIndicadores.rojo, nombre: '>= 2 Alertas Amarillas' },
+      { color: coloresIndicadores.rojo, nombre: '>= 2 alertas amarillas' },
       { color: coloresIndicadores.celeste, nombre: 'No se calculó indicador' },
       { color: coloresIndicadores.gris, nombre: 'No hay datos' }
     ],
@@ -213,9 +213,8 @@ export const indicadores = [
     descripcion: 'N° de brotes con alerta ROJA en el periodo',
     sufijo: '',
     niveles: [
-      { color: coloresIndicadores.verde, nombre: '0' },
-      { color: coloresIndicadores.amarillo, nombre: '1' },
-      { color: coloresIndicadores.rojo, nombre: '>= 2 Alertas Rojas' },
+      { color: coloresIndicadores.verde, nombre: '0 alertas rojas' },
+      { color: coloresIndicadores.rojo, nombre: '>= 1 alertas rojas' },
       { color: coloresIndicadores.celeste, nombre: 'No se calculó indicador' },
       { color: coloresIndicadores.gris, nombre: 'No hay datos' }
     ],
