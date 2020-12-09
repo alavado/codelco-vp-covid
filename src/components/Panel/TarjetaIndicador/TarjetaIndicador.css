@@ -77,15 +77,15 @@
 
 .TarjetaIndicador__popup_hexagono {
   background-color: white;
-  position: absolute;
   opacity: 0;
+  position: absolute;
   cursor: pointer;
   z-index: 2;
   pointer-events: none;
   padding: .5rem;
   font-size: .75rem;
   border-radius: .25rem;
-  width: 24ch;
+  width: 10rem;
   text-align: center;
   line-height: 1.25;
   box-shadow: 0 .1rem .25rem rgba(0, 0, 0, .2);
@@ -93,6 +93,10 @@
   transition: all .15s ease;
   transform: translateY(.25rem);
   display: none;
+}
+
+.TarjetaIndicador__indicadores_contenedor_hexagonos .TarjetaIndicador__popup_hexagono {
+  left: calc(var(--ancho-hexagono) / 2 - 5rem);
 }
 
 .TarjetaIndicador__indicadores_divisiones {
