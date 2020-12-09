@@ -1,10 +1,10 @@
 .TooltipPanel {
   position: absolute;
   z-index: 100;
-  top: -10rem;
+  top: -12rem;
   width: 12rem;
   left: -5rem;
-  height: 10rem;
+  height: 12rem;
   display: flex;
   flex-direction: column;
   opacity: 0;
@@ -64,7 +64,7 @@
 }
 
 .TooltipPanel__hex_nivel {
-  width: .7rem;
+  min-width: .7rem;
   height: .7rem;
   margin-right: .25rem;
   clip-path: polygon(0% 25%, 50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%);

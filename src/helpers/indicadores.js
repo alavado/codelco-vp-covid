@@ -19,7 +19,9 @@ export const indicadores = [
     niveles: [
       { color: coloresIndicadores.verde, nombre: '0' },
       { color: coloresIndicadores.amarillo, nombre: '< 1' },
-      { color: coloresIndicadores.rojo, nombre: '> 1' }
+      { color: coloresIndicadores.rojo, nombre: '> 1' },
+      { color: coloresIndicadores.celeste, nombre: 'No se calculó indicador' },
+      { color: coloresIndicadores.gris, nombre: 'No hay datos' }
     ],
     propiedadSemaforo: 'SE_incidencia',
     leyenda: 'X casos por 1000 trabajadores'
@@ -32,7 +34,9 @@ export const indicadores = [
     niveles: [
       { color: coloresIndicadores.verde, nombre: '< 1' },
       { color: coloresIndicadores.amarillo, nombre: '1 a 3' },
-      { color: coloresIndicadores.rojo, nombre: '> 3' }
+      { color: coloresIndicadores.rojo, nombre: '> 3' },
+      { color: coloresIndicadores.celeste, nombre: 'No se calculó indicador' },
+      { color: coloresIndicadores.gris, nombre: 'No hay datos' }
     ],
     propiedadSemaforo: 'SE_positividad',
     leyenda: 'X% de tests positivos',
@@ -45,7 +49,9 @@ export const indicadores = [
     niveles: [
       { color: coloresIndicadores.verde, nombre: '> 80%' },
       { color: coloresIndicadores.amarillo, nombre: '60% a 80%' },
-      { color: coloresIndicadores.rojo, nombre: '< 60%' }
+      { color: coloresIndicadores.rojo, nombre: '< 60%' },
+      { color: coloresIndicadores.celeste, nombre: 'No se calculó indicador, menos de 8 casos' },
+      { color: coloresIndicadores.gris, nombre: 'No hay datos' }
     ],
     propiedadSemaforo: 'SE_seguimientoInicio',
     leyenda: 'X de Y casos nuevos',
@@ -58,7 +64,9 @@ export const indicadores = [
     niveles: [
       { color: coloresIndicadores.verde, nombre: '> 80%' },
       { color: coloresIndicadores.amarillo, nombre: '60% a 80%' },
-      { color: coloresIndicadores.rojo, nombre: '< 60%' }
+      { color: coloresIndicadores.rojo, nombre: '< 60%' },
+      { color: coloresIndicadores.celeste, nombre: 'No se calculó indicador, menos de 8 casos' },
+      { color: coloresIndicadores.gris, nombre: 'No hay datos' }
     ],
     propiedadSemaforo: 'SE_seguimientoDesempeno',
     leyenda: 'X seguimientos oportunos de Y seguimientos',
@@ -71,7 +79,9 @@ export const indicadores = [
     niveles: [
       { color: coloresIndicadores.verde, nombre: '> 80%' },
       { color: coloresIndicadores.amarillo, nombre: '60% a 80%' },
-      { color: coloresIndicadores.rojo, nombre: '< 60%' }
+      { color: coloresIndicadores.rojo, nombre: '< 60%' },
+      { color: coloresIndicadores.celeste, nombre: 'No se calculó indicador, menos de 8 casos' },
+      { color: coloresIndicadores.gris, nombre: 'No hay datos' }
     ],
     propiedadSemaforo: 'SE_seguimientoDesempeno_contactos',
     leyenda: 'X seguimientos oportunos de Y seguimientos',
@@ -84,7 +94,9 @@ export const indicadores = [
     niveles: [
       { color: coloresIndicadores.verde, nombre: '> 80%' },
       { color: coloresIndicadores.amarillo, nombre: '60% a 80%' },
-      { color: coloresIndicadores.rojo, nombre: '< 60%' }
+      { color: coloresIndicadores.rojo, nombre: '< 60%' },
+      { color: coloresIndicadores.celeste, nombre: 'No se calculó indicador, menos de 8 casos' },
+      { color: coloresIndicadores.gris, nombre: 'No hay datos' }
     ],
     propiedadSemaforo: 'SE_notificacionOportunidad',
     leyenda: 'X notificaciones oportunas de Y casos nuevos',
@@ -97,7 +109,9 @@ export const indicadores = [
     niveles: [
       { color: coloresIndicadores.verde, nombre: '> 80%' },
       { color: coloresIndicadores.amarillo, nombre: '60% a 80%' },
-      { color: coloresIndicadores.rojo, nombre: '< 60%' }
+      { color: coloresIndicadores.rojo, nombre: '< 60%' },
+      { color: coloresIndicadores.celeste, nombre: 'No se calculó indicador, menos de 8 casos' },
+      { color: coloresIndicadores.gris, nombre: 'No hay datos' }
     ],
     propiedadSemaforo: 'SE_contactosDeteccion',
     leyenda: 'X casos con suficientes contactos de Y casos nuevos',
@@ -110,7 +124,9 @@ export const indicadores = [
     niveles: [
       { color: coloresIndicadores.verde, nombre: '> 80%' },
       { color: coloresIndicadores.amarillo, nombre: '60% a 80%' },
-      { color: coloresIndicadores.rojo, nombre: '< 60%' }
+      { color: coloresIndicadores.rojo, nombre: '< 60%' },
+      { color: coloresIndicadores.celeste, nombre: 'No se calculó indicador, menos de 8 casos' },
+      { color: coloresIndicadores.gris, nombre: 'No hay datos' }
     ],
     propiedadSemaforo: 'SE_trazabilidadOportu',
     leyenda: 'X% de contactos trazados oportunamente',
@@ -124,7 +140,8 @@ export const indicadores = [
       { color: coloresIndicadores.verde, nombre: '> 60%' },
       { color: coloresIndicadores.amarillo, nombre: '30% a 60%' },
       { color: coloresIndicadores.rojo, nombre: '< 30%' },
-      { color: coloresIndicadores.celeste, nombre: 'No calculado, 8 casos o menos' }
+      { color: coloresIndicadores.celeste, nombre: 'No se calculó indicador, menos de 8 casos' },
+      { color: coloresIndicadores.gris, nombre: 'No hay datos' }
     ],
     propiedadSemaforo: 'SE_trazabilidadDesempeno',
     leyenda: 'X casos provenientes de contactos de Y casos nuevos',
@@ -139,24 +156,11 @@ export const indicadores = [
       { color: coloresIndicadores.verde, nombre: '> 30%' },
       { color: coloresIndicadores.amarillo, nombre: '10% a 30%' },
       { color: coloresIndicadores.rojo, nombre: 'menor a 10%' },
-      { color: coloresIndicadores.celeste, nombre: 'No calculado, 8 casos o menos' }
+      { color: coloresIndicadores.celeste, nombre: 'No se calculó indicador, menos de 8 casos' },
+      { color: coloresIndicadores.gris, nombre: 'No hay datos' }
     ],
     propiedadSemaforo: 'SO_busqueda',
     leyenda: 'X% de los casos totales detectados antes de faena',
-  },
-  {
-    nombre: 'Búsqueda durante faena',
-    texto: 'Casos detectados durante faena',
-    descripcion: 'Casos durante faena / casos nuevos',
-    sufijo: '',
-    niveles: [
-      { color: coloresIndicadores.verde, nombre: '> 30%' },
-      { color: coloresIndicadores.amarillo, nombre: '10% a 30%' },
-      { color: coloresIndicadores.rojo, nombre: 'menor a 10%' },
-      { color: coloresIndicadores.celeste, nombre: 'No calculado, 8 casos o menos' }
-    ],
-    propiedadSemaforo: 'SO_busqueda_durante',
-    leyenda: 'X% de los casos totales detectados durante faena',
   },
   {
     nombre: 'Detección antes de faena',
@@ -166,7 +170,9 @@ export const indicadores = [
     niveles: [
       { color: coloresIndicadores.verde, nombre: '> 40%' },
       { color: coloresIndicadores.amarillo, nombre: '20% a 40%' },
-      { color: coloresIndicadores.rojo, nombre: '< 20%' }
+      { color: coloresIndicadores.rojo, nombre: '< 20%' },
+      { color: coloresIndicadores.celeste, nombre: 'No se calculó indicador, menos de 8 casos' },
+      { color: coloresIndicadores.gris, nombre: 'No hay datos' }
     ],
     propiedadSemaforo: 'SO_preventiva',
     leyenda: 'X casos detectados antes de entrar a faena de Y casos totales',
@@ -177,10 +183,11 @@ export const indicadores = [
     descripcion: 'Numero de casos asintomáticos / Casos nuevos',
     sufijo: '',
     niveles: [
-      { color: coloresIndicadores.verde, nombre: '> 80%' },
-      { color: coloresIndicadores.amarillo, nombre: '60% a 80%' },
-      { color: coloresIndicadores.rojo, nombre: '< 60%' },
-      { color: coloresIndicadores.celeste, nombre: 'No calculado, 8 casos o menos' }
+      { color: coloresIndicadores.verde, nombre: '> 40%' },
+      { color: coloresIndicadores.amarillo, nombre: '25% a 40%' },
+      { color: coloresIndicadores.rojo, nombre: '< 25%' },
+      { color: coloresIndicadores.celeste, nombre: 'No se calculó indicador, menos de 8 casos' },
+      { color: coloresIndicadores.gris, nombre: 'No hay datos' }
     ],
     propiedadSemaforo: 'SO_asintomaticos',
     leyenda: 'X% casos asintomáticos',
@@ -193,7 +200,9 @@ export const indicadores = [
     niveles: [
       { color: coloresIndicadores.verde, nombre: '0' },
       { color: coloresIndicadores.amarillo, nombre: '1' },
-      { color: coloresIndicadores.rojo, nombre: '>= 2 Alertas Amarillas' }
+      { color: coloresIndicadores.rojo, nombre: '>= 2 Alertas Amarillas' },
+      { color: coloresIndicadores.celeste, nombre: 'No se calculó indicador' },
+      { color: coloresIndicadores.gris, nombre: 'No hay datos' }
     ],
     propiedadSemaforo: 'SO_brotes_amarillos',
     leyenda: 'X brotes amarillos',
@@ -206,7 +215,9 @@ export const indicadores = [
     niveles: [
       { color: coloresIndicadores.verde, nombre: '0' },
       { color: coloresIndicadores.amarillo, nombre: '1' },
-      { color: coloresIndicadores.rojo, nombre: '>= 2 Alertas Rojas' }
+      { color: coloresIndicadores.rojo, nombre: '>= 2 Alertas Rojas' },
+      { color: coloresIndicadores.celeste, nombre: 'No se calculó indicador' },
+      { color: coloresIndicadores.gris, nombre: 'No hay datos' }
     ],
     propiedadSemaforo: 'SO_brotes_rojos',
     leyenda: 'X brotes rojos',
@@ -219,7 +230,9 @@ export const indicadores = [
     niveles: [
       { color: coloresIndicadores.verde, nombre: '> 80%' },
       { color: coloresIndicadores.amarillo, nombre: '60% a 80%' },
-      { color: coloresIndicadores.rojo, nombre: '< 60%' }
+      { color: coloresIndicadores.rojo, nombre: '< 60%' },
+      { color: coloresIndicadores.celeste, nombre: 'No se calculó indicador' },
+      { color: coloresIndicadores.gris, nombre: 'No hay datos' }
     ],
     propiedadSemaforo: 'SO_notificacionOportu',
     leyenda: 'X contactos laborales notificados oportunamente de Y contactos laborales totales',
@@ -232,7 +245,9 @@ export const indicadores = [
     niveles: [
       { color: coloresIndicadores.verde, nombre: '> 80%' },
       { color: coloresIndicadores.amarillo, nombre: '60% a 80%' },
-      { color: coloresIndicadores.rojo, nombre: '< 60%' }
+      { color: coloresIndicadores.rojo, nombre: '< 60%' },
+      { color: coloresIndicadores.celeste, nombre: 'No se calculó indicador' },
+      { color: coloresIndicadores.gris, nombre: 'No hay datos' }
     ],
     propiedadSemaforo: 'SO_trazabilidadOportu',
     leyenda: 'X% de los contactos finales detectados en primeras 24 horas',

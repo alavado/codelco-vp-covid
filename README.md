@@ -23,3 +23,5 @@ dudas:
   - cambiar kpi por indicadores
   - NC para los que no se calculan, celeste
   - ver archivo
+  - scroll fijo
+  - semana actual
