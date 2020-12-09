@@ -14,7 +14,7 @@ export const indicadores = [
   {
     nombre: 'Evolución de casos',
     texto: 'Casos nuevos',
-    descripcion: 'Total casos nuevos x 1000 / dotación',
+    descripcion: '[casos confirmados + casos probables] / [dotación]',
     sufijo: '',
     niveles: [
       { color: coloresIndicadores.verde, nombre: '0' },
@@ -29,7 +29,7 @@ export const indicadores = [
   {
     nombre: 'Positividad',
     texto: 'Tests positivos (test rápido o búsqueda activa)',
-    descripcion: 'Total test positivos x 100 / total de tests',
+    descripcion: '% de test positivos (antígeno, anticuerpo o PCR de búsqueda activa)',
     sufijo: '',
     niveles: [
       { color: coloresIndicadores.verde, nombre: '< 1' },
@@ -42,9 +42,9 @@ export const indicadores = [
     leyenda: 'X% de tests positivos',
   },
   {
-    nombre: 'Inicio de seguimiento',
+    nombre: 'Inicio de seguimiento oportuno',
     texto: 'Días desde la confirmación al inicio del seguimiento',
-    descripcion: 'Número de casos a los que se les inicia el seguimiento dentro de los dos dias desde la confirmacion / casos nuevos',
+    descripcion: '[casos confirmados + probales, a los que se les inicia el seguimiento dentro de los DOS dias desde la confirmacion] / [total casos confirmados + probables]',
     sufijo: '',
     niveles: [
       { color: coloresIndicadores.verde, nombre: '> 80%' },
@@ -59,7 +59,7 @@ export const indicadores = [
   {
     nombre: 'Desempeño de seguimiento de casos',
     texto: 'Caso, todos los días, Contacto 2 veces en el período',
-    descripcion: '(Numero de casos con contacto diario desde el inicio de seguimiento + número de contactos con contacto al menos dos veces desde inicio de seguimiento) / (Total de casos + total de contactos)',
+    descripcion: '[casos confirmados + probables con contacto DIARIO desde el inicio de seguimiento] / [total casos confirmados + probables]',
     sufijo: '',
     niveles: [
       { color: coloresIndicadores.verde, nombre: '> 80%' },
@@ -74,7 +74,7 @@ export const indicadores = [
   {
     nombre: 'Desempeño seguimiento de contactos',
     texto: 'Caso, todos los días, Contacto 2 veces en el período',
-    descripcion: '(Numero de casos con contacto diario desde el inicio de seguimiento + número de contactos con contacto al menos dos veces desde inicio de seguimiento) / (Total de casos + total de contactos)',
+    descripcion: '[contactos estrechos y operacionales con al menos CUATRO seguimientos dentro de su período de cuarentena de 14 días, o su proporción correspondiente a la semana] / [total contactos estrechos y operacionales]',
     sufijo: '',
     niveles: [
       { color: coloresIndicadores.verde, nombre: '> 80%' },
@@ -87,9 +87,9 @@ export const indicadores = [
     leyenda: 'X seguimientos oportunos de Y seguimientos',
   },
   {
-    nombre: 'Oportunidad de Notificacion',
+    nombre: 'Oportunidad de Notificacion (Confirmación)',
     texto: 'Dias DESDE inicio de síntomas a clasificación del caso',
-    descripcion: 'Número de casos clasificados como confirmado (PCR+) o probable (o Ag+ si se usa como confirmatorio), dentro de 3 días del inicio de síntomas / casos nuevos',
+    descripcion: '[casos confirmados con exámen confirmatorio dentro de los TRES días del inicio de síntomas] / [casos confirmados]',
     sufijo: '',
     niveles: [
       { color: coloresIndicadores.verde, nombre: '> 80%' },
@@ -104,7 +104,7 @@ export const indicadores = [
   {
     nombre: 'Detección de contactos',
     texto: 'Numero de contactos de un caso índice',
-    descripcion: 'Número de casos con 3 o más contactos / casos nuevos',
+    descripcion: '[casos confirmados o probables con TRES o más contactos estrechos u operacionales] / [casos confirmados + probables]',
     sufijo: '',
     niveles: [
       { color: coloresIndicadores.verde, nombre: '> 80%' },
@@ -119,7 +119,7 @@ export const indicadores = [
   {
     nombre: 'Trazabilidad oportuna',
     texto: 'Dias DESDE inicio de síntomas o PCR + HASTA fin de investigación de contactos',
-    descripcion: 'Número de contactos (laborales + familiares) contactados durante los 3 primeros días desde la confirmación del caso / Contactos totales (familiares + laborales)',
+    descripcion: '[contactos estrechos + operacionales contactados durante los TRES primeros días desde la confirmación del caso o inicio de los síntomas] / [total contactos estrechos + operacionales]',
     sufijo: '',
     niveles: [
       { color: coloresIndicadores.verde, nombre: '> 80%' },
@@ -134,7 +134,7 @@ export const indicadores = [
   {
     nombre: 'Desempeño de trazabilidad',
     texto: 'Casos nuevos provenientes de contactos',
-    descripcion: 'Numero de casos nuevos provenientes de contactos (familiares + laborales) / casos nuevos',
+    descripcion: '[casos confirmados + probables provenientes de contactos operacionales o estrechos que se encontraban en seguimiento] / [casos confirmados + probables]',
     sufijo: '',
     niveles: [
       { color: coloresIndicadores.verde, nombre: '> 60%' },
@@ -150,7 +150,7 @@ export const indicadores = [
   {
     nombre: 'Búsqueda antes de faena',
     texto: 'Casos detectados antes de faena',
-    descripcion: 'Casos antes de faena / casos nuevos',
+    descripcion: '[casos confirmados + probables detectados por busqueda preventiva antes de ingresar a faena] / [casos confirmados + probables]',
     sufijo: '',
     niveles: [
       { color: coloresIndicadores.verde, nombre: '> 30%' },
@@ -163,9 +163,9 @@ export const indicadores = [
     leyenda: 'X% de los casos totales detectados antes de faena',
   },
   {
-    nombre: 'Detección antes de faena',
+    nombre: 'Detección preventiva',
     texto: 'Casos detectados antes de ingresar a faena (todos los medios utilizados)',
-    descripcion: '(N° Casos confirmados Covid + detectados antes de ingresar a faena) / Número de casos confirmados Covid (+)',
+    descripcion: '[casos confirmados  + probables detectados antes de ingresar a faena por cualquier método usado] / [casos confirmados + probables]',
     sufijo: '',
     niveles: [
       { color: coloresIndicadores.verde, nombre: '> 40%' },
@@ -180,7 +180,7 @@ export const indicadores = [
   {
     nombre: 'Detección casos asintomáticos',
     texto: 'Proporción de casos asintomáticos',
-    descripcion: 'Numero de casos asintomáticos / Casos nuevos',
+    descripcion: '[casos confirmados asintomáticos al momento de su detección o confirmación] / [casos confirmados + probables] (%)',
     sufijo: '',
     niveles: [
       { color: coloresIndicadores.verde, nombre: '> 40%' },
@@ -195,7 +195,7 @@ export const indicadores = [
   {
     nombre: 'Identificación de Brotes alerta amarilla',
     texto: 'Identificación de Brotes (Alerta Amarilla)',
-    descripcion: 'N° de Brotes con Alerta Amarilla identificados en el Periodo',
+    descripcion: 'N° de brotes con alerta AMARILLA en el periodo',
     sufijo: '',
     niveles: [
       { color: coloresIndicadores.verde, nombre: '0' },
@@ -210,7 +210,7 @@ export const indicadores = [
   {
     nombre: 'Identificación de Brotes alerta roja',
     texto: 'Identificación de Brotes (Alerta Roja)',
-    descripcion: 'N° de Brotes con Alerta Roja identificados en el Periodo',
+    descripcion: 'N° de brotes con alerta ROJA en el periodo',
     sufijo: '',
     niveles: [
       { color: coloresIndicadores.verde, nombre: '0' },
@@ -223,9 +223,9 @@ export const indicadores = [
     leyenda: 'X brotes rojos',
   },
   {
-    nombre: 'Notificación oportuna de contactos',
+    nombre: 'Contactos notificados a tiempo',
     texto: 'Contactos notificados antes de 24 horas',
-    descripcion: 'Número de contactos laborales notificados antes de 24 horas / Total de contactos',
+    descripcion: '[contactos operacionales notificados dentro de primeras 24 horas] / [total contactos operacionales]',
     sufijo: '',
     niveles: [
       { color: coloresIndicadores.verde, nombre: '> 80%' },
@@ -240,7 +240,7 @@ export const indicadores = [
   {
     nombre: 'Efectividad de trazabilidad en Brotes',
     texto: 'Porcentaje de casos identificados en la trazabilidad inicial v/s la final',
-    descripcion: 'N° contactos identificados en el Brote dentro de las 24 horas / N° contactos identificados en el Brote, durante y al cerrar el Brote',
+    descripcion: '% casos identificados en la trazabilidad inicial v/s la final',
     sufijo: '',
     niveles: [
       { color: coloresIndicadores.verde, nombre: '> 80%' },
