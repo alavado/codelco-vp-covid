@@ -15,7 +15,7 @@ const MiniGrafico = ({ codigo }) => {
         data={{
           labels: datos.semanas,
           datasets: [{
-            data: datosDivision.acumulados,
+            data: datosDivision.propiosAcum.map((d, i) => d + datosDivision.externosAcum[i]),
             fill: false,
             borderColor: '#e6192e',
             pointRadius: 0,
