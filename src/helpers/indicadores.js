@@ -24,7 +24,7 @@ export const indicadores = [
       { color: coloresIndicadores.gris, nombre: 'No hay datos' }
     ],
     propiedadSemaforo: 'SE_incidencia',
-    leyenda: 'X casos por 1000 trabajadores'
+    leyenda: 'X caso(s) por 1000 trabajadore(s)'
   },
   {
     nombre: 'Positividad',
@@ -54,7 +54,7 @@ export const indicadores = [
       { color: coloresIndicadores.gris, nombre: 'No hay datos' }
     ],
     propiedadSemaforo: 'SE_seguimientoInicio',
-    leyenda: 'X de Y casos nuevos',
+    leyenda: 'X de Y caso(s) nuevo(s)',
   },
   {
     nombre: 'Desempeño de seguimiento de casos',
@@ -69,7 +69,7 @@ export const indicadores = [
       { color: coloresIndicadores.gris, nombre: 'No hay datos' }
     ],
     propiedadSemaforo: 'SE_seguimientoDesempeno',
-    leyenda: 'X seguimientos oportunos de Y seguimientos',
+    leyenda: 'X seguimiento(s) oportuno(s) de Y seguimiento(s)',
   },
   {
     nombre: 'Desempeño seguimiento de contactos',
@@ -84,7 +84,7 @@ export const indicadores = [
       { color: coloresIndicadores.gris, nombre: 'No hay datos' }
     ],
     propiedadSemaforo: 'SE_seguimientoDesempeno_contactos',
-    leyenda: 'X seguimientos oportunos de Y seguimientos',
+    leyenda: 'X seguimiento(s) oportuno(s) de Y seguimiento(s)',
   },
   {
     nombre: 'Oportunidad de Notificación (Confirmación)',
@@ -99,7 +99,7 @@ export const indicadores = [
       { color: coloresIndicadores.gris, nombre: 'No hay datos' }
     ],
     propiedadSemaforo: 'SE_notificacionOportunidad',
-    leyenda: 'X notificaciones oportunas de Y casos nuevos',
+    leyenda: 'X notificacion(es) oportuna(s) de Y caso(s) nuevo(s)',
   },
   {
     nombre: 'Detección de contactos',
@@ -114,7 +114,7 @@ export const indicadores = [
       { color: coloresIndicadores.gris, nombre: 'No hay datos' }
     ],
     propiedadSemaforo: 'SE_contactosDeteccion',
-    leyenda: 'X casos con suficientes contactos de Y casos nuevos',
+    leyenda: 'X caso(s) con suficientes contactos de Y caso(s) nuevo(s)',
   },
   {
     nombre: 'Trazabilidad oportuna',
@@ -144,7 +144,7 @@ export const indicadores = [
       { color: coloresIndicadores.gris, nombre: 'No hay datos' }
     ],
     propiedadSemaforo: 'SE_trazabilidadDesempeno',
-    leyenda: 'X casos provenientes de contactos de Y casos nuevos',
+    leyenda: 'X caso(s) proveniente(s) de contactos de Y caso(s) nuevo(s)',
   },
   // SO
   {
@@ -175,7 +175,7 @@ export const indicadores = [
       { color: coloresIndicadores.gris, nombre: 'No hay datos' }
     ],
     propiedadSemaforo: 'SO_preventiva',
-    leyenda: 'X casos detectados antes de entrar a faena de Y casos totales',
+    leyenda: 'X caso(s) detectado(s) antes de entrar a faena de Y caso(s) total(es)',
   },
   {
     nombre: 'Detección casos asintomáticos',
@@ -190,7 +190,7 @@ export const indicadores = [
       { color: coloresIndicadores.gris, nombre: 'No hay datos' }
     ],
     propiedadSemaforo: 'SO_asintomaticos',
-    leyenda: 'X% casos asintomáticos',
+    leyenda: 'X% de casos asintomáticos',
   },
   {
     nombre: 'Identificación de Brotes alerta amarilla',
@@ -205,7 +205,7 @@ export const indicadores = [
       { color: coloresIndicadores.gris, nombre: 'No hay datos' }
     ],
     propiedadSemaforo: 'SO_brotes_amarillos',
-    leyenda: 'X brotes amarillos',
+    leyenda: 'X brote(s) amarillo(s)',
   },
   {
     nombre: 'Identificación de Brotes alerta roja',
@@ -219,7 +219,7 @@ export const indicadores = [
       { color: coloresIndicadores.gris, nombre: 'No hay datos' }
     ],
     propiedadSemaforo: 'SO_brotes_rojos',
-    leyenda: 'X brotes rojos',
+    leyenda: 'X brote(s) rojo(s)',
   },
   {
     nombre: 'Contactos notificados a tiempo',
@@ -234,7 +234,7 @@ export const indicadores = [
       { color: coloresIndicadores.gris, nombre: 'No hay datos' }
     ],
     propiedadSemaforo: 'SO_notificacionOportu',
-    leyenda: 'X contactos laborales notificados oportunamente de Y contactos laborales totales',
+    leyenda: 'X contacto(s) laboral(es) notificado(s) oportunamente de Y contacto(s) laboral(es) total(es)',
   },
   {
     nombre: 'Efectividad de trazabilidad en Brotes',

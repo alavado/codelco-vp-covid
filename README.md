@@ -25,3 +25,6 @@ dudas:
   - ver archivo
   - scroll fijo
   - semana actual
+  - barra separando 2020 2021
+  - ultimos 50 semanas
+  - (s)
