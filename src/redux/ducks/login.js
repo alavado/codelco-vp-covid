@@ -2,7 +2,7 @@ const login = 'login/login'
 const fijarError = 'login/fijarError'
 
 const defaultState = {
-  usuario: window.location.href.indexOf('localhost') >= 0,
+  usuario: false,//window.location.href.indexOf('localhost') >= 0,
   error: null
 }
 
@@ -27,7 +27,10 @@ export default function reducer(state = defaultState, action = {}) {
 }
 
 export const iniciaSesion = password => {
-  if (password !== '19c0d3lc0v1d') {
+  if (
+    (window.location.href.indexOf('dev') > 0 && password !== '19c0d3lc0v1dev') &&
+    (window.location.href.indexOf('dev') < 0 && password !== '19c0d3lc0v1d')
+  ) {
     return {
       type: fijarError,
       payload: 'Contraseña incorrecta'
