@@ -263,5 +263,30 @@
     "texto": "27 de diciembre al 2 de enero",
     "inicio": "27-12-2020",
     "termino": "01-01-2021"
+  },
+  "54": {
+    "texto": "3 al 9 de enero",
+    "inicio": "03-01-2021",
+    "termino": "09-01-2021"
+  },
+  "55": {
+    "texto": "10 al 16 de enero",
+    "inicio": "10-01-2021",
+    "termino": "16-01-2021"
+  },
+  "56": {
+    "texto": "17 al 23 de enero",
+    "inicio": "17-01-2021",
+    "termino": "23-01-2021"
+  },
+  "57": {
+    "texto": "24 al 30 de enero",
+    "inicio": "24-01-2021",
+    "termino": "30-01-2021"
+  },
+  "58": {
+    "texto": "31 de enero al 6 de febrero",
+    "inicio": "31-01-2021",
+    "termino": "06-02-2021"
   }
 }

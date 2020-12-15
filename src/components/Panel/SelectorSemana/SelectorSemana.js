@@ -32,7 +32,7 @@ const SelectorSemana = () => {
           <InlineIcon className="SelectorSemana__icono_boton" icon={iconoAtras} />
         </button>
         <div className="SelectorSemana__semana_seleccionada">
-          <div>Semana {ultimaSemana + retroceso} / 2020</div>
+          <div>Semana {ultimaSemana + retroceso} / {ultimaSemana + retroceso > 53 ? 2021 : 2020}</div>
           <div className="SelectorSemana__fechas_semana">
             {semanasEpidemiologicas[ultimaSemana + retroceso].texto}
           </div>

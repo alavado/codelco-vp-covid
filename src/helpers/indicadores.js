@@ -59,7 +59,7 @@ export const indicadores = [
   {
     nombre: 'Desempeño de seguimiento de casos',
     texto: 'Caso, todos los días, Contacto 2 veces en el período',
-    descripcion: '[casos confirmados + probables con contacto DIARIO desde el inicio de seguimiento] / [total casos confirmados + probables]',
+    descripcion: '[casos confirmados + probables con contacto CADA 48 HORAS desde el inicio de seguimiento] / [total casos confirmados + probables]',
     sufijo: '',
     niveles: [
       { color: coloresIndicadores.verde, nombre: '> 80%' },
