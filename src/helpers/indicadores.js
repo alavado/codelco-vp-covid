@@ -268,7 +268,6 @@ export const obtenerSemaforoIndicador = (codigoDivision, indicador, retroceso) =
     valor = datos.series.find(s => s.codigoDivision === codigoDivision)[propiedad].slice(-1 + retroceso)[0]
 
   } catch(e) { console.log(e) }
-  console.log(codigoDivision, indicador.propiedadSemaforo, datos.series.find(s => s.codigoDivision === codigoDivision)[propiedad])
   return isNaN(valor) ? (valor.trim() === 'NA' ? -1 : -2) : Number(valor)
 }
 
