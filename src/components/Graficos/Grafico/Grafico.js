@@ -64,15 +64,15 @@ const Grafico = ({ division }) => {
         <div className="Grafico__grafico">
           <Bar
             data={{
-              labels: semanas,
+              labels: semanas.slice(-53),
               datasets: [
                 {
-                  data: series.propios.slice(),
+                  data: series.propios.slice(-53),
                   backgroundColor: colorTrabajadoresPropios,
                   label: `Casos propios`
                 },
                 {
-                  data: series.externos.slice(),
+                  data: series.externos.slice(-53),
                   backgroundColor: colorTrabajadoresContratistas,
                   label: `Casos externos`
                 }
@@ -87,7 +87,7 @@ const Grafico = ({ division }) => {
               },
               tooltips: {
                 callbacks: {
-                  title: items => `Semana ${items[0].xLabel}`,
+                  title: items => `Semana ${(items[0].xLabel - 1) % 53 + 1}`,
                   afterTitle: items => semanasEpidemiologicas[items[0].xLabel].texto
                 }
               },
@@ -96,7 +96,7 @@ const Grafico = ({ division }) => {
                   ticks: {
                     maxRotation: 0,
                     autoSkip: false,
-                    callback: v => `${v}`,
+                    callback: v => `${(v - 1) % 53 + 1}`,
                   },
                   gridLines: {
                     display: false
