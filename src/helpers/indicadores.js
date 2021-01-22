@@ -150,7 +150,7 @@ export const indicadores = [
   {
     nombre: 'Búsqueda antes de faena',
     texto: 'Casos detectados antes de faena',
-    descripcion: '[casos confirmados + probables detectados por busqueda preventiva antes de ingresar a faena] / [casos confirmados + probables]',
+    descripcion: '[casos confirmados detectados por busqueda preventiva antes de ingresar a faena] / [casos confirmados]',
     sufijo: '',
     niveles: [
       { color: coloresIndicadores.verde, nombre: '> 30%' },

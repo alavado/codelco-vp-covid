@@ -21,7 +21,10 @@ const App = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    axios.get('https://codelco-covid-form.herokuapp.com/reporte.csv', { responseType: 'text' })
+    axios.get(window.location.href.indexOf('dev') < 0
+      ? 'https://codelco-covid-form.herokuapp.com/reporte.csv'
+      : 'https://codelco-covid-form.herokuapp.com/dev/reporte.csv'
+    , { responseType: 'text' })
       .then(res => dispatch(guardaDatos(res.data)))
   }, [dispatch])
   

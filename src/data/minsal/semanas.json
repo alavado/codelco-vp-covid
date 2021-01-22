@@ -288,5 +288,25 @@
     "texto": "31 de enero al 6 de febrero",
     "inicio": "31-01-2021",
     "termino": "06-02-2021"
+  },
+  "59": {
+    "texto": "7 al 13 de febrero",
+    "inicio": "07-02-2021",
+    "termino": "13-02-2021"
+  },
+  "60": {
+    "texto": "14 al 20 de febrero",
+    "inicio": "14-02-2021",
+    "termino": "20-02-2021"
+  },
+  "61": {
+    "texto": "21 al 27 de febrero",
+    "inicio": "21-02-2021",
+    "termino": "27-02-2021"
+  },
+  "62": {
+    "texto": "28 de febrero al 6 de marzo",
+    "inicio": "28-02-2021",
+    "termino": "06-03-2021"
   }
 }
