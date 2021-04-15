@@ -10,6 +10,18 @@
   color: #212121;
 }
 
+.App__vp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0093D5;
+  color: white;
+  margin-left: .5rem;
+  height: 2.25rem;
+  width: 2.25rem;
+  border-radius: 1in;
+}
+
 .App__header {
   height: 3rem;
   display: flex;
@@ -34,6 +46,7 @@
   font-size: 1rem;
   display: flex;
   align-items: center;
+  white-space: nowrap;
 }
 
 .App__logo {

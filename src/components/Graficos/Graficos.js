@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import './Graficos.css'
 import { Chart } from 'react-chartjs-2'
-import divisiones from '../../data/csv/divisiones.json'
+import vicepresidencias from '../../data/csv/vicepresidencias.json'
 import 'moment/locale/es'
 import Grafico from './Grafico/Grafico'
 import { useParams } from 'react-router-dom'
@@ -24,8 +24,8 @@ const Graficos = () => {
       <div className="Graficos__titulo">
         Gráficos de casos confirmados semanales
       </div>
-      <Grafico division={divisiones.find(d => d.codigo === 'GLOBAL')} />
-      {divisiones.filter(d => d.codigo !== 'GLOBAL').map(d => (
+      {/* <Grafico division={vicepresidencias.find(d => d.codigo === 'GLOBAL')} /> */}
+      {vicepresidencias.filter(d => d.codigo !== 'GLOBAL').map(d => (
         <div
           id={`grafico-${d.codigo}`}
           key={`contenedor-grafico-${d.codigo}`}

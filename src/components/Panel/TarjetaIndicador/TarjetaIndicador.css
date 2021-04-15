@@ -66,6 +66,14 @@
   text-shadow: 0 .1rem .05rem rgba(0, 0, 0, .15);
 }
 
+.TarjetaIndicador__contenedor_hexagono:first-child {
+  margin-left: var(--ancho-hexagono);
+}
+
+.TarjetaIndicador__contenedor_hexagono:nth-child(5) {
+  margin-left: calc(var(--ancho-hexagono) * .5);
+}
+
 .TarjetaIndicador__hexagono_pequeño:hover {
   transform: scale(1.35);
 }
@@ -120,4 +128,14 @@
   opacity: 1;
   transform: translateY(0);
   display: block;
+}
+
+@media (orientation: portrait), (max-height: 600px) {
+  .TarjetaIndicador {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    height: auto;
+    padding: 1rem;
+  }
 }

@@ -1,5 +1,5 @@
 import geoJSONRegiones from '../../data/geojson/regiones.json'
-import divisiones from '../../data/csv/divisiones.json'
+import vicepresidencias from '../../data/csv/vicepresidencias.json'
 import store from '../store'
 
 const fijarRegion = 'marcador/fijarRegion'
@@ -20,7 +20,7 @@ export default function reducer(state = defaultState, action = {}) {
       const { Region: titulo } = geoJSONRegiones.features
         .find(f => f.properties.codregion === Number(codigo))
         .properties
-      const divisionesRegion = divisiones.filter(d => d.region === Number(codigo))
+      const divisionesRegion = vicepresidencias.filter(d => d.region === Number(codigo))
       const casosContratistas = divisionesRegion
         .reduce((sum, division) => sum + datos.series.find(d => d.codigoDivision === division.codigo).externosAcum.slice(-1)[0], 0)
       const casosPropios = divisionesRegion
@@ -39,7 +39,7 @@ export default function reducer(state = defaultState, action = {}) {
       if (!codigo || codigo === state.codigo) {
         return state
       }
-      const division = divisiones.find(d => d.codigo === codigo)
+      const division = vicepresidencias.find(d => d.codigo === codigo)
       const datosDivision = datos.series.find(s => s.codigoDivision === codigo)
       return {
         ...state,

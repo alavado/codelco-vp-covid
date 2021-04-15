@@ -1,9 +1,9 @@
 import { coloresIndicadores } from './indicadores'
-import datosRegiones from '../data/csv/divisiones.json'
+import vicepresidencias from '../data/csv/vicepresidencias.json'
 import store from '../redux/store'
 
 export const obtenerColorRegion = codigoRegion => {
-  const divisionesRegion = datosRegiones.filter(d => d.region === codigoRegion)
+  const divisionesRegion = vicepresidencias.filter(d => d.region === codigoRegion)
   if (divisionesRegion.length === 0) {
     return '#cdd0d0'
   }

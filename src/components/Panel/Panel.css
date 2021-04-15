@@ -6,7 +6,7 @@
   animation: aparece-panel .25s ease-in-out both;
   --ancho-hexagono: 2.5rem;
   --ancho-indicador-global: 10rem;
-  --ancho-indicadores-locales: calc(var(--ancho-hexagono) * 4);
+  --ancho-indicadores-locales: calc(var(--ancho-hexagono) * 5);
   position: relative;
 }
 
@@ -68,5 +68,29 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+@media (orientation: portrait), (max-height: 600px) {
+  .Panel__contenedor_paneles {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .Panel__contenedor {
+    padding: 0;
+  }
+
+  .Panel__superior {
+    flex-direction: column;
+    padding: 1rem 0;
+  }
+
+  .Panel__panel:first-child {
+    margin-right: 0;
+  }
+  
+  .Panel__panel:last-child {
+    margin-left: 0;
   }
 }

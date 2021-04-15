@@ -47,3 +47,12 @@
   align-items: center;
   justify-content: center;
 }
+
+@media (orientation: portrait), (max-height: 600px) {
+  .SelectorSemana {
+    padding: 0;
+  }
+  .SelectorSemana__selector {
+    display: none;
+  }
+}

@@ -1,0 +1,98 @@
+[
+  {
+    "codigo": "VP",
+    "codigoCorto": "VP",
+    "nombre": "VP",
+    "region": 13,
+    "lat": -22.5090245,
+    "lng": -69.0710203
+  },
+  {
+    "codigo": "VP - CARTERA PROYECTOS TENIENTE",
+    "codigoCorto": "CPT",
+    "nombre": "VP - CARTERA PROYECTOS TENIENTE",
+    "region": 13,
+    "lat": -22.5090245,
+    "lng": -69.0710203
+  },
+  {
+    "codigo": "VP - TRANQUE TALABRE",
+    "codigoCorto": "TT",
+    "nombre": "VP - TRANQUE TALABRE",
+    "region": 13,
+    "lat": -22.5090245,
+    "lng": -69.0710203
+  },
+  {
+    "codigo": "VP - EMBALSE CAREN",
+    "codigoCorto": "EC",
+    "nombre": "VP - EMBALSE CAREN",
+    "region": 13,
+    "lat": -22.5090245,
+    "lng": -69.0710203
+  },
+  {
+    "codigo": "VP - TRANQUE OVEJERIA",
+    "codigoCorto": "TO",
+    "nombre": "VP - TRANQUE OVEJERIA",
+    "region": 13,
+    "lat": -22.5090245,
+    "lng": -69.0710203
+  },
+  {
+    "codigo": "VP - DLN EXTENDIDO",
+    "codigoCorto": "DLNE",
+    "nombre": "VP - DLN EXTENDIDO",
+    "region": 13,
+    "lat": -22.5090245,
+    "lng": -69.0710203
+  },
+  {
+    "codigo": "VP - RAJO INCA",
+    "codigoCorto": "RI",
+    "nombre": "VP - RAJO INCA",
+    "region": 13,
+    "lat": -22.5090245,
+    "lng": -69.0710203
+  },
+  {
+    "codigo": "VP - DESARROLLO FUTURO ANDINA",
+    "codigoCorto": "DFA",
+    "nombre": "VP - DESARROLLO FUTURO ANDINA",
+    "region": 13,
+    "lat": -22.5090245,
+    "lng": -69.0710203
+  },
+  {
+    "codigo": "VP - TRASPASO ANDINA",
+    "codigoCorto": "TA",
+    "nombre": "VP - TRASPASO ANDINA",
+    "region": 13,
+    "lat": -22.5090245,
+    "lng": -69.0710203
+  },
+  {
+    "codigo": "VP - RT OXIDOS",
+    "codigoCorto": "RTO",
+    "nombre": "VP - RT OXIDOS",
+    "region": 13,
+    "lat": -22.5090245,
+    "lng": -69.0710203
+  },
+  {
+    "codigo": "VP - SUMINISTRO AGUA DESALINIZADA",
+    "codigoCorto": "SAD",
+    "nombre": "VP - SUMINISTRO AGUA DESALINIZADA",
+    "region": 13,
+    "lat": -22.5090245,
+    "lng": -69.0710203
+  },
+  {
+    "codigo": "VP - PMCHS",
+    "codigoCorto": "PMC",
+    "nombre": "VP - PMCHS",
+    "region": 13,
+    "lat": -22.5090245,
+    "lng": -69.0710203
+  }
+]

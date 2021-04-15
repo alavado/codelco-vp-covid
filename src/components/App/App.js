@@ -10,7 +10,7 @@ import logo from '../../assets/Codelco_logo.svg'
 import { InlineIcon } from '@iconify/react'
 import chartScatterPlotHexbin from  '@iconify/icons-mdi/chart-scatter-plot-hexbin'
 import chartBox from  '@iconify/icons-mdi/chart-bar'
-import mapLegend from '@iconify/icons-mdi/map-legend'
+// import mapLegend from '@iconify/icons-mdi/map-legend'
 import axios from 'axios'
 import { guardaDatos } from '../../redux/ducks/datos'
 
@@ -22,8 +22,8 @@ const App = () => {
 
   useEffect(() => {
     axios.get(window.location.href.indexOf('dev') < 0
-      ? 'https://codelco-covid-form.herokuapp.com/reporte.csv'
-      : 'https://codelco-covid-form.herokuapp.com/dev/reporte.csv'
+      ? 'https://codelco-covid-form.herokuapp.com/dev.csv'
+      : 'https://codelco-covid-form.herokuapp.com/dev.csv'
     , { responseType: 'text' })
       .then(res => dispatch(guardaDatos(res.data)))
   }, [dispatch])
@@ -41,7 +41,7 @@ const App = () => {
       <div className="App__header">
         <h1 className="App__codelco">
           <img src={logo} alt="Logo CODELCO" className="App__logo" />
-          Dashboard CODELCO COVID-19
+          Dashboard CODELCO COVID-19 <span className="App__vp">VP</span>
         </h1>
         <nav className="App__navegacion">
           <NavLink
@@ -59,14 +59,14 @@ const App = () => {
           >
             <InlineIcon className="App__icono" icon={chartBox} /> Gráficos 
           </NavLink>
-          <NavLink
+          {/* <NavLink
             className="App__link_navegacion"
             activeClassName="App__link_navegacion--activo"
             exact
             to="/mapa"
           >
             <InlineIcon className="App__icono" icon={mapLegend} /> Mapa 
-          </NavLink>
+          </NavLink> */}
         </nav>
       </div>
       <div className="App__contenedor">

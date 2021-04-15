@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
 import MiniGrafico from './MiniGrafico'
-import divisiones from '../../../data/csv/divisiones.json'
+import vicepresidencias from '../../../data/csv/vicepresidencias.json'
 import geoJSONRegiones from '../../../data/geojson/regiones.json'
 import Select from 'react-select'
 import TotalCasos from './TotalCasos'
@@ -12,10 +12,10 @@ import { InlineIcon } from '@iconify/react'
 import chartBox from  '@iconify/icons-mdi/chart-bar'
 import semanasEpidemilogicas from '../../../data/minsal/semanas.json'
 
-const divisionesAgrupadasPorRegion = Array.from(new Set(divisiones.map(d => d.region)))
+const divisionesAgrupadasPorRegion = Array.from(new Set(vicepresidencias.map(d => d.region)))
   .sort((r1, r2) => r1 < r2 ? -1 : 1)
   .map(region => {
-    const divisionesRegion = divisiones.filter(d => d.region === region)
+    const divisionesRegion = vicepresidencias.filter(d => d.region === region)
     const feature = geoJSONRegiones.features.find(f => Number(f.properties.codregion) === Number(region))
     const label = feature?.properties.Region ?? 'Global'
     return {
@@ -54,7 +54,7 @@ const VisionGeneral = () => {
           defaultValue={divisionesAgrupadasPorRegion[0].options[0]}
           onChange={e => dispatch(muestraDivision(e.value))}
           className="VisionGeneral__selector_division"
-          value={{ value: codigo, label: divisiones.find(d => d.codigo === codigo).nombre }}
+          value={{ value: codigo, label: vicepresidencias.find(d => d.codigo === codigo).nombre }}
           formatGroupLabel={data => (
             <div>
               <span>{data.label}</span>
