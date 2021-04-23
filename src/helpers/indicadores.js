@@ -193,9 +193,9 @@ export const indicadores = [
     leyenda: 'X% de casos asintomáticos',
   },
   {
-    nombre: 'Identificación de Brotes alerta amarilla',
-    texto: 'Identificación de Brotes (Alerta Amarilla)',
-    descripcion: 'N° de brotes con alerta AMARILLA en el periodo',
+    nombre: 'Identificación de brotes alerta amarilla confirmados',
+    texto: 'Identificación de Brotes confirmados (Alerta Amarilla)',
+    descripcion: 'N° de brotes con alerta AMARILLA confirmados en el periodo',
     sufijo: '',
     niveles: [
       { color: coloresIndicadores.verde, nombre: '0' },
@@ -208,9 +208,24 @@ export const indicadores = [
     leyenda: 'X brote(s) amarillo(s)',
   },
   {
-    nombre: 'Identificación de Brotes alerta roja',
-    texto: 'Identificación de Brotes (Alerta Roja)',
-    descripcion: 'N° de brotes con alerta ROJA en el periodo',
+    nombre: 'Identificación de brotes alerta amarilla activos',
+    texto: 'Identificación de Brotes activos (Alerta Amarilla)',
+    descripcion: 'N° de brotes con alerta AMARILLA activos en el periodo',
+    sufijo: '',
+    niveles: [
+      { color: coloresIndicadores.verde, nombre: '0' },
+      { color: coloresIndicadores.amarillo, nombre: '1' },
+      { color: coloresIndicadores.rojo, nombre: '>= 2 alertas amarillas' },
+      { color: coloresIndicadores.celeste, nombre: 'No se calculó indicador' },
+      { color: coloresIndicadores.gris, nombre: 'No hay datos' }
+    ],
+    propiedadSemaforo: 'SO_brotes_amarillos_activos',
+    leyenda: 'X brote(s) amarillo(s)',
+  },
+  {
+    nombre: 'Identificación de brotes alerta roja confirmados',
+    texto: 'Identificación de Brotes confirmados (Alerta Roja)',
+    descripcion: 'N° de brotes con alerta ROJA cofirmados en el periodo',
     sufijo: '',
     niveles: [
       { color: coloresIndicadores.verde, nombre: '0 alertas rojas' },
@@ -219,6 +234,20 @@ export const indicadores = [
       { color: coloresIndicadores.gris, nombre: 'No hay datos' }
     ],
     propiedadSemaforo: 'SO_brotes_rojos',
+    leyenda: 'X brote(s) rojo(s)',
+  },
+  {
+    nombre: 'Identificación de brotes alerta roja activos',
+    texto: 'Identificación de Brotes activos (Alerta Roja)',
+    descripcion: 'N° de brotes con alerta ROJA cofirmados en el periodo',
+    sufijo: '',
+    niveles: [
+      { color: coloresIndicadores.verde, nombre: '0 alertas rojas' },
+      { color: coloresIndicadores.rojo, nombre: '>= 1 alertas rojas' },
+      { color: coloresIndicadores.celeste, nombre: 'No se calculó indicador' },
+      { color: coloresIndicadores.gris, nombre: 'No hay datos' }
+    ],
+    propiedadSemaforo: 'SO_brotes_rojos_activos',
     leyenda: 'X brote(s) rojo(s)',
   },
   {
@@ -285,10 +314,25 @@ export const obtenerTextoPopupIndicador = (codigoDivision, indicador, retroceso)
     }
   }
   else {
-    const propiedadDatoX = `${indicador.propiedadSemaforo}_datox`
+    let propiedadDatoX = `${indicador.propiedadSemaforo}_datox`
     const propiedadDatoY = `${indicador.propiedadSemaforo}_datoy`
+    if (!serieDivision[propiedadDatoX]) {
+      propiedadDatoX = obtenerPropiedadRara(indicador.propiedadSemaforo)
+    }
     return indicador.leyenda
       .replace('X', serieDivision[propiedadDatoX].slice(-1 + retroceso)[0].toLocaleString('de-DE'))
       .replace('Y', serieDivision[propiedadDatoY]?.slice(-1 + retroceso)[0].toLocaleString('de-DE'))
+  }
+}
+
+const obtenerPropiedadRara = propiedad => {
+  if (propiedad === 'SO_brotes_rojos_activos') {
+    return 'SO_brotes_rojos_datox_activos'
+  }
+  else if (propiedad === 'SO_brotes_amarillos_activos') {
+    return 'SO_brotes_amarillos_datox_activos'
+  }
+  else {
+    throw Error('propiedad muy rara')
   }
 }

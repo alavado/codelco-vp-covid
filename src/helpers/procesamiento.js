@@ -58,7 +58,11 @@ export const procesarCSV = csv => {
     'SO_busqueda_durante_datox',
     'SE_seguimientoDesempeno_contactos',
     'SE_seguimientoDesempeno_contactos_datox',
-    'SE_seguimientoDesempeno_contactos_datoy'    
+    'SE_seguimientoDesempeno_contactos_datoy',
+    'SO_brotes_amarillos_activos',
+    'SO_brotes_amarillos_datox_activos',
+    'SO_brotes_rojos_activos',
+    'SO_brotes_rojos_datox_activos' 
   ]
   
   const datos = filas.map(fila => {
