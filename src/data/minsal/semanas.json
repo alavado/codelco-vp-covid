@@ -353,5 +353,30 @@
     "texto": "2 al 8 de mayo",
     "inicio": "02-05-2021",
     "termino": "08-05-2021"
+  },
+  "72": {
+    "texto": "9 al 15 de mayo",
+    "inicio": "09-05-2021",
+    "termino": "15-05-2021"
+  },
+  "73": {
+    "texto": "16 al 22 de mayo",
+    "inicio": "16-05-2021",
+    "termino": "22-05-2021"
+  },
+  "74": {
+    "texto": "23 al 29 de mayo",
+    "inicio": "23-05-2021",
+    "termino": "29-05-2021"
+  },
+  "75": {
+    "texto": "30 de mayo al 5 de junio",
+    "inicio": "30-05-2021",
+    "termino": "05-06-2021"
+  },
+  "76": {
+    "texto": "6 al 12 de junio",
+    "inicio": "06-06-2021",
+    "termino": "12-06-2021"
   }
 }
