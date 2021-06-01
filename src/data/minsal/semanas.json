@@ -378,5 +378,25 @@
     "texto": "6 al 12 de junio",
     "inicio": "06-06-2021",
     "termino": "12-06-2021"
+  },
+  "77": {
+    "texto": "13 al 19 de junio",
+    "inicio": "13-06-2021",
+    "termino": "19-06-2021"
+  },
+  "78": {
+    "texto": "20 al 26 de junio",
+    "inicio": "20-06-2021",
+    "termino": "26-06-2021"
+  },
+  "79": {
+    "texto": "27 de junio al 3 de julio",
+    "inicio": "27-06-2021",
+    "termino": "03-07-2021"
+  },
+  "80": {
+    "texto": "4 al 10 de julio",
+    "inicio": "04-07-2021",
+    "termino": "10-07-2021"
   }
 }
