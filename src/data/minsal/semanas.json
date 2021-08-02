@@ -423,5 +423,25 @@
     "texto": "8 al 14 de agosto",
     "inicio": "08-08-2021",
     "termino": "14-08-2021"
+  },
+  "86": {
+    "texto": "15 al 21 de agosto",
+    "inicio": "15-08-2021",
+    "termino": "21-08-2021"
+  },
+  "87": {
+    "texto": "22 al 28 de agosto",
+    "inicio": "22-08-2021",
+    "termino": "28-08-2021"
+  },
+  "88": {
+    "texto": "29 de agosto al 4 de septiembre",
+    "inicio": "29-08-2021",
+    "termino": "04-09-2021"
+  },
+  "89": {
+    "texto": "5 al 11 de septiembre",
+    "inicio": "05-09-2021",
+    "termino": "11-09-2021"
   }
 }
