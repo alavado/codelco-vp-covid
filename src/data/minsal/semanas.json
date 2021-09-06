@@ -443,5 +443,25 @@
     "texto": "5 al 11 de septiembre",
     "inicio": "05-09-2021",
     "termino": "11-09-2021"
+  },
+  "90": {
+    "texto": "12 al 18 de septiembre",
+    "inicio": "12-09-2021",
+    "termino": "18-09-2021"
+  },
+  "91": {
+    "texto": "19 al 25 de septiembre",
+    "inicio": "19-09-2021",
+    "termino": "25-09-2021"
+  },
+  "92": {
+    "texto": "26 de septiembre al 2 de octubre",
+    "inicio": "26-09-2021",
+    "termino": "02-10-2021"
+  },
+  "93": {
+    "texto": "3 al 9 de octubre",
+    "inicio": "03-10-2021",
+    "termino": "09-10-2021"
   }
 }
