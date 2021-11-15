@@ -488,5 +488,25 @@
     "texto": "7 al 13 de noviembre",
     "inicio": "07-11-2021",
     "termino": "13-11-2021"
+  },
+  "99": {
+    "texto": "14 al 20 de noviembre",
+    "inicio": "14-11-2021",
+    "termino": "20-11-2021"
+  },
+  "100": {
+    "texto": "21 al 27 de noviembre",
+    "inicio": "21-11-2021",
+    "termino": "27-11-2021"
+  },
+  "101": {
+    "texto": "28 al noviembre al 4 de diciembre",
+    "inicio": "28-11-2021",
+    "termino": "04-12-2021"
+  },
+  "102": {
+    "texto": "5 al 11 de diciembre",
+    "inicio": "05-12-2021",
+    "termino": "11-12-2021"
   }
 }
