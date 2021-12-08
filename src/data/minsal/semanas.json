@@ -508,5 +508,30 @@
     "texto": "5 al 11 de diciembre",
     "inicio": "05-12-2021",
     "termino": "11-12-2021"
+  },
+  "103": {
+    "texto": "12 al 18 de diciembre",
+    "inicio": "12-12-2021",
+    "termino": "18-12-2021"
+  },
+  "104": {
+    "texto": "19 al 25 de diciembre",
+    "inicio": "19-12-2021",
+    "termino": "25-12-2021"
+  },
+  "105": {
+    "texto": "26 de diciembre al 1 de enero",
+    "inicio": "26-12-2021",
+    "termino": "01-01-2022"
+  },
+  "106": {
+    "texto": "2 al 8 de enero",
+    "inicio": "02-01-2022",
+    "termino": "08-01-2022"
+  },
+  "107": {
+    "texto": "9 al 15 de enero",
+    "inicio": "09-01-2022",
+    "termino": "15-01-2022"
   }
 }
