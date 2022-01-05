@@ -2,536 +2,667 @@
   "1": {
     "texto": "29 de diciembre al 4 de enero",
     "inicio": "29-12-2019",
-    "termino": "04-01-2020"
+    "termino": "04-01-2020",
+    "semanaEnAño": 1
   },
   "2": {
     "texto": "5 al 11 de enero",
     "inicio": "05-01-2020",
-    "termino": "11-01-2020"
+    "termino": "11-01-2020",
+    "semanaEnAño": 2
   },
   "3": {
     "texto": "12 al 18 de enero",
     "inicio": "12-01-2020",
-    "termino": "18-01-2020"
+    "termino": "18-01-2020",
+    "semanaEnAño": 3
   },
   "4": {
     "texto": "19 al 25 de enero",
     "inicio": "19-01-2020",
-    "termino": "25-01-2020"
+    "termino": "25-01-2020",
+    "semanaEnAño": 4
   },
   "5": {
     "texto": "26 de enero al 1 de febrero",
     "inicio": "26-01-2020",
-    "termino": "01-02-2020"
+    "termino": "01-02-2020",
+    "semanaEnAño": 5
   },
   "6": {
     "texto": "2 al 8 de febrero",
     "inicio": "02-02-2020",
-    "termino": "08-02-2020"
+    "termino": "08-02-2020",
+    "semanaEnAño": 6
   },
   "7": {
     "texto": "9 al 15 de febrero",
     "inicio": "09-02-2020",
-    "termino": "15-02-2020"
+    "termino": "15-02-2020",
+    "semanaEnAño": 7
   },
   "8": {
     "texto": "16 al 22 de febrero",
     "inicio": "16-02-2020",
-    "termino": "22-02-2020"
+    "termino": "22-02-2020",
+    "semanaEnAño": 8
   },
   "9": {
     "texto": "23 al 29 de febrero",
     "inicio": "23-02-2020",
-    "termino": "29-02-2020"
+    "termino": "29-02-2020",
+    "semanaEnAño": 9
   },
   "10": {
     "texto": "1 al 7 de marzo",
     "inicio": "01-03-2020",
-    "termino": "07-03-2020"
+    "termino": "07-03-2020",
+    "semanaEnAño": 10
   },
   "11": {
     "texto": "8 al 14 de marzo",
     "inicio": "08-03-2020",
-    "termino": "14-03-2020"
+    "termino": "14-03-2020",
+    "semanaEnAño": 11
   },
   "12": {
     "texto": "15 al 21 de marzo",
     "inicio": "15-03-2020",
-    "termino": "21-03-2020"
+    "termino": "21-03-2020",
+    "semanaEnAño": 12
   },
   "13": {
     "texto": "22 al 28 de marzo",
     "inicio": "22-03-2020",
-    "termino": "28-03-2020"
+    "termino": "28-03-2020",
+    "semanaEnAño": 13
   },
   "14": {
     "texto": "29 de marzo al 4 de abril",
     "inicio": "29-03-2020",
-    "termino": "04-04-2020"
+    "termino": "04-04-2020",
+    "semanaEnAño": 14
   },
   "15": {
     "texto": "5 al 11 de abril",
     "inicio": "05-04-2020",
-    "termino": "11-04-2020"
+    "termino": "11-04-2020",
+    "semanaEnAño": 15
   },
   "16": {
     "texto": "12 al 18 de abril",
     "inicio": "12-04-2020",
-    "termino": "18-04-2020"
+    "termino": "18-04-2020",
+    "semanaEnAño": 16
   },
   "17": {
     "texto": "19 al 25 de abril",
     "inicio": "19-04-2020",
-    "termino": "25-04-2020"
+    "termino": "25-04-2020",
+    "semanaEnAño": 17
   },
   "18": {
     "texto": "26 de abril al 2 de mayo",
     "inicio": "26-04-2020",
-    "termino": "02-05-2020"
+    "termino": "02-05-2020",
+    "semanaEnAño": 18
   },
   "19": {
     "texto": "3 al 9 de mayo",
     "inicio": "03-05-2020",
-    "termino": "09-05-2020"
+    "termino": "09-05-2020",
+    "semanaEnAño": 19
   },
   "20": {
     "texto": "10 al 16 de mayo",
     "inicio": "10-05-2020",
-    "termino": "16-05-2020"
+    "termino": "16-05-2020",
+    "semanaEnAño": 20
   },
   "21": {
     "texto": "17 al 23 de mayo",
     "inicio": "17-05-2020",
-    "termino": "23-05-2020"
+    "termino": "23-05-2020",
+    "semanaEnAño": 21
   },
   "22": {
     "texto": "24 al 30 de mayo",
     "inicio": "24-05-2020",
-    "termino": "30-05-2020"
+    "termino": "30-05-2020",
+    "semanaEnAño": 22
   },
   "23": {
     "texto": "31 de mayo al 6 de junio",
     "inicio": "31-05-2020",
-    "termino": "06-06-2020"
+    "termino": "06-06-2020",
+    "semanaEnAño": 23
   },
   "24": {
     "texto": "7 al 13 de junio",
     "inicio": "07-06-2020",
-    "termino": "13-06-2020"
+    "termino": "13-06-2020",
+    "semanaEnAño": 24
   },
   "25": {
     "texto": "14 al 20 de junio",
     "inicio": "14-06-2020",
-    "termino": "20-06-2020"
+    "termino": "20-06-2020",
+    "semanaEnAño": 25
   },
   "26": {
     "texto": "21 al 27 de junio",
     "inicio": "21-06-2020",
-    "termino": "27-06-2020"
+    "termino": "27-06-2020",
+    "semanaEnAño": 26
   },
   "27": {
     "texto": "28 de junio al 4 de julio",
     "inicio": "28-06-2020",
-    "termino": "04-07-2020"
+    "termino": "04-07-2020",
+    "semanaEnAño": 27
   },
   "28": {
     "texto": "5 al 11 de julio",
     "inicio": "05-07-2020",
-    "termino": "11-07-2020"
+    "termino": "11-07-2020",
+    "semanaEnAño": 28
   },
   "29": {
     "texto": "12 al 18 de julio",
     "inicio": "12-07-2020",
-    "termino": "18-07-2020"
+    "termino": "18-07-2020",
+    "semanaEnAño": 29
   },
   "30": {
     "texto": "19 al 25 de julio",
     "inicio": "19-07-2020",
-    "termino": "25-07-2020"
+    "termino": "25-07-2020",
+    "semanaEnAño": 30
   },
   "31": {
     "texto": "26 de julio al 1 de agosto",
     "inicio": "26-07-2020",
-    "termino": "01-08-2020"
+    "termino": "01-08-2020",
+    "semanaEnAño": 31
   },
   "32": {
     "texto": "2 al 8 de agosto",
     "inicio": "02-08-2020",
-    "termino": "08-08-2020"
+    "termino": "08-08-2020",
+    "semanaEnAño": 32
   },
   "33": {
     "texto": "9 al 15 de agosto",
     "inicio": "09-08-2020",
-    "termino": "15-08-2020"
+    "termino": "15-08-2020",
+    "semanaEnAño": 33
   },
   "34": {
     "texto": "16 al 22 de agosto",
     "inicio": "16-08-2020",
-    "termino": "22-08-2020"
+    "termino": "22-08-2020",
+    "semanaEnAño": 34
   },
   "35": {
     "texto": "23 al 29 de agosto",
     "inicio": "23-08-2020",
-    "termino": "29-08-2020"
+    "termino": "29-08-2020",
+    "semanaEnAño": 35
   },
   "36": {
     "texto": "30 de agosto al 5 de septiembre",
     "inicio": "30-08-2020",
-    "termino": "05-09-2020"
+    "termino": "05-09-2020",
+    "semanaEnAño": 36
   },
   "37": {
     "texto": "6 al 12 de septiembre",
     "inicio": "06-09-2020",
-    "termino": "12-09-2020"
+    "termino": "12-09-2020",
+    "semanaEnAño": 37
   },
   "38": {
     "texto": "13 al 19 de septiembre",
     "inicio": "13-09-2020",
-    "termino": "19-09-2020"
+    "termino": "19-09-2020",
+    "semanaEnAño": 38
   },
   "39": {
     "texto": "20 al 26 de septiembre",
     "inicio": "20-09-2020",
-    "termino": "26-09-2020"
+    "termino": "26-09-2020",
+    "semanaEnAño": 39
   },
   "40": {
     "texto": "27 de septiembre al 3 de octubre",
     "inicio": "27-09-2020",
-    "termino": "03-10-2020"
+    "termino": "03-10-2020",
+    "semanaEnAño": 40
   },
   "41": {
     "texto": "4 al 10 de octubre",
     "inicio": "04-10-2020",
-    "termino": "10-10-2020"
+    "termino": "10-10-2020",
+    "semanaEnAño": 41
   },
   "42": {
     "texto": "11 al 17 de octubre",
     "inicio": "11-10-2020",
-    "termino": "17-10-2020"
+    "termino": "17-10-2020",
+    "semanaEnAño": 42
   },
   "43": {
     "texto": "18 al 24 de octubre",
     "inicio": "18-10-2020",
-    "termino": "24-10-2020"
+    "termino": "24-10-2020",
+    "semanaEnAño": 43
   },
   "44": {
     "texto": "25 al 31 de octubre",
     "inicio": "25-10-2020",
-    "termino": "31-10-2020"
+    "termino": "31-10-2020",
+    "semanaEnAño": 44
   },
   "45": {
     "texto": "1 al 7 de noviembre",
     "inicio": "01-11-2020",
-    "termino": "07-11-2020"
+    "termino": "07-11-2020",
+    "semanaEnAño": 45
   },
   "46": {
     "texto": "8 al 14 de noviembre",
     "inicio": "08-11-2020",
-    "termino": "14-11-2020"
+    "termino": "14-11-2020",
+    "semanaEnAño": 46
   },
   "47": {
     "texto": "15 al 21 de noviembre",
     "inicio": "15-11-2020",
-    "termino": "21-11-2020"
+    "termino": "21-11-2020",
+    "semanaEnAño": 47
   },
   "48": {
     "texto": "22 al 28 de noviembre",
     "inicio": "22-11-2020",
-    "termino": "28-11-2020"
+    "termino": "28-11-2020",
+    "semanaEnAño": 48
   },
   "49": {
     "texto": "29 de noviembre al 5 de diciembre",
     "inicio": "29-11-2020",
-    "termino": "05-12-2020"
+    "termino": "05-12-2020",
+    "semanaEnAño": 49
   },
   "50": {
     "texto": "6 al 12 de diciembre",
     "inicio": "06-12-2020",
-    "termino": "12-12-2020"
+    "termino": "12-12-2020",
+    "semanaEnAño": 50
   },
   "51": {
     "texto": "13 al 19 de diciembre",
     "inicio": "13-12-2020",
-    "termino": "19-12-2020"
+    "termino": "19-12-2020",
+    "semanaEnAño": 51
   },
   "52": {
     "texto": "20 al 26 de diciembre",
     "inicio": "20-12-2020",
-    "termino": "26-12-2020"
+    "termino": "26-12-2020",
+    "semanaEnAño": 52
   },
   "53": {
     "texto": "27 de diciembre al 2 de enero",
     "inicio": "27-12-2020",
-    "termino": "01-01-2021"
+    "termino": "01-01-2021",
+    "semanaEnAño": 53
   },
   "54": {
     "texto": "3 al 9 de enero",
     "inicio": "03-01-2021",
-    "termino": "09-01-2021"
+    "termino": "09-01-2021",
+    "semanaEnAño": 1
   },
   "55": {
     "texto": "10 al 16 de enero",
     "inicio": "10-01-2021",
-    "termino": "16-01-2021"
+    "termino": "16-01-2021",
+    "semanaEnAño": 2
   },
   "56": {
     "texto": "17 al 23 de enero",
     "inicio": "17-01-2021",
-    "termino": "23-01-2021"
+    "termino": "23-01-2021",
+    "semanaEnAño": 3
   },
   "57": {
     "texto": "24 al 30 de enero",
     "inicio": "24-01-2021",
-    "termino": "30-01-2021"
+    "termino": "30-01-2021",
+    "semanaEnAño": 4
   },
   "58": {
     "texto": "31 de enero al 6 de febrero",
     "inicio": "31-01-2021",
-    "termino": "06-02-2021"
+    "termino": "06-02-2021",
+    "semanaEnAño": 5
   },
   "59": {
     "texto": "7 al 13 de febrero",
     "inicio": "07-02-2021",
-    "termino": "13-02-2021"
+    "termino": "13-02-2021",
+    "semanaEnAño": 6
   },
   "60": {
     "texto": "14 al 20 de febrero",
     "inicio": "14-02-2021",
-    "termino": "20-02-2021"
+    "termino": "20-02-2021",
+    "semanaEnAño": 7
   },
   "61": {
     "texto": "21 al 27 de febrero",
     "inicio": "21-02-2021",
-    "termino": "27-02-2021"
+    "termino": "27-02-2021",
+    "semanaEnAño": 8
   },
   "62": {
     "texto": "28 de febrero al 6 de marzo",
     "inicio": "28-02-2021",
-    "termino": "06-03-2021"
+    "termino": "06-03-2021",
+    "semanaEnAño": 9
   },
   "63": {
     "texto": "7 al 13 de marzo",
     "inicio": "07-03-2021",
-    "termino": "13-03-2021"
+    "termino": "13-03-2021",
+    "semanaEnAño": 10
   },
   "64": {
     "texto": "14 al 20 de marzo",
     "inicio": "14-03-2021",
-    "termino": "20-03-2021"
+    "termino": "20-03-2021",
+    "semanaEnAño": 11
   },
   "65": {
     "texto": "21 al 27 de marzo",
     "inicio": "21-03-2021",
-    "termino": "27-03-2021"
+    "termino": "27-03-2021",
+    "semanaEnAño": 12
   },
   "66": {
     "texto": "28 de marzo al 3 de abril",
     "inicio": "28-03-2021",
-    "termino": "03-04-2021"
+    "termino": "03-04-2021",
+    "semanaEnAño": 13
   },
   "67": {
     "texto": "4 al 10 de abril",
     "inicio": "04-04-2021",
-    "termino": "10-04-2021"
+    "termino": "10-04-2021",
+    "semanaEnAño": 14
   },
   "68": {
     "texto": "11 al 17 de abril",
     "inicio": "11-04-2021",
-    "termino": "17-04-2021"
+    "termino": "17-04-2021",
+    "semanaEnAño": 15
   },
   "69": {
     "texto": "18 al 24 de abril",
     "inicio": "18-04-2021",
-    "termino": "24-04-2021"
+    "termino": "24-04-2021",
+    "semanaEnAño": 16
   },
   "70": {
     "texto": "25 al 1 de mayo",
     "inicio": "25-04-2021",
-    "termino": "01-05-2021"
+    "termino": "01-05-2021",
+    "semanaEnAño": 17
   },
   "71": {
     "texto": "2 al 8 de mayo",
     "inicio": "02-05-2021",
-    "termino": "08-05-2021"
+    "termino": "08-05-2021",
+    "semanaEnAño": 18
   },
   "72": {
     "texto": "9 al 15 de mayo",
     "inicio": "09-05-2021",
-    "termino": "15-05-2021"
+    "termino": "15-05-2021",
+    "semanaEnAño": 19
   },
   "73": {
     "texto": "16 al 22 de mayo",
     "inicio": "16-05-2021",
-    "termino": "22-05-2021"
+    "termino": "22-05-2021",
+    "semanaEnAño": 20
   },
   "74": {
     "texto": "23 al 29 de mayo",
     "inicio": "23-05-2021",
-    "termino": "29-05-2021"
+    "termino": "29-05-2021",
+    "semanaEnAño": 21
   },
   "75": {
     "texto": "30 de mayo al 5 de junio",
     "inicio": "30-05-2021",
-    "termino": "05-06-2021"
+    "termino": "05-06-2021",
+    "semanaEnAño": 22
   },
   "76": {
     "texto": "6 al 12 de junio",
     "inicio": "06-06-2021",
-    "termino": "12-06-2021"
+    "termino": "12-06-2021",
+    "semanaEnAño": 23
   },
   "77": {
     "texto": "13 al 19 de junio",
     "inicio": "13-06-2021",
-    "termino": "19-06-2021"
+    "termino": "19-06-2021",
+    "semanaEnAño": 24
   },
   "78": {
     "texto": "20 al 26 de junio",
     "inicio": "20-06-2021",
-    "termino": "26-06-2021"
+    "termino": "26-06-2021",
+    "semanaEnAño": 25
   },
   "79": {
     "texto": "27 de junio al 3 de julio",
     "inicio": "27-06-2021",
-    "termino": "03-07-2021"
+    "termino": "03-07-2021",
+    "semanaEnAño": 26
   },
   "80": {
     "texto": "4 al 10 de julio",
     "inicio": "04-07-2021",
-    "termino": "10-07-2021"
+    "termino": "10-07-2021",
+    "semanaEnAño": 27
   },
   "81": {
     "texto": "11 al 17 de julio",
     "inicio": "11-07-2021",
-    "termino": "17-07-2021"
+    "termino": "17-07-2021",
+    "semanaEnAño": 28
   },
   "82": {
     "texto": "18 al 24 de julio",
     "inicio": "18-07-2021",
-    "termino": "24-07-2021"
+    "termino": "24-07-2021",
+    "semanaEnAño": 29
   },
   "83": {
     "texto": "25 al 31 de julio",
     "inicio": "25-07-2021",
-    "termino": "31-07-2021"
+    "termino": "31-07-2021",
+    "semanaEnAño": 30
   },
   "84": {
     "texto": "1 al 7 de agosto",
     "inicio": "01-08-2021",
-    "termino": "07-08-2021"
+    "termino": "07-08-2021",
+    "semanaEnAño": 31
   },
   "85": {
     "texto": "8 al 14 de agosto",
     "inicio": "08-08-2021",
-    "termino": "14-08-2021"
+    "termino": "14-08-2021",
+    "semanaEnAño": 32
   },
   "86": {
     "texto": "15 al 21 de agosto",
     "inicio": "15-08-2021",
-    "termino": "21-08-2021"
+    "termino": "21-08-2021",
+    "semanaEnAño": 33
   },
   "87": {
     "texto": "22 al 28 de agosto",
     "inicio": "22-08-2021",
-    "termino": "28-08-2021"
+    "termino": "28-08-2021",
+    "semanaEnAño": 34
   },
   "88": {
     "texto": "29 de agosto al 4 de septiembre",
     "inicio": "29-08-2021",
-    "termino": "04-09-2021"
+    "termino": "04-09-2021",
+    "semanaEnAño": 35
   },
   "89": {
     "texto": "5 al 11 de septiembre",
     "inicio": "05-09-2021",
-    "termino": "11-09-2021"
+    "termino": "11-09-2021",
+    "semanaEnAño": 36
   },
   "90": {
     "texto": "12 al 18 de septiembre",
     "inicio": "12-09-2021",
-    "termino": "18-09-2021"
+    "termino": "18-09-2021",
+    "semanaEnAño": 37
   },
   "91": {
     "texto": "19 al 25 de septiembre",
     "inicio": "19-09-2021",
-    "termino": "25-09-2021"
+    "termino": "25-09-2021",
+    "semanaEnAño": 38
   },
   "92": {
     "texto": "26 de septiembre al 2 de octubre",
     "inicio": "26-09-2021",
-    "termino": "02-10-2021"
+    "termino": "02-10-2021",
+    "semanaEnAño": 39
   },
   "93": {
     "texto": "3 al 9 de octubre",
     "inicio": "03-10-2021",
-    "termino": "09-10-2021"
+    "termino": "09-10-2021",
+    "semanaEnAño": 40
   },
   "94": {
     "texto": "10 al 16 de octubre",
     "inicio": "10-10-2021",
-    "termino": "16-10-2021"
+    "termino": "16-10-2021",
+    "semanaEnAño": 41
   },
   "95": {
     "texto": "17 al 23 de octubre",
     "inicio": "17-10-2021",
-    "termino": "23-10-2021"
+    "termino": "23-10-2021",
+    "semanaEnAño": 42
   },
   "96": {
     "texto": "24 al 30 de octubre",
     "inicio": "24-10-2021",
-    "termino": "30-10-2021"
+    "termino": "30-10-2021",
+    "semanaEnAño": 43
   },
   "97": {
     "texto": "31 de octubre al 6 de noviembre",
     "inicio": "31-10-2021",
-    "termino": "06-11-2021"
+    "termino": "06-11-2021",
+    "semanaEnAño": 44
   },
   "98": {
     "texto": "7 al 13 de noviembre",
     "inicio": "07-11-2021",
-    "termino": "13-11-2021"
+    "termino": "13-11-2021",
+    "semanaEnAño": 45
   },
   "99": {
     "texto": "14 al 20 de noviembre",
     "inicio": "14-11-2021",
-    "termino": "20-11-2021"
+    "termino": "20-11-2021",
+    "semanaEnAño": 46
   },
   "100": {
     "texto": "21 al 27 de noviembre",
     "inicio": "21-11-2021",
-    "termino": "27-11-2021"
+    "termino": "27-11-2021",
+    "semanaEnAño": 47
   },
   "101": {
     "texto": "28 al noviembre al 4 de diciembre",
     "inicio": "28-11-2021",
-    "termino": "04-12-2021"
+    "termino": "04-12-2021",
+    "semanaEnAño": 48
   },
   "102": {
     "texto": "5 al 11 de diciembre",
     "inicio": "05-12-2021",
-    "termino": "11-12-2021"
+    "termino": "11-12-2021",
+    "semanaEnAño": 49
   },
   "103": {
     "texto": "12 al 18 de diciembre",
     "inicio": "12-12-2021",
-    "termino": "18-12-2021"
+    "termino": "18-12-2021",
+    "semanaEnAño": 50
   },
   "104": {
     "texto": "19 al 25 de diciembre",
     "inicio": "19-12-2021",
-    "termino": "25-12-2021"
+    "termino": "25-12-2021",
+    "semanaEnAño": 51
   },
   "105": {
     "texto": "26 de diciembre al 1 de enero",
     "inicio": "26-12-2021",
-    "termino": "01-01-2022"
+    "termino": "01-01-2022",
+    "semanaEnAño": 52
   },
   "106": {
     "texto": "2 al 8 de enero",
     "inicio": "02-01-2022",
-    "termino": "08-01-2022"
+    "termino": "08-01-2022",
+    "semanaEnAño": 1
   },
   "107": {
     "texto": "9 al 15 de enero",
     "inicio": "09-01-2022",
-    "termino": "15-01-2022"
+    "termino": "15-01-2022",
+    "semanaEnAño": 2
+  },
+  "108": {
+    "texto": "16 al 22 de enero",
+    "inicio": "16-01-2022",
+    "termino": "22-01-2022",
+    "semanaEnAño": 3
+  },
+  "109": {
+    "texto": "23 al 29 de enero",
+    "inicio": "23-01-2022",
+    "termino": "29-01-2022",
+    "semanaEnAño": 4
+  },
+  "110": {
+    "texto": "30 de enero al 5 de febrero",
+    "inicio": "30-01-2022",
+    "termino": "05-02-2022",
+    "semanaEnAño": 5
+  },
+  "111": {
+    "texto": "6 al 12 de febrero",
+    "inicio": "30-01-2022",
+    "termino": "05-02-2022",
+    "semanaEnAño": 6
   }
 }

@@ -87,7 +87,7 @@ const Grafico = ({ division }) => {
               },
               tooltips: {
                 callbacks: {
-                  title: items => `Semana ${(items[0].xLabel - 1) % 53 + 1}`,
+                  title: items => `Semana ${semanasEpidemiologicas[items[0].xLabel].semanaEnAño}`,
                   afterTitle: items => semanasEpidemiologicas[items[0].xLabel].texto
                 }
               },
@@ -96,7 +96,7 @@ const Grafico = ({ division }) => {
                   ticks: {
                     maxRotation: 0,
                     autoSkip: false,
-                    callback: v => `${(v - 1) % 53 + 1}`,
+                    callback: v => `${semanasEpidemiologicas[+v].semanaEnAño}`,
                   },
                   gridLines: {
                     display: false
