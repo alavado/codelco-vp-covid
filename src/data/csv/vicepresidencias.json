@@ -40,33 +40,9 @@
     "lng": -69.0710203
   },
   {
-    "codigo": "VP - DLN EXTENDIDO",
-    "codigoCorto": "DLNE",
-    "nombre": "VP - DLN EXTENDIDO",
-    "region": 13,
-    "lat": -22.5090245,
-    "lng": -69.0710203
-  },
-  {
     "codigo": "VP - RAJO INCA",
     "codigoCorto": "RI",
     "nombre": "VP - RAJO INCA",
-    "region": 13,
-    "lat": -22.5090245,
-    "lng": -69.0710203
-  },
-  {
-    "codigo": "VP - DESARROLLO FUTURO ANDINA",
-    "codigoCorto": "DFA",
-    "nombre": "VP - DESARROLLO FUTURO ANDINA",
-    "region": 13,
-    "lat": -22.5090245,
-    "lng": -69.0710203
-  },
-  {
-    "codigo": "VP - TRASPASO ANDINA",
-    "codigoCorto": "TA",
-    "nombre": "VP - TRASPASO ANDINA",
     "region": 13,
     "lat": -22.5090245,
     "lng": -69.0710203
@@ -91,6 +67,46 @@
     "codigo": "VP - PMCHS",
     "codigoCorto": "PMC",
     "nombre": "VP - PMCHS",
+    "region": 13,
+    "lat": -22.5090245,
+    "lng": -69.0710203
+  },
+  {
+    "codigo": "VP - PMCHS",
+    "codigoCorto": "PMC",
+    "nombre": "VP - PMCHS",
+    "region": 13,
+    "lat": -22.5090245,
+    "lng": -69.0710203
+  },
+  {
+    "codigo": "VP - CARTERA PROYECTOS ANDINA",
+    "codigoCorto": "CPA",
+    "nombre": "VP - CARTERA PROYECTOS ANDINA",
+    "region": 13,
+    "lat": -22.5090245,
+    "lng": -69.0710203
+  },
+  {
+    "codigo": "VP - DLN EXTENDIDO",
+    "codigoCorto": "DLNE",
+    "nombre": "VP - DLN EXTENDIDO",
+    "region": 13,
+    "lat": -22.5090245,
+    "lng": -69.0710203
+  },
+  {
+    "codigo": "VP - TRASPASO ANDINA",
+    "codigoCorto": "TA",
+    "nombre": "VP - TRASPASO ANDINA",
+    "region": 13,
+    "lat": -22.5090245,
+    "lng": -69.0710203
+  },
+  {
+    "codigo": "VP - DESARROLLO FUTURO ANDINA",
+    "codigoCorto": "DFA",
+    "nombre": "VP - DESARROLLO FUTURO ANDINA",
     "region": 13,
     "lat": -22.5090245,
     "lng": -69.0710203
