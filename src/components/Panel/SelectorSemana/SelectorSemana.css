@@ -25,6 +25,7 @@
 
 .SelectorSemana__selector {
   flex: 1;
+  background-color: transparent;
   cursor: pointer;
 }
 

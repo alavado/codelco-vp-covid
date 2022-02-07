@@ -8,12 +8,17 @@ import { obtenerSemaforoIndicador, obtenerTextoPopupIndicador } from '../../../h
 import './TarjetaIndicador.css'
 import { useHistory } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import classNames from 'classnames'
 
 const TarjetaIndicador = ({ indicador, indice, setMostrandoTooltip, mostrandoTooltip }) => {
 
   const history = useHistory()
+  const { ultimaSemana } = useSelector(state => state.datos)
   const { retroceso } = useSelector(state => state.indicadores)
-  // const valorSemaforo = obtenerSemaforoIndicador('GLOBAL', indicador, retroceso)
+
+  const semanaMostrada = ultimaSemana + retroceso
+  const primeraSemana2022 = 106
+  const juntarProyectosAndina = semanaMostrada >= primeraSemana2022
 
   return (
     <div className="TarjetaIndicador">
@@ -41,25 +46,17 @@ const TarjetaIndicador = ({ indicador, indice, setMostrandoTooltip, mostrandoToo
           </div>
         </div>
       </div>
-      {/* <div className="TarjetaIndicador__indicador_global">
-        <div
-          className="TarjetaIndicador__hexagono"
-          onClick={() => indice === 0 && history.push('/graficos')}
-          style={{ backgroundColor: obtenerColorIndicadorPanel(indicador, valorSemaforo) }}
-        >
-          Global
-        </div>
-        <div className="TarjetaIndicador__popup_hexagono">
-          CODELCO: {obtenerTextoPopupIndicador('GLOBAL', indicador, retroceso)}
-        </div>
-      </div> */}
       <div className="TarjetaIndicador__indicadores_divisiones">
         <div className="TarjetaIndicador__indicadores_contenedor_hexagonos">
           {vicepresidencias.filter(d => d.codigo !== 'GLOBAL').map((d, j) => {
             const valorSemaforo = obtenerSemaforoIndicador(d.codigo, indicador, retroceso)
             return (
               <React.Fragment key={`hexagono-${indicador}-${j}`}>
-                <div className="TarjetaIndicador__contenedor_hexagono">
+                <div className={classNames({
+                  "TarjetaIndicador__contenedor_hexagono": true,
+                  "TarjetaIndicador__contenedor_hexagono--oculto": juntarProyectosAndina && ['DLNE', 'TA', 'DFA'].includes(d.codigoCorto),
+                  "TarjetaIndicador__contenedor_hexagono--oculto-r2l": !juntarProyectosAndina && d.codigoCorto === 'CPA'
+                })}>
                   <div
                     className="TarjetaIndicador__hexagono_pequeño"
                     onClick={() => indice === 0 && history.push(`/graficos/${d.codigo}`)}

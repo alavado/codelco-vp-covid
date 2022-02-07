@@ -67,12 +67,31 @@
   text-shadow: 0 .1rem .05rem rgba(0, 0, 0, .15);
 }
 
+.TarjetaIndicador__contenedor_hexagono {
+  position: relative;
+  transition: all .25s ease;
+}
+
 .TarjetaIndicador__contenedor_hexagono:first-child {
   margin-left: var(--ancho-hexagono);
 }
 
 .TarjetaIndicador__contenedor_hexagono:nth-child(5) {
   margin-left: calc(var(--ancho-hexagono) * .5);
+}
+
+.TarjetaIndicador__contenedor_hexagono--oculto {
+  opacity: 0;
+  position: absolute;
+  transform: translateX(-.5rem);
+  bottom: 0;
+}
+
+.TarjetaIndicador__contenedor_hexagono--oculto-r2l {
+  opacity: 0;
+  position: absolute;
+  transform: translateX(.5rem);
+  bottom: 0;
 }
 
 .TarjetaIndicador__hexagono_pequeño:hover {
@@ -118,10 +137,6 @@
 .TarjetaIndicador__indicadores_contenedor_hexagonos {
   display: flex;
   flex-wrap: wrap;
-}
-
-.TarjetaIndicador__contenedor_hexagono {
-  position: relative;
 }
 
 .TarjetaIndicador__contenedor_hexagono:hover .TarjetaIndicador__popup_hexagono,

@@ -8,6 +8,7 @@
   --ancho-indicador-global: 10rem;
   --ancho-indicadores-locales: calc(var(--ancho-hexagono) * 5);
   position: relative;
+  background-color: #fafafa;
 }
 
 .Panel__contenedor {
@@ -34,7 +35,6 @@
   width: 100%;
   position: sticky;
   top: 3rem;
-  background-color: white;
   z-index: 2;
 }
 
