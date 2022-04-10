@@ -720,14 +720,14 @@
     "semanaEnAño": 15
   },
   "121": {
-    "texto": "10 al 17 de abril",
+    "texto": "17 al 23 de abril",
     "inicio": "17-04-2022",
     "termino": "23-04-2022",
     "semanaEnAño": 16
   },
   "122": {
-    "texto": "23 al 30 de abril",
-    "inicio": "23-04-2022",
+    "texto": "24 al 30 de abril",
+    "inicio": "24-04-2022",
     "termino": "30-04-2022",
     "semanaEnAño": 17
   },
