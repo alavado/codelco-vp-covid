@@ -796,5 +796,29 @@
     "inicio": "10-07-2022",
     "termino": "16-07-2022",
     "semanaEnAño": 28
+  },
+  "134": {
+    "texto": "17 al 23 de julio",
+    "inicio": "17-07-2022",
+    "termino": "23-07-2022",
+    "semanaEnAño": 29
+  },
+  "135": {
+    "texto": "24 al 30 de julio",
+    "inicio": "24-07-2022",
+    "termino": "30-07-2022",
+    "semanaEnAño": 30
+  },
+  "136": {
+    "texto": "31 de julio al 6 de agosto",
+    "inicio": "31-07-2022",
+    "termino": "06-08-2022",
+    "semanaEnAño": 31
+  },
+  "137": {
+    "texto": "7 al 13 de agosto",
+    "inicio": "07-08-2022",
+    "termino": "13-08-2022",
+    "semanaEnAño": 32
   }
 }
