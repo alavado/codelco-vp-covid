@@ -874,5 +874,35 @@
     "inicio": "09-10-2022",
     "termino": "15-10-2022",
     "semanaEnAño": 41
+  },
+  "147": {
+    "texto": "16 al 22 de octubre",
+    "inicio": "16-10-2022",
+    "termino": "22-10-2022",
+    "semanaEnAño": 42
+  },
+  "148": {
+    "texto": "23 al 29 de octubre",
+    "inicio": "23-10-2022",
+    "termino": "29-10-2022",
+    "semanaEnAño": 43
+  },
+  "149": {
+    "texto": "30 de octubre al 5 de noviembre",
+    "inicio": "30-10-2022",
+    "termino": "05-11-2022",
+    "semanaEnAño": 44
+  },
+  "150": {
+    "texto": "6 al 12 de noviembre",
+    "inicio": "06-11-2022",
+    "termino": "12-11-2022",
+    "semanaEnAño": 45
+  },
+  "151": {
+    "texto": "13 al 19 de noviembre",
+    "inicio": "13-11-2022",
+    "termino": "19-11-2022",
+    "semanaEnAño": 46
   }
 }
