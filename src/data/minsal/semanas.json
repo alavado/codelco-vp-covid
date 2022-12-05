@@ -928,5 +928,35 @@
     "inicio": "11-12-2022",
     "termino": "17-12-2022",
     "semanaEnAño": 50
+  },
+  "156": {
+    "texto": "18 al 24 de diciembre",
+    "inicio": "18-12-2022",
+    "termino": "24-12-2022",
+    "semanaEnAño": 51
+  },
+  "157": {
+    "texto": "25 al 31 de diciembre",
+    "inicio": "25-12-2022",
+    "termino": "31-12-2022",
+    "semanaEnAño": 52
+  },
+  "158": {
+    "texto": "1 al 7 de enero",
+    "inicio": "01-01-2023",
+    "termino": "07-01-2023",
+    "semanaEnAño": 1
+  },
+  "159": {
+    "texto": "8 al 14 de enero",
+    "inicio": "08-01-2023",
+    "termino": "14-01-2023",
+    "semanaEnAño": 2
+  },
+  "160": {
+    "texto": "15 al 21 de enero",
+    "inicio": "15-01-2023",
+    "termino": "21-01-2023",
+    "semanaEnAño": 3
   }
 }
