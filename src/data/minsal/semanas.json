@@ -982,5 +982,29 @@
     "inicio": "12-02-2023",
     "termino": "18-02-2023",
     "semanaEnAño": 7
+  },
+  "165": {
+    "texto": "19 al 25 de febrero",
+    "inicio": "19-02-2023",
+    "termino": "25-02-2023",
+    "semanaEnAño": 8
+  },
+  "166": {
+    "texto": "26 al 4 de marzo",
+    "inicio": "26-02-2023",
+    "termino": "04-03-2023",
+    "semanaEnAño": 9
+  },
+  "167": {
+    "texto": "5 al 11 de marzo",
+    "inicio": "05-03-2023",
+    "termino": "11-03-2023",
+    "semanaEnAño": 10
+  },
+  "168": {
+    "texto": "12 al 18 de marzo",
+    "inicio": "12-03-2023",
+    "termino": "18-03-2023",
+    "semanaEnAño": 11
   }
 }
